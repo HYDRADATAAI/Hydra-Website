@@ -1,0 +1,38 @@
+{
+  "pages": {
+    "index.html": {
+      "js_errors": [],
+      "title": "HYDRA \u2014 Market Intelligence Data Platform",
+      "repo_links_visible": 0
+    },
+    "architecture.html": {
+      "js_errors": [],
+      "title": "Architecture \u2014 HYDRA",
+      "repo_links_visible": 0
+    },
+    "lab.html": {
+      "js_errors": [],
+      "title": "Integrity Lab \u2014 HYDRA",
+      "repo_links_visible": 0
+    },
+    "roadmap.html": {
+      "js_errors": [],
+      "title": "Roadmap \u2014 HYDRA",
+      "repo_links_visible": 0
+    },
+    "404.html": {
+      "js_errors": [],
+      "title": "404 \u2014 HYDRA",
+      "repo_links_visible": 0
+    }
+  },
+  "interactions": {
+    "architecture_contract": "Contracts",
+    "lab_missing": "BLOCKED_BY_MISSING_AUTHORITY"
+  },
+  "mobile": {
+    "horizontal_overflow_px": 0,
+    "menu_open": true,
+    "js_errors": []
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "version": "V5",
+  "focus": "Constraint Intelligence integration",
+  "required_files": {
+    "index.html": true,
+    "architecture.html": true,
+    "constraint.html": true,
+    "lab.html": true,
+    "roadmap.html": true,
+    "404.html": true,
+    "styles.css": true,
+    "app.js": true,
+    "site.config.js": true,
+    "assets/hydra-mark.svg": true
+  },
+  "node_syntax_check": "PASS",
+  "html_reference_check": "PASS",
+  "constraint_interaction": "PASS \u2014 Actual constraint -> Regulatory barrier",
+  "mobile_constraint_overflow": "PASS \u2014 390px scrollWidth equals viewport width",
+  "visual_previews": [
+    "HYDRA_V5_CONSTRAINT_PAGE_1440x1000.png",
+    "HYDRA_V5_CONSTRAINT_SECTION_1440x1000.png",
+    "HYDRA_V5_ARCH_CONSTRAINT_1440x1000.png",
+    "HYDRA_V5_CONSTRAINT_MOBILE_390x844.png"
+  ],
+  "integrity_lab_note": "V4 drift scenario object nesting defect repaired; app.js syntax validated.",
+  "hero_direction": "UNCHANGED / frozen recruiter baseline"
+}

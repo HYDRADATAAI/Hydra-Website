@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" data-page="roadmap">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#06100f" />
+  <meta name="description" content="HYDRA roadmap: data engineering foundation first, AWS cloud mapping next, and generative AI as a downstream intelligence division." />
+  <title>Roadmap — HYDRA</title>
+  <link rel="icon" href="assets/hydra-mark.svg" type="image/svg+xml" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="site.config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="ambient-grid" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="scroll-meter" aria-hidden="true"><span></span></div>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html" aria-label="HYDRA home">
+      <img src="assets/hydra-mark.svg" alt="" />
+      <span class="brand-stack"><strong>HYDRA</strong><small>DATA SYSTEMS LAB</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span></span><span></span><b>Menu</b></button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation" data-nav>
+      <a href="index.html">Overview</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="constraint.html">Constraint Intel</a>
+      <a href="case-study.html">Case Study</a>
+      <a href="lab.html">Integrity Lab</a>
+      <a href="proof.html">Proof</a>
+      <a class="is-active" href="roadmap.html">Roadmap</a>
+      <a class="nav-repo" href="#" data-repo-link hidden>Repository <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero shell roadmap-hero">
+      <div data-reveal>
+        <p class="eyebrow">HYDRA / ROADMAP</p>
+        <h1>Grow the intelligence.<br/><span>Do not outrun the evidence.</span></h1>
+        <p class="page-lede">The roadmap keeps HYDRA legible as a data engineering project today while leaving a deliberate expansion path into cloud data systems, generative AI, and agent orchestration.</p>
+      </div>
+      <div class="page-hero-aside" data-reveal>
+        <span class="status-chip status-future">LONG-HORIZON SYSTEM</span>
+        <p>The roadmap is directional. Status moves only when a capability is actually implemented and proven.</p>
+      </div>
+    </section>
+
+    <section class="shell section roadmap-timeline">
+      <div class="timeline-row current" data-reveal>
+        <div class="timeline-marker"><span>NOW</span><i></i></div>
+        <div class="timeline-copy"><p class="eyebrow">PHASE 01</p><h2>Data engineering core</h2><p>Strengthen source intake, contracts, identity, lineage, trust history, constraint case modeling, quarantine, integrated seams, deterministic artifacts, and release discipline.</p></div>
+        <div class="timeline-tags"><span>contracts</span><span>lineage</span><span>constraint modeling</span><span>provenance</span><span>testing</span><span>reproducibility</span></div>
+      </div>
+
+      <div class="timeline-row" data-reveal>
+        <div class="timeline-marker"><span>NEXT</span><i></i></div>
+        <div class="timeline-copy"><p class="eyebrow">PHASE 02</p><h2>AWS data platform mapping</h2><p>Move one honest vertical slice into AWS. Preserve the same boundaries while adding cloud storage, orchestration, cataloging, observability, and queryable outputs.</p></div>
+        <div class="timeline-tags"><span>S3</span><span>Glue</span><span>Lambda</span><span>Step Functions</span><span>CloudWatch</span><span>Athena</span></div>
+      </div>
+
+      <div class="timeline-row" data-reveal>
+        <div class="timeline-marker"><span>LATER</span><i></i></div>
+        <div class="timeline-copy"><p class="eyebrow">PHASE 03</p><h2>Analytical serving + operations</h2><p>Turn proven pipeline outputs into a more complete analytical platform with clear SLIs, operational dashboards, backfills, recovery behavior, and cost-aware execution.</p></div>
+        <div class="timeline-tags"><span>warehouse patterns</span><span>observability</span><span>backfills</span><span>cost controls</span><span>recovery</span></div>
+      </div>
+
+      <div class="timeline-row future" data-reveal>
+        <div class="timeline-marker"><span>EMERGING</span><i></i></div>
+        <div class="timeline-copy"><p class="eyebrow">PHASE 04</p><h2>HYDRA / Intelligence</h2><p>Add retrieval, model routing, evaluation, agent workflows, and decision support as consumers of governed data. Intelligence becomes a distinct division rather than a shortcut around data engineering.</p></div>
+        <div class="timeline-tags"><span>retrieval</span><span>models</span><span>agents</span><span>evaluation</span><span>grounding</span><span>guardrails</span></div>
+      </div>
+    </section>
+
+    <section class="section contrast-section">
+      <div class="shell division-future-grid">
+        <article class="future-card data-card" data-reveal>
+          <div class="future-card-head"><span>D / DATA</span><strong>FOUNDATION</strong></div>
+          <h2>Own the facts.</h2>
+          <p>HYDRA / Data answers the operational questions that make downstream intelligence defensible.</p>
+          <ul>
+            <li><span>01</span>What entered the system?</li>
+            <li><span>02</span>Who owns each field?</li>
+            <li><span>03</span>What changed and why?</li>
+            <li><span>04</span>Which evidence supports this state?</li>
+            <li><span>05</span>Is this handoff allowed?</li>
+          </ul>
+        </article>
+
+        <article class="future-card intelligence-card" data-reveal>
+          <div class="future-card-head"><span>I / INTELLIGENCE</span><strong>DOWNSTREAM</strong></div>
+          <h2>Reason over governed context.</h2>
+          <p>HYDRA / Intelligence eventually asks different questions, but it inherits the data division's constraints.</p>
+          <ul>
+            <li><span>01</span>Which context should a model see?</li>
+            <li><span>02</span>How is retrieval evaluated?</li>
+            <li><span>03</span>Which model or agent owns the step?</li>
+            <li><span>04</span>How are outputs grounded and reviewed?</li>
+            <li><span>05</span>When should the system refuse to act?</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section portfolio-plan">
+      <div class="section-heading" data-reveal>
+        <div><p class="eyebrow">PUBLIC PORTFOLIO PLAN</p><h2>What gets promoted to the website next.</h2></div>
+        <p>The public surface should get more concrete over time, but only with material that a hiring manager can understand quickly and inspect further if they care.</p>
+      </div>
+
+      <div class="portfolio-grid">
+        <article data-reveal><span>01</span><h3>Architecture diagrams</h3><p>Replace conceptual diagrams with clean versions of actual HYDRA boundaries and handoffs.</p><small>PRIORITY · HIGH</small></article>
+        <article data-reveal><span>02</span><h3>One AWS vertical slice</h3><p>Show source → storage → transform → quality gate → query with logs and evidence.</p><small>PRIORITY · HIGH</small></article>
+        <article data-reveal><span>03</span><h3>Recruiter README</h3><p>Turn the repository front door into a 2-minute technical story instead of an internal build archive.</p><small>PRIORITY · HIGH</small></article>
+        <article data-reveal><span>04</span><h3>Constraint case study</h3><p>Show one market constraint from source evidence through classification, conflict handling, lineage, and downstream interpretation.</p><small>PRIORITY · MEDIUM</small></article>
+        <article data-reveal><span>05</span><h3>Operational screenshots</h3><p>Add selected receipts, test summaries, logs, or dashboards once they communicate something useful.</p><small>PRIORITY · MEDIUM</small></article>
+        <article data-reveal><span>06</span><h3>GenAI demo</h3><p>Later, connect an intelligence use case to governed HYDRA data so the AI story has a real substrate.</p><small>PRIORITY · LATER</small></article>
+      </div>
+    </section>
+
+    <section class="section north-star-section">
+      <div class="shell north-star" data-reveal>
+        <p class="eyebrow">NORTH STAR</p>
+        <blockquote>HYDRA should eventually make one idea obvious: <strong>good AI engineering begins before the model call.</strong></blockquote>
+        <p>It begins with the data, the contract, the history, the failure behavior, and the evidence that survived the pipeline.</p>
+      </div>
+    </section>
+
+    <section class="shell final-cta" data-reveal>
+      <p class="eyebrow">CURRENT PRIORITY</p>
+      <h2>Build the data story.<br/>Make it inspectable.</h2>
+      <div class="final-cta-actions"><a class="button button-primary" href="architecture.html">Architecture <span>→</span></a><a class="button button-secondary" href="lab.html">Integrity Lab <span>→</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div class="footer-brand"><img src="assets/hydra-mark.svg" alt="" /><div><strong>HYDRA</strong><small>DATA SYSTEMS LAB</small></div></div>
+    <p>Market intelligence built on traceable data engineering.</p>
+    <div class="footer-links"><a href="index.html">Overview</a><a href="architecture.html">Architecture</a><a href="constraint.html">Constraints</a><a href="case-study.html">Case Study</a><a href="lab.html">Integrity Lab</a><a href="proof.html">Proof</a><a href="roadmap.html">Roadmap</a></div>
+    <small class="footer-meta">Data engineering · market intelligence · <span data-year></span></small>
+  </footer>
+</body>
+</html>

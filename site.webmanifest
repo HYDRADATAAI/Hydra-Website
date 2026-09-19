@@ -1,0 +1,17 @@
+{
+  "name": "HYDRA \u2014 Market Intelligence Data Platform",
+  "short_name": "HYDRA",
+  "description": "Market intelligence built on traceable data engineering.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#06100f",
+  "theme_color": "#06100f",
+  "icons": [
+    {
+      "src": "assets/hydra-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

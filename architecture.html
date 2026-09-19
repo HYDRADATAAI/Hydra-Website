@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en" data-page="architecture">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#06100f" />
+  <meta name="description" content="Explore HYDRA's market-intelligence data engineering architecture: source intake, contracts, identity, validation, lineage, trust, release gates, and governed downstream consumers." />
+  <title>Architecture — HYDRA</title>
+  <link rel="icon" href="assets/hydra-mark.svg" type="image/svg+xml" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="site.config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="ambient-grid" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="scroll-meter" aria-hidden="true"><span></span></div>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html" aria-label="HYDRA home">
+      <img src="assets/hydra-mark.svg" alt="" />
+      <span class="brand-stack"><strong>HYDRA</strong><small>DATA SYSTEMS LAB</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span></span><span></span><b>Menu</b></button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation" data-nav>
+      <a href="index.html">Overview</a>
+      <a class="is-active" href="architecture.html">Architecture</a>
+      <a href="constraint.html">Constraint Intel</a>
+      <a href="case-study.html">Case Study</a>
+      <a href="lab.html">Integrity Lab</a>
+      <a href="proof.html">Proof</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a class="nav-repo" href="#" data-repo-link hidden>Repository <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero shell">
+      <div data-reveal>
+        <p class="eyebrow">HYDRA / DATA · ARCHITECTURE</p>
+        <h1>Make every handoff <span>explain itself.</span></h1>
+        <p class="page-lede">The architecture is organized around boundaries. A stage should know what it owns, what it accepts, what it emits, and what evidence must survive the transition.</p>
+      </div>
+      <div class="page-hero-aside" data-reveal>
+        <span class="status-chip status-active"><i></i> CURRENT FOCUS</span>
+        <p>Local architecture is the proving ground. Cloud mapping comes after the contracts and seams are understood.</p>
+      </div>
+    </section>
+
+    <section class="shell architecture-explorer section">
+      <div class="architecture-stage-list" role="tablist" aria-label="HYDRA architecture stages" data-stage-list>
+        <button class="stage-tab is-active" type="button" role="tab" aria-selected="true" data-stage="source"><span>01</span><strong>Source Intake</strong><small>what entered?</small></button>
+        <button class="stage-tab" type="button" role="tab" aria-selected="false" data-stage="identity"><span>02</span><strong>Identity</strong><small>what is it?</small></button>
+        <button class="stage-tab" type="button" role="tab" aria-selected="false" data-stage="contract"><span>03</span><strong>Contracts</strong><small>is it admissible?</small></button>
+        <button class="stage-tab" type="button" role="tab" aria-selected="false" data-stage="transform"><span>04</span><strong>Transform</strong><small>what changed?</small></button>
+        <button class="stage-tab" type="button" role="tab" aria-selected="false" data-stage="lineage"><span>05</span><strong>Lineage</strong><small>where from?</small></button>
+        <button class="stage-tab" type="button" role="tab" aria-selected="false" data-stage="trust"><span>06</span><strong>Trust / History</strong><small>what conflicts?</small></button>
+        <button class="stage-tab" type="button" role="tab" aria-selected="false" data-stage="release"><span>07</span><strong>Release Gate</strong><small>may it leave?</small></button>
+      </div>
+
+      <div class="architecture-stage-panel" data-stage-panel data-reveal>
+        <div class="stage-panel-topline"><span data-stage-kicker>STAGE 01</span><span class="stage-owner" data-stage-owner>OWNER · SOURCE LANE</span></div>
+        <h2 data-stage-title>Source Intake</h2>
+        <p class="stage-panel-lede" data-stage-summary>Capture source material without losing the context required to identify and audit it later.</p>
+        <div class="stage-detail-grid">
+          <div><small>QUESTION</small><strong data-stage-question>What entered the system?</strong></div>
+          <div><small>MUST PRESERVE</small><strong data-stage-preserve>origin · source identity · arrival context</strong></div>
+          <div><small>FAILURE BEHAVIOR</small><strong data-stage-failure>quarantine unknown or malformed source state</strong></div>
+          <div><small>DOWNSTREAM SIGNAL</small><strong data-stage-output>normalized source envelope</strong></div>
+        </div>
+        <div class="stage-principle"><span>PRINCIPLE</span><p data-stage-principle>Do not clean away the evidence needed to explain what arrived.</p></div>
+      </div>
+    </section>
+
+    <section class="section contrast-section">
+      <div class="shell">
+        <div class="section-heading" data-reveal>
+          <div><p class="eyebrow">BOUNDARY MODEL</p><h2>The pipeline is a chain of permissioned transitions.</h2></div>
+          <p>HYDRA treats a downstream object as more than a bag of available fields. A valid handoff needs compatible shape, legitimate ownership, and traceable authority.</p>
+        </div>
+
+        <div class="boundary-rail" data-reveal>
+          <div class="boundary-node"><span>RAW</span><strong>Source</strong><small>evidence enters</small></div>
+          <i>→</i>
+          <div class="boundary-gate"><span>GATE</span><strong>Identity + Contract</strong><small>prove ownership</small></div>
+          <i>→</i>
+          <div class="boundary-node"><span>CORE</span><strong>Canonical State</strong><small>transform with receipts</small></div>
+          <i>→</i>
+          <div class="boundary-gate"><span>GATE</span><strong>Trust + Release</strong><small>prove admissibility</small></div>
+          <i>→</i>
+          <div class="boundary-node future-boundary"><span>CONSUME</span><strong>Query / Intel</strong><small>governed output</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section constraint-architecture-section">
+      <div class="section-heading" data-reveal>
+        <div><p class="eyebrow">DOMAIN LAYER / MARKET CONSTRAINTS</p><h2>Constraint intelligence sits on top of governed evidence.</h2></div>
+        <p>The pipeline establishes identity, ownership, lineage, and history first. Only then does HYDRA turn market evidence into a constraint case that can be inspected, challenged, and revised.</p>
+      </div>
+      <div class="constraint-architecture-board" data-reveal>
+        <div class="constraint-arch-step"><span>01</span><strong>MARKET EVIDENCE</strong><small>events · reference · history</small></div><i>→</i>
+        <div class="constraint-arch-step"><span>02</span><strong>CASE BINDING</strong><small>canonical subject + scope</small></div><i>→</i>
+        <div class="constraint-arch-step constraint-arch-focus"><span>03</span><strong>CONSTRAINT MODEL</strong><small>type + dimensions + competing evidence</small></div><i>→</i>
+        <div class="constraint-arch-step"><span>04</span><strong>LINEAGE</strong><small>why this classification exists</small></div><i>→</i>
+        <div class="constraint-arch-step"><span>05</span><strong>MARKET INTEL</strong><small>traceable downstream use</small></div>
+      </div>
+      <div class="constraint-architecture-note" data-reveal>
+        <span>INVARIANT</span><p><strong>The domain layer cannot manufacture authority.</strong> A constraint classification inherits the evidence limits, conflicts, freshness, and provenance of the data that produced it.</p>
+        <a class="text-link" href="constraint.html">Explore the constraint model <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="shell section">
+      <div class="section-heading" data-reveal>
+        <div><p class="eyebrow">CROSS-CUTTING SYSTEMS</p><h2>The things that should survive every stage.</h2></div>
+        <p>These are not decorative metadata. They are the connective tissue that lets an engineering team debug, reproduce, review, and trust the pipeline.</p>
+      </div>
+
+      <div class="crosscut-grid">
+        <article data-reveal><span class="crosscut-number">A</span><h3>Lineage</h3><p>Which input, stage, version, and transformation produced this output?</p><div class="mini-meter"><i style="--w:88%"></i></div></article>
+        <article data-reveal><span class="crosscut-number">B</span><h3>Provenance</h3><p>Which source and authority justify the values and decisions represented here?</p><div class="mini-meter"><i style="--w:82%"></i></div></article>
+        <article data-reveal><span class="crosscut-number">C</span><h3>Determinism</h3><p>Can the same sealed input reproduce the same artifact and receipt?</p><div class="mini-meter"><i style="--w:91%"></i></div></article>
+        <article data-reveal><span class="crosscut-number">D</span><h3>Quarantine</h3><p>Can the system isolate suspect material without silently contaminating the next stage?</p><div class="mini-meter"><i style="--w:79%"></i></div></article>
+        <article data-reveal><span class="crosscut-number">E</span><h3>Mutation Audit</h3><p>Can a closeout prove whether the frozen baseline changed during a repair?</p><div class="mini-meter"><i style="--w:86%"></i></div></article>
+        <article data-reveal><span class="crosscut-number">F</span><h3>Receipts</h3><p>Can the test return evidence instead of requiring a reviewer to trust a narrative?</p><div class="mini-meter"><i style="--w:90%"></i></div></article>
+      </div>
+      <p class="meter-note" data-reveal>Visual meters are design emphasis, not maturity scores.</p>
+    </section>
+
+    <section class="section cloud-section">
+      <div class="shell">
+        <div class="section-heading" data-reveal>
+          <div><p class="eyebrow">AWS / TARGET MAPPING</p><h2>Cloud services should inherit the architecture, not replace it.</h2></div>
+          <p>The AWS direction is a target mapping for the data engineering path. These services are not presented as already deployed HYDRA production infrastructure.</p>
+        </div>
+
+        <div class="cloud-map" data-reveal>
+          <div class="cloud-layer"><span>INGEST</span><div><b>Amazon S3</b><small>landing / durable objects</small></div><div><b>EventBridge</b><small>event routing</small></div></div>
+          <div class="cloud-arrow">↓</div>
+          <div class="cloud-layer"><span>PROCESS</span><div><b>AWS Glue</b><small>catalog / ETL patterns</small></div><div><b>Lambda</b><small>bounded event transforms</small></div></div>
+          <div class="cloud-arrow">↓</div>
+          <div class="cloud-layer"><span>ORCHESTRATE</span><div><b>Step Functions</b><small>stateful workflows</small></div><div><b>CloudWatch</b><small>logs / metrics / alarms</small></div></div>
+          <div class="cloud-arrow">↓</div>
+          <div class="cloud-layer"><span>SERVE</span><div><b>Athena</b><small>query / inspection</small></div><div><b>Redshift</b><small>analytical serving path</small></div></div>
+        </div>
+
+        <div class="cloud-caveat" data-reveal><span>STATUS</span><p><strong>Reference architecture / learning target.</strong> The portfolio should only promote services into “implemented” status after a real HYDRA slice runs through them with evidence.</p></div>
+      </div>
+    </section>
+
+    <section class="shell final-cta" data-reveal>
+      <p class="eyebrow">TRY THE FAILURE MODEL</p>
+      <h2>Architecture gets interesting<br/>when something is missing.</h2>
+      <div class="final-cta-actions"><a class="button button-primary" href="lab.html">Open Integrity Lab <span>→</span></a><a class="button button-secondary" href="roadmap.html">See roadmap <span>→</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div class="footer-brand"><img src="assets/hydra-mark.svg" alt="" /><div><strong>HYDRA</strong><small>DATA SYSTEMS LAB</small></div></div>
+    <p>Market intelligence built on traceable data engineering.</p>
+    <div class="footer-links"><a href="index.html">Overview</a><a href="architecture.html">Architecture</a><a href="constraint.html">Constraints</a><a href="case-study.html">Case Study</a><a href="lab.html">Integrity Lab</a><a href="proof.html">Proof</a><a href="roadmap.html">Roadmap</a></div>
+    <small class="footer-meta">Data engineering · market intelligence · <span data-year></span></small>
+  </footer>
+</body>
+</html>

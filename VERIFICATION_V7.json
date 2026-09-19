@@ -1,0 +1,24 @@
+{
+  "version": "V7",
+  "verified_at_utc": "2026-09-18T00:30:00Z",
+  "scope": "static site package + browser interaction smoke checks",
+  "checks": {
+    "html_pages": 8,
+    "internal_asset_links": "PASS",
+    "javascript_parse": "PASS",
+    "desktop_horizontal_overflow_px": 0,
+    "case_study_interaction": "PASS",
+    "case_study_release_step_title": "Emit an inspectable market object",
+    "integrity_lab_missing_authority_outcome": "BLOCKED_BY_MISSING_AUTHORITY",
+    "integrity_lab_state": "BLOCKED",
+    "mobile_case_horizontal_overflow_px": 0,
+    "mobile_menu": "PASS",
+    "browser_console_errors": 0,
+    "landing_hero_direction": "UNCHANGED"
+  },
+  "truth_notes": [
+    "Case Study is explicitly labeled representative and is not presented as live market output.",
+    "AWS and future intelligence work remain roadmap/target material until implemented.",
+    "Public repository/profile/contact controls remain hidden until configured."
+  ]
+}

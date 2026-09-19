@@ -1,0 +1,31 @@
+{
+  "version": "V6",
+  "focus": "Engineering Proof layer",
+  "hero_direction": "UNCHANGED / frozen recruiter baseline",
+  "required_files": {
+    "index.html": true,
+    "architecture.html": true,
+    "constraint.html": true,
+    "lab.html": true,
+    "proof.html": true,
+    "roadmap.html": true,
+    "404.html": true,
+    "styles.css": true,
+    "app.js": true,
+    "site.config.js": true,
+    "assets/hydra-mark.svg": true
+  },
+  "node_syntax_check": "PASS",
+  "html_reference_check": "PASS",
+  "desktop_render_overflow": 0,
+  "proof_mobile_390px_overflow": 0,
+  "architecture_release_interaction": "PASS",
+  "constraint_regulatory_interaction": "PASS",
+  "public_links_fail_closed": "PASS by config logic; blank values keep controls hidden",
+  "repository_ui_fail_closed": "PASS",
+  "visual_previews": [
+    "HYDRA_V6_HOME_1440x1000.png",
+    "HYDRA_V6_PROOF_1440x1000.png",
+    "HYDRA_V6_PROOF_MOBILE_390x844.png"
+  ]
+}

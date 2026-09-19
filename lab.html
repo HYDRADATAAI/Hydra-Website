@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" data-page="lab">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#06100f" />
+  <meta name="description" content="Run a browser simulation of HYDRA's fail-closed data engineering principles." />
+  <title>Integrity Lab — HYDRA</title>
+  <link rel="icon" href="assets/hydra-mark.svg" type="image/svg+xml" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="site.config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="ambient-grid" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="scroll-meter" aria-hidden="true"><span></span></div>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html" aria-label="HYDRA home">
+      <img src="assets/hydra-mark.svg" alt="" />
+      <span class="brand-stack"><strong>HYDRA</strong><small>DATA SYSTEMS LAB</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span></span><span></span><b>Menu</b></button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation" data-nav>
+      <a href="index.html">Overview</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="constraint.html">Constraint Intel</a>
+      <a href="case-study.html">Case Study</a>
+      <a class="is-active" href="lab.html">Integrity Lab</a>
+      <a href="proof.html">Proof</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a class="nav-repo" href="#" data-repo-link hidden>Repository <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero shell lab-hero">
+      <div data-reveal>
+        <p class="eyebrow">HYDRA / INTEGRITY LAB</p>
+        <h1>Make the failure <span>visible.</span></h1>
+        <p class="page-lede">This browser demo turns HYDRA's core engineering rule into something you can click: missing authority should produce an honest blocker, not a cosmetically complete record.</p>
+      </div>
+      <div class="page-hero-aside" data-reveal>
+        <span class="status-chip"><i></i> INTERACTIVE DEMO</span>
+        <p>This is a front-end simulation of project principles. It is not a live connection to the HYDRA pipeline.</p>
+      </div>
+    </section>
+
+    <section class="shell lab-layout section">
+      <div class="lab-controls" data-reveal>
+        <div class="lab-panel-heading">
+          <p class="eyebrow">SCENARIO</p>
+          <h2>Choose what the handoff knows.</h2>
+        </div>
+
+        <label class="scenario-option is-selected">
+          <input type="radio" name="scenario" value="valid" checked />
+          <span class="scenario-radio"></span>
+          <span><strong>Authorized handoff</strong><small>Producer owns the required fields and lineage is intact.</small></span>
+        </label>
+        <label class="scenario-option">
+          <input type="radio" name="scenario" value="missing" />
+          <span class="scenario-radio"></span>
+          <span><strong>Missing authority</strong><small>Required downstream fields exist nowhere under an authoritative producer contract.</small></span>
+        </label>
+        <label class="scenario-option">
+          <input type="radio" name="scenario" value="ambiguous" />
+          <span class="scenario-radio"></span>
+          <span><strong>Ambiguous ownership</strong><small>Values can be found in sibling records, but producer ownership is not proven.</small></span>
+        </label>
+        <label class="scenario-option">
+          <input type="radio" name="scenario" value="drift" />
+          <span class="scenario-radio"></span>
+          <span><strong>Snapshot drift</strong><small>Expected lineage and the active source snapshot no longer agree.</small></span>
+        </label>
+
+        <button class="button button-primary lab-run" type="button" data-lab-run>Run integrity check <span>▶</span></button>
+        <button class="text-button" type="button" data-lab-reset>Reset console</button>
+      </div>
+
+      <div class="lab-console-wrap" data-reveal>
+        <div class="console-topbar">
+          <div><i class="console-dot red"></i><i class="console-dot amber"></i><i class="console-dot green"></i></div>
+          <span>HYDRA_INTEGRITY_SIM / LOCAL</span>
+          <span class="console-state" data-console-state>IDLE</span>
+        </div>
+        <div class="console-body" data-console aria-live="polite">
+          <div class="console-line console-muted"><span>00</span><p>Ready. Select a scenario and run the integrity check.</p></div>
+          <div class="console-line console-muted"><span>01</span><p>No production systems are contacted by this demo.</p></div>
+        </div>
+        <div class="console-receipt" data-console-receipt hidden>
+          <div><small>OUTCOME</small><strong data-receipt-outcome>PASS</strong></div>
+          <div><small>BASELINE MUTATED</small><strong>NO</strong></div>
+          <div><small>RECEIPT</small><strong data-receipt-hash>—</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contrast-section">
+      <div class="shell">
+        <div class="section-heading" data-reveal>
+          <div><p class="eyebrow">WHY THIS MATTERS</p><h2>Data bugs often look like successful joins.</h2></div>
+          <p>A system can return values and still be wrong. HYDRA's interest is the boundary between “a value exists” and “this producer is allowed to supply that value to this consumer.”</p>
+        </div>
+
+        <div class="comparison-table" data-reveal role="table" aria-label="Naive pipeline and HYDRA comparison">
+          <div class="comparison-row comparison-head" role="row"><div role="columnheader">QUESTION</div><div role="columnheader">NAIVE PIPELINE</div><div role="columnheader">HYDRA PRINCIPLE</div></div>
+          <div class="comparison-row" role="row"><div role="cell">Field found somewhere?</div><div role="cell">Accept it</div><div role="cell"><strong>Prove producer ownership</strong></div></div>
+          <div class="comparison-row" role="row"><div role="cell">Missing downstream requirement?</div><div role="cell">Derive / default silently</div><div role="cell"><strong>Block unless a contract authorizes derivation</strong></div></div>
+          <div class="comparison-row" role="row"><div role="cell">Test is red?</div><div role="cell">Expand until green</div><div role="cell"><strong>Name defect → minimum repair → rerun → freeze</strong></div></div>
+          <div class="comparison-row" role="row"><div role="cell">Conflicting evidence?</div><div role="cell">Pick a winner</div><div role="cell"><strong>Preserve conflict and adjudicate explicitly</strong></div></div>
+          <div class="comparison-row" role="row"><div role="cell">Source snapshot changed?</div><div role="cell">Continue if shape still fits</div><div role="cell"><strong>Detect drift and quarantine the seam</strong></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section">
+      <div class="section-heading" data-reveal>
+        <div><p class="eyebrow">REPAIR DISCIPLINE</p><h2>Small repair loops beat heroic rewrites.</h2></div>
+        <p>The repair lane is intentionally boring. That is a feature. It narrows causality and keeps a proven defect from turning into an excuse for unrelated construction.</p>
+      </div>
+
+      <div class="repair-loop" data-reveal>
+        <div><span>01</span><strong>TEST</strong><small>run the bounded seam</small></div><i>→</i>
+        <div><span>02</span><strong>NAME</strong><small>record the defect</small></div><i>→</i>
+        <div><span>03</span><strong>REPAIR</strong><small>minimum change only</small></div><i>→</i>
+        <div><span>04</span><strong>RERUN</strong><small>same seam immediately</small></div><i>→</i>
+        <div><span>05</span><strong>FREEZE</strong><small>capture receipt and stop</small></div>
+      </div>
+    </section>
+
+    <section class="shell final-cta" data-reveal>
+      <p class="eyebrow">BACK TO THE SYSTEM</p>
+      <h2>Now inspect the boundaries<br/>that make the demo possible.</h2>
+      <div class="final-cta-actions"><a class="button button-primary" href="proof.html">Engineering Proof <span>→</span></a><a class="button button-secondary" href="architecture.html">Architecture <span>→</span></a><a class="button button-secondary" href="roadmap.html">Roadmap <span>→</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div class="footer-brand"><img src="assets/hydra-mark.svg" alt="" /><div><strong>HYDRA</strong><small>DATA SYSTEMS LAB</small></div></div>
+    <p>Market intelligence built on traceable data engineering.</p>
+    <div class="footer-links"><a href="index.html">Overview</a><a href="architecture.html">Architecture</a><a href="constraint.html">Constraints</a><a href="case-study.html">Case Study</a><a href="lab.html">Integrity Lab</a><a href="proof.html">Proof</a><a href="roadmap.html">Roadmap</a></div>
+    <small class="footer-meta">Data engineering · market intelligence · <span data-year></span></small>
+  </footer>
+</body>
+</html>

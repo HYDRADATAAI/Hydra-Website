@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="HYDRA representative constraint case study"><title>HYDRA | Constraint Case Study V2</title><link rel="stylesheet" href="assets/site.css"></head><body class="case-page">
+<header class="topbar"><div class="shell"><a class="brand" href="index.html"><span class="brand-mark">H</span><span>HYDRA</span></a><nav class="nav"><a href="index.html#proof">Technical proof</a><a href="#lineage">Lineage</a><a href="#blocked">Blocked state</a></nav></div></header>
+<main><section class="hero"><div class="shell"><div class="eyebrow">HYDRA_CONSTRAINT_CASE_STUDY_V2</div><h1>From fragmented evidence to a bounded, auditable result.</h1><p class="subtag">A representative data-engineering walkthrough with separately labeled synthetic/shadow control evidence.</p><div class="badges"><span class="pill rep">REPRESENTATIVE MARKET CASE</span><span class="pill shadow">SHADOW AUTHORITY PROOF</span></div></div></section>
+<section class="section"><div class="shell"><div class="section-head"><div><div class="kicker">SEVEN STAGES</div><h2>One case, seven engineering decisions.</h2><p class="desc">Each stage makes a different promise. The system does not blur source normalization, identity, authority, lineage, or interpretation into one opaque scoring step.</p></div></div>
+<div class="case-flow">
+<div class="flow-row"><div class="flow-num">01</div><article class="flow-body"><div class="flow-head"><h3>FRAGMENTED MARKET EVIDENCE</h3><span class="label rep">REPRESENTATIVE</span></div><p>Different source families arrive with different schemas and context. HYDRA keeps the observations separate rather than flattening them into one convenient narrative.</p><div class="code">supplier_note: { supplier: "Apex Components", lead_time_days: 42 }
+issuer_extract: { issuer_alias: "Apex Comp.", capacity_note: "line constrained" }
+market_signal: { symbol: "APX", spot_move: "+11%", window: "5d" }</div></article></div>
+<div class="flow-row"><div class="flow-num">02</div><article class="flow-body"><div class="flow-head"><h3>SOURCE NORMALIZATION</h3><span class="label rep">REPRESENTATIVE</span></div><p>Source-specific fields become a controlled evidence record without erasing source identity, time, or raw provenance.</p><div class="code">evidence_id: ev_0184
+source_ref: src_supplier_note_07
+entity_alias: "Apex Components"
+claim_type: capacity_limit
+value: 42
+unit: days
+raw_ref: raw/07#lead_time</div></article></div>
+<div class="flow-row"><div class="flow-num">03</div><article class="flow-body"><div class="flow-head"><h3>IDENTITY RESOLUTION</h3><span class="label rep">REPRESENTATIVE</span></div><p>Aliases converge only when identity rules support the match. Identity resolution remains separate from deciding what the evidence means.</p><div class="code">"Apex Components" ┐
+"Apex Comp."       ├─→ canonical_entity_id: ent_apex_001
+"APX"              ┘
+identity_status: RESOLVED_REPRESENTATIVE</div></article></div>
+<div class="flow-row"><div class="flow-num">04</div><article class="flow-body"><div class="flow-head"><h3>CONTRACT / AUTHORITY CHECK</h3><span class="label shadow">REPRESENTATIVE + SHADOW PROOF</span></div><p>The downstream contract asks whether a required semantic value is actually owned or legitimately derivable, not whether a plausible value can be found nearby.</p><div class="card principle" style="margin-top:14px"><h3>Discoverable data is not automatically authorized data.</h3><div class="branch"><div class="branch-box"><b style="color:var(--mint)">AUTHORIZED PATH</b><small>required field + valid owner/contract = ADMISSIBLE</small></div><div class="branch-box"><b style="color:var(--red)">BLOCKED PATH</b><small>discoverable_data=YES<br>authorized_for_handoff=NO<br>result=BLOCK<br>fabricated_values=NO</small></div></div></div></article></div>
+<div class="flow-row"><div class="flow-num">05</div><article class="flow-body"><div class="flow-head"><h3>PROVENANCE + HISTORY</h3><span class="label rep">REPRESENTATIVE</span></div><p>The admitted path keeps the source, evidence record, canonical entity, and constraint candidate linked. History adds context without overwriting the original observation.</p><div class="code">src_supplier_note_07
+  ↓
+ev_0184
+  ↓
+ent_apex_001
+  ↓
+cn_0042
+  ↺ source reference preserved
+  ↺ history link preserved</div></article></div>
+<div class="flow-row"><div class="flow-num">06</div><article class="flow-body"><div class="flow-head"><h3>CONSTRAINT INTERPRETATION</h3><span class="label rep">REPRESENTATIVE</span></div><p>The evidence supports a local bottleneck pattern. It does not justify upgrading the story into a systemic market shortage.</p><div class="code">supported_scope: LOCAL
+classification: BOTTLENECK
+mechanism: CAPACITY / LEAD_TIME
+broader_shortage_claim: NOT_PROMOTED
+reason: evidence does not justify systemic scope</div></article></div>
+<div class="flow-row"><div class="flow-num">07</div><article class="flow-body"><div class="flow-head"><h3>AUDITABLE RESULT</h3><span class="label rep">REPRESENTATIVE</span></div><p>The result carries both the conclusion and its evidence boundary. What the system declined to conclude remains visible.</p><div class="code">constraint_id: cn_0042
+entity_id: ent_apex_001
+classification: local_bottleneck
+provenance_refs: [ev_0184, ev_0187]
+history_linked: true
+unsupported_claims: [systemic_shortage]
+status: REPRESENTATIVE_WALKTHROUGH</div></article></div>
+</div>
+<div id="lineage" class="card lineage"><h3>Visible source-to-result lineage</h3><div class="lineage-track"><span class="chip">raw source fragment</span><span class="arrow">→</span><span class="chip">evidence record</span><span class="arrow">→</span><span class="chip">canonical entity</span><span class="arrow">→</span><span class="chip">authority gate</span><span class="arrow">→</span><span class="chip">history-linked candidate</span><span class="arrow">→</span><span class="chip">bounded constraint result</span></div><p class="desc" style="margin-top:14px">The blocked branch stops at the authority gate. It does not silently jump forward to a populated downstream object.</p></div>
+<div id="blocked" class="card block-panel"><div class="block-grid"><div><span class="label blocked">VALID ENGINEERING OUTCOME: BLOCK</span><h3>Missing authority is a reason to stop.</h3><p>HYDRA located candidate data but could not prove authoritative ownership for the semantics required by the downstream handoff. The correct result was to refuse promotion. No substitute values were inferred from nearby data.</p></div><div class="code">authority_source_status: MISSING
+required_semantics: NOT_PROVEN
+downstream_handoff: BLOCKED
+semantic_values_invented: false
+canonical_promotion: NONE
+classification: SHADOW</div></div></div>
+<div class="boundary"><strong>Public claim boundary:</strong> the market source fragments, normalized record, identity resolution, constraint interpretation, and final constraint object are <strong>REPRESENTATIVE</strong>. The authority-control evidence is <strong>SHADOW</strong>. Supporting repaired-seam and quarantine evidence is <strong>SYNTHETIC / SHADOW</strong>. No unsupported live-production claim is made.</div>
+</div></section></main><footer><div class="shell footer-row"><span>HYDRA / CONSTRAINT CASE STUDY V2</span><span><a href="index.html">Back to recruiter front door</a></span></div></footer></body></html>

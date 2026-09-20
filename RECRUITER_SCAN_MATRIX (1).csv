@@ -1,0 +1,10 @@
+surface,scan_window,recruiter_question,required_signal,initial_state,repair,final_verdict
+Hero,10s,"What is HYDRA?","Market-intelligence data platform + traceable intelligence + 3 core capabilities",PASS,"No W6 redesign; preserve W5 copy lock",PASS
+W2 Proof Strip,30s,"Can you prove this is real engineering?","Real scale + traceability + fail-closed behavior",REPAIR,"Added REAL DATA / TRACE / FAIL CLOSED fast proof row",PASS
+W2 Scope Labels,30s,"Can I read the evidence boundaries quickly?","REAL / SYNTHETIC-SHADOW / REPRESENTATIVE labels",REPAIR,"Raised 8px evidence/status labels to 9px",PASS
+W3 Case Study,60-90s,"Can I understand one end-to-end engineering example?","Source-to-result path + supported vs blocked conclusion",REPAIR,"Added supported/not-authorized fast-read strip",PASS
+W3 Output Example,60-90s,"Is the final object understandable without log archaeology?","Compact representative output",REPAIR,"Reduced representative JSON to essential audit fields",PASS
+GitHub README,30s,"Does GitHub confirm the website story immediately?","Same real proof + trace + fail-closed boundary",REPAIR,"Added 30-second proof before architecture",PASS
+GitHub Navigation,60-90s,"Can I inspect evidence without hunting?","Resolvable relative docs/evidence links",PASS,"No change",PASS
+Public Runner Boundary,30s,"Are you claiming something that does not exist?","No public production runner claimed",PASS,"No change",PASS
+Browser/Responsive Runtime,W7,"Does it render/deploy correctly everywhere?","Browser, mobile, links, JS, routes, overflow",DEFERRED,"Owned by W7",DEFERRED_TO_W7

@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HYDRA Technical Proof Index</title>
+<link rel="stylesheet" href="proof-index.css">
+</head>
+<body>
+
+<section class="proof-index" id="technical-proof">
+  <div class="eyebrow">HYDRA / TECHNICAL PROOF INDEX</div>
+  <div class="hero">
+    <div>
+      <h1>Inspect the receipts, not the adjectives.</h1>
+      <p class="lead">
+        A recruiter-facing index of HYDRA's strongest public-safe technical evidence:
+        contract checks, lineage, authority, defects, replay, release gates, semantics, and fail-closed blockers.
+      </p>
+    </div>
+    <aside class="summary">
+      <strong>PUBLIC PROOF SNAPSHOT</strong>
+      <div class="summary-grid">
+        <div class="metric"><b>12</b><span>indexed proofs</span></div>
+        <div class="metric"><b>2</b><span>evidence classes</span></div>
+        <div class="metric"><b>0</b><span>REAL claims</span></div>
+        <div class="metric"><b>1</b><span>authority blocker</span></div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="controls" aria-label="Proof filters">
+    <button class="filter active" data-filter="all">ALL</button>
+    <button class="filter" data-filter="authority">AUTHORITY</button>
+    <button class="filter" data-filter="contracts">CONTRACTS</button>
+    <button class="filter" data-filter="lineage">LINEAGE</button>
+    <button class="filter" data-filter="defects">DEFECTS</button>
+    <button class="filter" data-filter="replay">REPLAY</button>
+    <button class="filter" data-filter="semantics">SEMANTICS</button>
+    <button class="filter" data-filter="admissibility">ADMISSIBILITY</button>
+    <button class="filter" data-filter="release">RELEASE</button>
+    <input class="search" id="proofSearch" type="search" placeholder="Search receipts or proof..." aria-label="Search technical proof">
+  </div>
+
+  <div class="grid" id="proofGrid">
+    
+    <article class="card" data-category="contracts" data-search="bounded t1→t5 contract path contracts pass ci_test_004_repaired_rerun_result_v004.json t1→t2→t3→t4→t5 path pass; deterministic regeneration pass; zero fabricated mapping claims; sealed baseline unchanged. w1-001 w1-019">
+      <div class="card-top">
+        <span class="id">P001</span>
+        <span class="state shadow">SHADOW</span>
+      </div>
+      <div class="category">contracts</div>
+      <h2>Bounded T1→T5 contract path</h2>
+      <div class="status">PASS</div>
+      <p>Bounded shadow contract proof. No historical-equivalence or live-production claim.</p>
+      <div class="receipt">
+        <b>RECEIPT</b> · CI_TEST_004_REPAIRED_RERUN_RESULT_V004.json<br>
+        <b>PROOF</b> · T1→T2→T3→T4→T5 path PASS; deterministic regeneration PASS; zero fabricated mapping claims; sealed baseline unchanged.
+      </div>
+      <div class="meta">
+        <span>CLAIMS · W1-001 / W1-019</span>
+        <span class="planned">PLANNED PUBLIC DOC · docs/verification/ci-test-004.md</span>
+      </div>
+    </article>
+    
+    <article class="card" data-category="lineage" data-search="behavioral seam traceability lineage pass ci_test_005_summary.txt exact replay match; stable lineage digest; reverse trace complete; why-trace complete; stable t5 gate reason; failure count 0. w1-002">
+      <div class="card-top">
+        <span class="id">P002</span>
+        <span class="state shadow">SHADOW</span>
+      </div>
+      <div class="category">lineage</div>
+      <h2>Behavioral seam traceability</h2>
+      <div class="status">PASS</div>
+      <p>Receipt-backed behavioral seam proof under SYNTHETIC_SHADOW_ONLY.</p>
+      <div class="receipt">
+        <b>RECEIPT</b> · CI_TEST_005_SUMMARY.txt<br>
+        <b>PROOF</b> · Exact replay match; stable lineage digest; reverse trace complete; why-trace complete; stable T5 gate reason; failure count 0.
+      </div>
+      <div class="meta">
+        <span>CLAIMS · W1-002</span>
+        <span class="planned">PLANNED PUBLIC DOC · docs/verification/ci-test-005.md</span>
+      </div>
+    </article>
+    
+    <article class="card" data-category="defects" data-search="quarantine repair + release block defects pass_repaired ci_test_006_repaired_rerun_summary_v002.txt t2→t4 quarantine pass; t4→t5 release block pass; target quarantine proven; lineage/provenance preserved; baseline immutable. w1-003 w1-017 w1-022">
+      <div class="card-top">
+        <span class="id">P003</span>
+        <span class="state shadow">SHADOW</span>
+      </div>
+      <div class="category">defects</div>
+      <h2>Quarantine repair + release block</h2>
+      <div class="status">PASS_REPAIRED</div>
+      <p>Defect-scoped repair and fail-closed release behavior.</p>
+      <div class="receipt">
+        <b>RECEIPT</b> · CI_TEST_006_REPAIRED_RERUN_SUMMARY_V002.txt<br>
+        <b>PROOF</b> · T2→T4 quarantine PASS; T4→T5 release block PASS; target quarantine proven; lineage/provenance preserved; baseline immutable.
+      </div>
+      <div class="meta">
+        <span>CLAIMS · W1-003 / W1-017 / W1-022</span>
+        <span class="planned">PLANNED PUBLIC DOC · docs/verification/ci-test-006.md</span>
+      </div>
+    </article>
+    
+    <article class="card" data-category="replay" data-search="deterministic repaired replay replay pass ci_test_007_summary_v001.txt independent replay a/b byte-identical; both match stored repaired overlay; batch60 immutability pin pass. w1-004">
+      <div class="card-top">
+        <span class="id">P004</span>
+        <span class="state shadow">SHADOW</span>
+      </div>
+      <div class="category">replay</div>
+      <h2>Deterministic repaired replay</h2>
+      <div class="status">PASS</div>
+      <p>Reproducibility proof for the repaired quarantine path.</p>
+      <div class="receipt">
+        <b>RECEIPT</b> · CI_TEST_007_SUMMARY_V001.txt<br>
+        <b>PROOF</b> · Independent replay A/B byte-identical; both match stored repaired overlay; Batch60 immutability pin PASS.
+      </div>
+      <div class="meta">
+        <span>CLAIMS · W1-004</span>
+        <span class="planned">PLANNED PUBLIC DOC · docs/verification/ci-test-007.md</span>
+      </div>
+    </article>
+    
+    <article class="card" data-category="authority" data-search="source-authority registry authority 108/108 pass n4_final_closeout_v004 108/108 tests pass; canonical-hash pass; explicit sourceauthorityregistry.evaluate_evidence(...) seam. w1-008 w1-009">
+      <div class="card-top">
+        <span class="id">P005</span>
+        <span class="state integrated">INTEGRATED</span>
+      </div>
+      <div class="category">authority</div>
+      <h2>Source-authority registry</h2>
+      <div class="status">108/108 PASS</div>
+      <p>Source presence alone does not grant authority.</p>
+      <div class="receipt">
+        <b>RECEIPT</b> · N4_FINAL_CLOSEOUT_V004<br>
+        <b>PROOF</b> · 108/108 tests PASS; canonical-hash PASS; explicit SourceAuthorityRegistry.evaluate_evidence(...) seam.
+      </div>
+      <div class="meta">
+        <span>CLAIMS · W1-008 / W1-009</span>
+        <span class="planned">PLANNED PUBLIC DOC · docs/verification/n4-source-authority-registry.md</span>
+      </div>
+    </article>
+    
+    <article class="card" data-category="semantics" data-search="constraint semantic classification semantics 38/38 pass n1 sealed / current reproof receipts 38/38 pass; upstream canonical identity authority consumed; classification cannot mint canonical identity. w1-010">
+      <div class="card-top">
+        <span class="id">P006</span>
+        <span class="state integrated">INTEGRATED</span>
+      </div>
+      <div class="category">semantics</div>
+      <h2>Constraint semantic classification</h2>
+      <div class="status">38/38 PASS</div>
+      <p>Additive semantic enrichment only. It does not create canonical Constraint existence.</p>
+      <div class="receipt">
+        <b>RECEIPT</b> · N1 sealed / current reproof receipts<br>
+        <b>PROOF</b> · 38/38 PASS; upstream canonical identity authority consumed; classification cannot mint canonical identity.
+      </div>
+      <div class="meta">
+        <span>CLAIMS · W1-010</span>
+        <span class="planned">PLANNED PUBLIC DOC · docs/verification/n1-semantic-classification.md</span>
+      </div>
+    </article>
+    
+    <article class="card" data-category="governance" data-search="historical defect preserved after rebaseline governance open_preserved historical_defect_receipt.json historical defect remains open_preserved; rebaseline does not rewrite history; historical batch60 equivalence remains false. w1-013 w1-014">
+      <div class="card-top">
+        <span class="id">P007</span>
+        <span class="state shadow">SHADOW</span>
+      </div>
+      <div class="category">governance</div>
+      <h2>Historical defect preserved after rebaseline</h2>
+      <div class="status">OPEN_PRESERVED</div>
+      <p>Repairing a test path does not erase the historical defect record.</p>
+      <div class="receipt">
+        <b>RECEIPT</b> · HISTORICAL_DEFECT_RECEIPT.json<br>
+        <b>PROOF</b> · Historical defect remains OPEN_PRESERVED; rebaseline does not rewrite history; historical Batch60 equivalence remains false.
+      </div>
+      <div class="meta">
+        <span>CLAIMS · W1-013 / W1-014</span>
+        <span class="planned">PLANNED PUBLIC DOC · docs/verification/ci-test-004-history-preservation.md</span>
+      </div>
+    </article>
+    
+    <article class="card" data-category="admissibility" data-search="native t6 surface audit admissibility partial / blocked ci_test_008_native_t6_audit_summary_v004.txt native validator pass; field contract pass; temporal/leakage surfaces pass; exact batch60 t5 binding fail; semantics invented no. w1-005">
+      <div class="card-top">
+        <span class="id">P008</span>
+        <span class="state integrated">INTEGRATED</span>
+      </div>
+      <div class="category">admissibility</div>
+      <h2>Native T6 surface audit</h2>
+      <div class="status">PARTIAL / BLOCKED</div>
+      <p>Native downstream surface exists while the authoritative handoff remains missing.</p>
+      <div class="receipt">
+        <b>RECEIPT</b> · CI_TEST_008_NATIVE_T6_AUDIT_SUMMARY_V004.txt<br>
+        <b>PROOF</b> · Native validator PASS; field contract PASS; temporal/leakage surfaces PASS; exact Batch60 T5 binding FAIL; semantics invented NO.
+      </div>
+      <div class="meta">
+        <span>CLAIMS · W1-005</span>
+        <span class="planned">PLANNED PUBLIC DOC · docs/verification/ci-test-008-native-t6-audit.md</span>
+      </div>
+    </article>
+    
+    <article class="card" data-category="admissibility" data-search="fail-closed missing authority admissibility blocked ci_test_008_v012_result.json 0 authority hits; 0 complete cases; 1,206 nonblocked t5 cases; deterministic double scan; semantic_values_invented=false. w1-006 w1-007">
+      <div class="card-top">
+        <span class="id">P009</span>
+        <span class="state shadow">SHADOW</span>
+      </div>
+      <div class="category">admissibility</div>
+      <h2>Fail-closed missing authority</h2>
+      <div class="status">BLOCKED</div>
+      <p>Correct outcome: BLOCKED_BY_MISSING_AUTHORITY, not an invented green handoff.</p>
+      <div class="receipt">
+        <b>RECEIPT</b> · CI_TEST_008_V012_RESULT.json<br>
+        <b>PROOF</b> · 0 authority hits; 0 complete cases; 1,206 nonblocked T5 cases; deterministic double scan; semantic_values_invented=false.
+      </div>
+      <div class="meta">
+        <span>CLAIMS · W1-006 / W1-007</span>
+        <span class="planned">PLANNED PUBLIC DOC · docs/verification/ci-test-008.md</span>
+      </div>
+    </article>
+    
+    <article class="card" data-category="review" data-search="no-repair reclassification review pass_reclassified_no_repair n3_v011r4r1_return_20260913_165910.zip an apparent history/migration defect was reclassified after current-tree review; no unnecessary semantic repair was authorized. w1-011">
+      <div class="card-top">
+        <span class="id">P010</span>
+        <span class="state integrated">INTEGRATED</span>
+      </div>
+      <div class="category">review</div>
+      <h2>No-repair reclassification</h2>
+      <div class="status">PASS_RECLASSIFIED_NO_REPAIR</div>
+      <p>Test-first adjudication rather than patching to force a preferred outcome.</p>
+      <div class="receipt">
+        <b>RECEIPT</b> · N3_V011R4R1_RETURN_20260913_165910.zip<br>
+        <b>PROOF</b> · An apparent history/migration defect was reclassified after current-tree review; no unnecessary semantic repair was authorized.
+      </div>
+      <div class="meta">
+        <span>CLAIMS · W1-011</span>
+        <span class="planned">PLANNED PUBLIC DOC · docs/verification/n3-history-adjudication.md</span>
+      </div>
+    </article>
+    
+    <article class="card" data-category="release" data-search="seal withheld on missing transport authority release fail_with_defect n2 final seal / defect receipts seal withheld when the native upstream→n2 transport contract could not be established; no baseline/core mutation forced closure. w1-012 w1-022">
+      <div class="card-top">
+        <span class="id">P011</span>
+        <span class="state integrated">INTEGRATED</span>
+      </div>
+      <div class="category">release</div>
+      <h2>Seal withheld on missing transport authority</h2>
+      <div class="status">FAIL_WITH_DEFECT</div>
+      <p>Blocked seal presented as control behavior, not a successful transport integration.</p>
+      <div class="receipt">
+        <b>RECEIPT</b> · N2 final seal / defect receipts<br>
+        <b>PROOF</b> · Seal withheld when the native upstream→N2 transport contract could not be established; no baseline/core mutation forced closure.
+      </div>
+      <div class="meta">
+        <span>CLAIMS · W1-012 / W1-022</span>
+        <span class="planned">PLANNED PUBLIC DOC · docs/verification/n2-transport-contract-blocker.md</span>
+      </div>
+    </article>
+    
+    <article class="card" data-category="security" data-search="authority metadata secret rejection security pass n4_final_closeout_v004 secret metadata forbidden; nested secret material in registry and cost metadata rejected. w1-023">
+      <div class="card-top">
+        <span class="id">P012</span>
+        <span class="state integrated">INTEGRATED</span>
+      </div>
+      <div class="category">security</div>
+      <h2>Authority metadata secret rejection</h2>
+      <div class="status">PASS</div>
+      <p>Defensive-control proof for deeper technical readers.</p>
+      <div class="receipt">
+        <b>RECEIPT</b> · N4_FINAL_CLOSEOUT_V004<br>
+        <b>PROOF</b> · Secret metadata forbidden; nested secret material in registry and cost metadata rejected.
+      </div>
+      <div class="meta">
+        <span>CLAIMS · W1-023</span>
+        <span class="planned">PLANNED PUBLIC DOC · docs/verification/n4-source-authority-registry.md</span>
+      </div>
+    </article>
+    
+  </div>
+
+  <div class="note">
+    <b>PUBLIC BOUNDARY:</b> “Planned public doc” paths are destinations for the future public GitHub evidence pack.
+    They are not working links until the sanitized documents actually exist in the repository.
+    No local drive paths, operator identifiers, or proprietary raw data are exposed here.
+  </div>
+</section>
+
+<script src="proof-index.js"></script>
+</body>
+</html>

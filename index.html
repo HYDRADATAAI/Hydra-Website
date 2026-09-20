@@ -1,365 +1,220 @@
 <!doctype html>
-<html lang="en" data-page="home">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#06100f" />
-  <meta name="description" content="HYDRA is a market-intelligence data engineering platform built around governed ingestion, explicit contracts, lineage, provenance, integrated testing, and traceable downstream outputs." />
-  <meta property="og:title" content="HYDRA — Market Intelligence Data Platform" />
-  <meta property="og:description" content="Market intelligence built on traceable data engineering." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/social-card.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <title>HYDRA — Market Intelligence Data Platform</title>
-  <link rel="icon" href="assets/hydra-mark.svg" type="image/svg+xml" />
-  <link rel="manifest" href="site.webmanifest" />
+  <meta name="description" content="HYDRA recruiter technical proof strip: ingest, normalize, contract, trace, validate, defect, resolution, output." />
+  <title>HYDRA | Recruiter Technical Proof Strip</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="site.config.js" defer></script>
-  <script src="app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="ambient-grid" aria-hidden="true"></div>
-  <div class="cursor-glow" aria-hidden="true"></div>
-  <div class="scroll-meter" aria-hidden="true"><span></span></div>
-
-  <header class="site-header" data-header>
-    <a class="brand" href="index.html" aria-label="HYDRA home">
-      <img src="assets/hydra-mark.svg" alt="" />
-      <span class="brand-stack"><strong>HYDRA</strong><small>DATA SYSTEMS LAB</small></span>
-    </a>
-
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
-      <span></span><span></span>
-      <b>Menu</b>
-    </button>
-
-    <nav id="site-nav" class="site-nav" aria-label="Primary navigation" data-nav>
-      <a class="is-active" href="index.html">Overview</a>
-      <a href="architecture.html">Architecture</a>
-      <a href="constraint.html">Constraint Intel</a>
-      <a href="case-study.html">Case Study</a>
-      <a href="lab.html">Integrity Lab</a>
-      <a href="proof.html">Proof</a>
-      <a href="roadmap.html">Roadmap</a>
-      <a class="nav-repo" href="#" data-repo-link hidden>Repository <span>↗</span></a>
-    </nav>
-  </header>
-
-  <main id="main">
-    <section class="hero shell">
-      <div class="hero-copy" data-reveal>
-        <div class="status-row">
-          <span class="status-chip status-active"><i></i> MULTI-SOURCE INGESTION</span>
-          <span class="status-chip status-active"><i></i> CONTRACT-BOUND HANDOFFS</span>
-          <span class="status-chip status-active"><i></i> LINEAGE + RELEASE GATES</span>
-        </div>
-
-        <p class="eyebrow">HYDRA / MARKET INTELLIGENCE DATA PLATFORM</p>
-        <h1>Turn fragmented market data into <span>traceable intelligence.</span></h1>
-        <p class="hero-lede">
-          HYDRA is a data engineering platform that ingests market, reference, and historical data, resolves identity, enforces contracts, preserves lineage, and releases downstream market intelligence with an auditable evidence trail.
-        </p>
-
-        <div class="hero-actions">
-          <a class="button button-primary" href="architecture.html">Explore architecture <span>→</span></a>
-          <a class="button button-secondary" href="lab.html">Run integrity demo <span>↗</span></a>
-        </div>
-
-        <div class="hero-trust">
-          <div><strong>INGEST</strong><span>Bring heterogeneous market, reference, and historical inputs into one controlled pipeline.</span></div>
-          <div><strong>GOVERN</strong><span>Resolve identity, enforce producer ownership, preserve lineage, and validate every handoff.</span></div>
-          <div><strong>SERVE</strong><span>Release market intelligence only when the system can explain the evidence path behind it.</span></div>
-        </div>
-      </div>
-
-      <div class="hero-system" data-reveal aria-label="Animated HYDRA data pipeline diagram">
-        <div class="hero-system-topbar">
-          <span>HYDRA / PIPELINE MAP</span>
-          <span class="pulse-label"><i></i> ARCHITECTURE FLOW</span>
-        </div>
-        <svg class="hero-flow" viewBox="0 0 760 560" role="img" aria-labelledby="hero-flow-title hero-flow-desc">
-          <title id="hero-flow-title">HYDRA pipeline overview</title>
-          <desc id="hero-flow-desc">Three sources converge into a contract gate, canonical data core, lineage ledger, governance gate, and downstream consumers.</desc>
-          <defs>
-            <linearGradient id="flowGrad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#4ff3b4" stop-opacity=".2" />
-              <stop offset=".55" stop-color="#66e1ff" stop-opacity=".95" />
-              <stop offset="1" stop-color="#ab8cff" stop-opacity=".55" />
-            </linearGradient>
-            <filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          </defs>
-
-          <g class="map-grid" opacity=".28">
-            <path d="M0 80H760M0 160H760M0 240H760M0 320H760M0 400H760M0 480H760" />
-            <path d="M95 0V560M190 0V560M285 0V560M380 0V560M475 0V560M570 0V560M665 0V560" />
-          </g>
-
-          <g class="flow-lines" fill="none" stroke="url(#flowGrad)" stroke-width="2">
-            <path d="M125 125 C210 125 215 260 310 260"/>
-            <path d="M125 260 H310"/>
-            <path d="M125 395 C210 395 215 260 310 260"/>
-            <path d="M360 260 H470"/>
-            <path d="M520 260 H615"/>
-            <path d="M665 260 C710 260 712 165 725 165"/>
-            <path d="M665 260 C710 260 712 355 725 355"/>
-          </g>
-
-          <g class="packets" fill="#8affd1" filter="url(#glow)">
-            <circle r="4"><animateMotion dur="3.8s" repeatCount="indefinite" path="M125 125 C210 125 215 260 310 260" /></circle>
-            <circle r="4"><animateMotion dur="3.2s" begin=".8s" repeatCount="indefinite" path="M125 260 H310" /></circle>
-            <circle r="4"><animateMotion dur="4.1s" begin="1.6s" repeatCount="indefinite" path="M125 395 C210 395 215 260 310 260" /></circle>
-            <circle r="4"><animateMotion dur="2.7s" begin=".5s" repeatCount="indefinite" path="M360 260 H470" /></circle>
-            <circle r="4"><animateMotion dur="2.5s" begin="1.2s" repeatCount="indefinite" path="M520 260 H615" /></circle>
-          </g>
-
-          <g class="map-node source-node">
-            <rect x="35" y="92" width="120" height="66" rx="14"/><text x="55" y="119">MARKET</text><text x="55" y="140" class="node-sub">events</text>
-            <rect x="35" y="227" width="120" height="66" rx="14"/><text x="55" y="254">REFERENCE</text><text x="55" y="275" class="node-sub">entities</text>
-            <rect x="35" y="362" width="120" height="66" rx="14"/><text x="55" y="389">HISTORY</text><text x="55" y="410" class="node-sub">context</text>
-          </g>
-
-          <g class="map-node gate-node">
-            <rect x="285" y="214" width="100" height="92" rx="18"/><text x="305" y="246">CONTRACT</text><text x="305" y="266">GATE</text><text x="305" y="286" class="node-sub">admissibility</text>
-          </g>
-
-          <g class="map-node core-node">
-            <rect x="445" y="210" width="100" height="100" rx="26"/><text x="466" y="251">DATA</text><text x="466" y="271">CORE</text><text x="466" y="292" class="node-sub">canonical</text>
-          </g>
-
-          <g class="map-node ledger-node">
-            <rect x="600" y="214" width="100" height="92" rx="18"/><text x="619" y="246">LINEAGE</text><text x="619" y="266">LEDGER</text><text x="619" y="286" class="node-sub">provenance</text>
-          </g>
-
-          <g class="map-node output-node">
-            <rect x="688" y="132" width="64" height="66" rx="14"/><text x="701" y="160">QUERY</text><text x="701" y="179" class="node-sub">serve</text>
-            <rect x="688" y="322" width="64" height="66" rx="14"/><text x="701" y="350">INTEL</text><text x="701" y="369" class="node-sub">market</text>
-          </g>
-        </svg>
-
-        <div class="hero-system-footer">
-          <span><i class="legend-dot green"></i> admissible path</span>
-          <span><i class="legend-dot cyan"></i> lineage retained</span>
-          <span><i class="legend-dot violet"></i> governed market output</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="ticker" aria-label="HYDRA engineering principles">
-      <div class="ticker-track">
-        <span>DATA CONTRACTS</span><b>◆</b><span>CONSTRAINT INTELLIGENCE</span><b>◆</b><span>LINEAGE</span><b>◆</b><span>PROVENANCE</span><b>◆</b><span>DETERMINISM</span><b>◆</b><span>FAIL-CLOSED GATES</span><b>◆</b><span>LINEAGE + RELEASE GATES</span><b>◆</b><span>QUARANTINE</span><b>◆</b><span>AUDITABILITY</span><b>◆</b>
-        <span>DATA CONTRACTS</span><b>◆</b><span>CONSTRAINT INTELLIGENCE</span><b>◆</b><span>LINEAGE</span><b>◆</b><span>PROVENANCE</span><b>◆</b><span>DETERMINISM</span><b>◆</b><span>FAIL-CLOSED GATES</span><b>◆</b><span>LINEAGE + RELEASE GATES</span><b>◆</b><span>QUARANTINE</span><b>◆</b><span>AUDITABILITY</span><b>◆</b>
-      </div>
-    </section>
-
-    <section class="shell system-rail-wrap" aria-label="HYDRA data path" data-reveal>
-      <div class="system-rail">
-        <div><small>01</small><strong>INGEST</strong><span>market + reference + history</span></div>
-        <i>→</i>
-        <div><small>02</small><strong>IDENTITY</strong><span>canonical object binding</span></div>
-        <i>→</i>
-        <div><small>03</small><strong>CONTRACT</strong><span>ownership + admissibility</span></div>
-        <i>→</i>
-        <div><small>04</small><strong>LINEAGE</strong><span>provenance + receipts</span></div>
-        <i>→</i>
-        <div><small>05</small><strong>RELEASE</strong><span>governed downstream output</span></div>
-      </div>
-    </section>
-
-    <section class="shell section" id="system">
-      <div class="section-heading" data-reveal>
-        <div><p class="eyebrow">01 / SYSTEM SURFACE</p><h2>One governed path from source data to market intelligence.</h2></div>
-        <p>HYDRA treats ingestion, identity, contracts, transformation, lineage, trust, and release as one connected data system rather than a stack of isolated scripts.</p>
-      </div>
-
-      <div class="division-stage">
-        <article class="division-card division-data" data-reveal>
-          <div class="division-card-head"><span class="division-index">D/01</span><span class="status-chip status-active"><i></i> CORE PIPELINE</span></div>
-          <div class="division-symbol" aria-hidden="true">DATA</div>
-          <h3>Govern the data path.</h3>
-          <p>Ingest market, reference, and historical material through explicit identity, contract, transformation, lineage, trust, quarantine, and release boundaries.</p>
-          <div class="capability-grid">
-            <span>Source intake</span><span>Identity</span><span>Contracts</span><span>Lineage</span><span>Quarantine</span><span>Release gates</span>
-          </div>
-          <a class="text-link" href="architecture.html">Open pipeline architecture <span>→</span></a>
-        </article>
-
-        <article class="division-card division-market" data-reveal>
-          <div class="division-card-head"><span class="division-index">C/02</span><span class="status-chip status-active"><i></i> CONSTRAINT INTELLIGENCE</span></div>
-          <div class="division-symbol" aria-hidden="true">LIMIT</div>
-          <h3>Model what is actually constraining the market.</h3>
-          <p>HYDRA structures market friction into evidence-backed constraint cases, preserving the difference between a binding constraint, a bottleneck, a shortage, pricing pressure, and technology or regulatory barriers.</p>
-          <div class="capability-grid">
-            <span>Constraint cases</span><span>Bottlenecks</span><span>Shortages</span><span>Pricing pressure</span><span>Technology barriers</span><span>Regulatory barriers</span>
-          </div>
-          <a class="text-link" href="constraint.html">Explore constraint intelligence <span>→</span></a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section constraint-preview-section" id="constraints">
-      <div class="shell">
-        <div class="section-heading" data-reveal>
-          <div><p class="eyebrow">02 / CONSTRAINT INTELLIGENCE</p><h2>Not every market problem is a constraint.</h2></div>
-          <p>HYDRA separates market friction from genuinely binding limits. The domain layer turns governed evidence into explicit constraint cases without severing the lineage back to source data.</p>
-        </div>
-        <div class="constraint-preview-grid">
-          <article class="constraint-model-card" data-reveal>
-            <div class="constraint-flow-label">FROM SIGNAL TO EXPLAINABLE CASE</div>
-            <div class="constraint-mini-flow" aria-label="Constraint intelligence flow">
-              <div><small>01</small><strong>SIGNAL</strong><span>market friction</span></div><i>→</i>
-              <div><small>02</small><strong>IDENTITY</strong><span>case binding</span></div><i>→</i>
-              <div><small>03</small><strong>EVIDENCE</strong><span>support + conflict</span></div><i>→</i>
-              <div class="constraint-mini-focus"><small>04</small><strong>CLASSIFY</strong><span>constraint type</span></div><i>→</i>
-              <div><small>05</small><strong>INTEL</strong><span>traceable output</span></div>
-            </div>
-            <div class="constraint-type-cloud">
-              <span>actual constraint</span><span>inconvenience</span><span>bottleneck</span><span>shortage</span><span>pricing pressure</span><span>technology barrier</span><span>regulatory barrier</span>
-            </div>
-          </article>
-          <article class="constraint-question-card" data-reveal>
-            <p class="eyebrow">WHAT THE LAYER ASKS</p>
-            <h3>Turn “something is wrong” into a structured market question.</h3>
-            <div class="constraint-question-list">
-              <div><span>01</span><p><strong>Is the friction actually binding?</strong><small>Separate a real constraint from inconvenience or noise.</small></p></div>
-              <div><span>02</span><p><strong>Where does it operate?</strong><small>Local or systemic, current or emerging.</small></p></div>
-              <div><span>03</span><p><strong>How durable is it?</strong><small>Track severity, reversibility, and changing evidence over time.</small></p></div>
-              <div><span>04</span><p><strong>Who bears the effect?</strong><small>Preserve beneficiary, fairness, and risk context for downstream analysis.</small></p></div>
-            </div>
-            <a class="text-link" href="constraint.html">Open Constraint Intelligence <span>→</span></a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="shell section walkthrough-teaser" id="walkthrough">
-      <div class="section-heading" data-reveal>
-        <div><p class="eyebrow">03 / END-TO-END WALKTHROUGH</p><h2>See one market case move through the whole system.</h2></div>
-        <p>A representative constraint case shows how separate market, reference, operations, and historical inputs become one governed object without flattening source ownership or contradictory evidence.</p>
-      </div>
-      <div class="walkthrough-teaser-board" data-reveal>
-        <div><small>01</small><strong>FRAGMENTED INPUTS</strong><span>market signal · operations notice · reference identity · history</span></div><i>→</i>
-        <div><small>02</small><strong>CASE BINDING</strong><span>canonical identity + source-owned fields</span></div><i>→</i>
-        <div><small>03</small><strong>CONSTRAINT MODEL</strong><span>supporting evidence + limiting evidence + dimensions</span></div><i>→</i>
-        <div><small>04</small><strong>TRACEABLE OUTPUT</strong><span>classification + lineage + release state</span></div>
-      </div>
-      <div class="walkthrough-teaser-action" data-reveal>
-        <span>Representative walkthrough · architecture-faithful · not live market output</span>
-        <a class="button button-secondary" href="case-study.html">Walk the case <span>→</span></a>
-      </div>
-    </section>
-
-    <section class="section contrast-section">
-      <div class="shell">
-        <div class="section-heading" data-reveal>
-          <div><p class="eyebrow">04 / ENGINEERING DEPTH</p><h2>The controls are part of the product.</h2></div>
-          <p>The interesting engineering lives at the boundaries: what a producer is allowed to supply, how history survives transformation, and what the pipeline does when the evidence is incomplete or contradictory.</p>
-        </div>
-
-        <div class="signal-grid">
-          <article class="signal-card" data-reveal>
-            <div class="signal-icon">01</div><h3>Explicit contracts</h3><p>Consumers should not receive fields simply because a recursive search happened to find them somewhere in a document. Ownership matters.</p>
-          </article>
-          <article class="signal-card" data-reveal>
-            <div class="signal-icon">02</div><h3>Integrated seams</h3><p>Component tests are necessary. They are not enough. HYDRA pushes proof through the handoffs where real systems usually break.</p>
-          </article>
-          <article class="signal-card" data-reveal>
-            <div class="signal-icon">03</div><h3>Deterministic artifacts</h3><p>Builds, hashes, receipts, and frozen baselines make changes reviewable and reproduction possible.</p>
-          </article>
-          <article class="signal-card" data-reveal>
-            <div class="signal-icon">04</div><h3>Honest blockers</h3><p>If native authority is missing, the correct outcome can be a blocker. Green status is not more important than a truthful system.</p>
-          </article>
-          <article class="signal-card" data-reveal>
-            <div class="signal-icon">05</div><h3>Provenance retained</h3><p>The system should preserve where a decision came from, which evidence fed it, and which contract allowed the handoff.</p>
-          </article>
-          <article class="signal-card" data-reveal>
-            <div class="signal-icon">06</div><h3>Downstream-ready evidence</h3><p>Outputs retain enough structure, history, authority, and failure context to support analytics and later intelligent consumers without sacrificing auditability.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="shell section case-study" id="case-study">
-      <div class="case-study-intro" data-reveal>
-        <p class="eyebrow">05 / DEFECT STORY</p>
-        <h2>A green pipeline was available.<br/><span>HYDRA chose the blocker.</span></h2>
-        <p>One integrated test found a dangerous shortcut: fields could be assembled from unrelated records when the same identifier appeared elsewhere in a document. That could make an invalid handoff look complete.</p>
-      </div>
-
-      <div class="case-study-board" data-reveal>
-        <div class="case-column">
-          <span class="case-label">OBSERVED</span>
-          <strong>Recursive field discovery crossed ownership boundaries.</strong>
-          <p>The selector could collect values without proving the same producer owned the complete case.</p>
-        </div>
-        <div class="case-arrow">→</div>
-        <div class="case-column">
-          <span class="case-label">RESPONSE</span>
-          <strong>Contain scope before claiming admissibility.</strong>
-          <p>The test was treated as evidence of a real defect, not an invitation to invent missing data.</p>
-        </div>
-        <div class="case-arrow">→</div>
-        <div class="case-column case-outcome">
-          <span class="case-label">PRINCIPLE</span>
-          <strong>Authority beats convenience.</strong>
-          <p>When the handoff cannot be proven, stop. That failure behavior is part of the product.</p>
-        </div>
-      </div>
-
-      <div class="case-study-link" data-reveal>
-        <a class="button button-primary" href="proof.html">Read engineering proof <span>→</span></a>
-        <a class="button button-secondary" href="lab.html">Recreate the principle in the browser <span>↗</span></a>
-      </div>
-    </section>
-
-    <section class="section recruiter-section">
-      <div class="shell recruiter-panel" data-reveal>
-        <div class="recruiter-copy">
-          <p class="eyebrow">05 / DATA ENGINEERING SIGNAL</p>
-          <h2>The system exposes the decisions behind the pipeline.</h2>
-          <p class="recruiter-lede">HYDRA demonstrates <strong>multi-stage data pipelines, contract ownership, identity resolution, lineage, reproducibility, integration testing, failure containment, and the discipline to keep downstream market outputs explainable.</strong></p>
-        </div>
-        <div class="recruiter-tags" aria-label="Skills demonstrated">
-          <span>Python</span><span>Market Data Pipelines</span><span>Constraint Modeling</span><span>Data Contracts</span><span>Data Quality</span><span>Identity Resolution</span><span>Lineage</span><span>Provenance</span><span>Integration Testing</span><span>Deterministic Builds</span><span>Schema Discipline</span><span>Failure Containment</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="shell section repository-section" id="repository" data-repo-section hidden>
-      <div class="repository-card" data-reveal>
+  <main class="page-shell">
+    <section class="proof-strip" id="technical-proof" aria-labelledby="proof-title">
+      <div class="section-kicker">TECHNICAL PROOF / 30-90 SECOND PATH</div>
+      <div class="proof-heading-grid">
         <div>
-          <p class="eyebrow">ENGINEERING EVIDENCE</p>
-          <h2>Inspect the engineering behind the interface.</h2>
-          <p>The repository is designed to surface code, architecture notes, validation artifacts, and reproducible engineering evidence behind the public system story.</p>
+          <h1 id="proof-title">Correctness is part of the pipeline.</h1>
+          <p class="lede">
+            HYDRA turns fragmented market inputs into controlled, traceable structures, then forces each handoff through explicit contracts and evidence gates. A failed seam is not painted green: prove the defect, repair only what is justified, rerun, or block when authority is missing.
+          </p>
         </div>
-        <div class="repo-state" data-repo-state>
-          <span class="repo-light"></span>
-          <div><small>PROJECT SURFACE</small><strong>CODE + ARCHITECTURE + TEST EVIDENCE</strong></div>
-        </div>
-        <a class="button button-primary repo-button" href="#" data-repo-link hidden>Open repository ↗</a>
+        <aside class="scope-box" aria-label="Evidence scope">
+          <span class="scope-label">EVIDENCE SCOPE</span>
+          <strong>Real-data canonicalization + synthetic/shadow integration proof</strong>
+          <p>Scope is labeled per card. No production-ML claim is implied.</p>
+        </aside>
       </div>
-    </section>
 
-    <section class="shell final-cta" data-reveal>
-      <p class="eyebrow">EXPLORE THE SYSTEM</p>
-      <h2>From raw source<br/>to governed market output.</h2>
-      <div class="final-cta-actions">
-        <a class="button button-primary" href="architecture.html">Architecture <span>→</span></a>
-        <a class="button button-secondary" href="lab.html">Integrity Lab <span>→</span></a>
-        <a class="button button-secondary" href="proof.html">Engineering Proof <span>→</span></a>
+      <nav class="proof-route" aria-label="Engineering proof route">
+        <span>01 INGEST</span><i aria-hidden="true"></i>
+        <span>02 NORMALIZE</span><i aria-hidden="true"></i>
+        <span>03 CONTRACT</span><i aria-hidden="true"></i>
+        <span>04 TRACE</span><i aria-hidden="true"></i>
+        <span>05 VALIDATE</span><i aria-hidden="true"></i>
+        <span>06 DEFECT</span><i aria-hidden="true"></i>
+        <span>07 RESOLUTION</span><i aria-hidden="true"></i>
+        <span>08 OUTPUT</span>
+      </nav>
+
+      <div class="proof-grid">
+        <article class="proof-card" data-step="01">
+          <div class="card-topline">
+            <span class="step">01 / INGEST</span>
+            <span class="scope-tag real">REAL DATA</span>
+          </div>
+          <h2>Start with fragmented source files.</h2>
+          <p>Full Q1 options-chain run discovered and loaded thousands of source files into a controlled ingestion pass.</p>
+          <div class="mini-flow" aria-label="Raw source flow">
+            <span>*_option_chain.txt</span>
+            <span>*_option_chain.csv</span>
+            <b>→</b>
+            <span>canonicalizer</span>
+          </div>
+          <pre><code>source_records_discovered = 3,353
+source_records_loaded     = 3,353
+source_records_error      = 0
+rows_in_total             = 17,766,662</code></pre>
+          <footer>Artifact: options chain canonicalizer v0.2.2</footer>
+        </article>
+
+        <article class="proof-card" data-step="02">
+          <div class="card-topline">
+            <span class="step">02 / NORMALIZE</span>
+            <span class="scope-tag real">REAL DATA</span>
+          </div>
+          <h2>Convert sources into a controlled internal layer.</h2>
+          <p>The canonicalizer emits a canonical table plus a source manifest and quality summary, keeping source accounting next to transformed output.</p>
+          <div class="before-after">
+            <div>
+              <span>RAW</span>
+              <code>3,353 source files</code>
+            </div>
+            <b>→</b>
+            <div>
+              <span>CANONICAL</span>
+              <code>17,766,662 rows</code>
+            </div>
+          </div>
+          <pre><code>canonical_status        = OPTIONS_CHAIN_CANONICAL_COMPLETE
+canonical_rows_written  = 17,766,662
+manifest                = ...source_manifest_v0_2_2.csv
+quality_notes            = ok</code></pre>
+          <footer>Transformation remains accountable to a manifest.</footer>
+        </article>
+
+        <article class="proof-card" data-step="03">
+          <div class="card-topline">
+            <span class="step">03 / CONTRACT</span>
+            <span class="scope-tag shadow">INTEGRATION CONTRACT</span>
+          </div>
+          <h2>Handoffs have required fields, not vibes.</h2>
+          <p>A native T5 → T6 contract pins the graph fields that must exist before downstream admission.</p>
+          <pre class="schema"><code>{
+  "upstream_object_id": "required",
+  "object_type": "required",
+  "subject_entity_id": "required",
+  "as_of": "required",
+  "confidence": "required",
+  "evidence_ids": "required",
+  "payload": "required"
+}</code></pre>
+          <footer>Contract pin: native T5 input contract</footer>
+        </article>
+
+        <article class="proof-card" data-step="04">
+          <div class="card-topline">
+            <span class="step">04 / TRACE</span>
+            <span class="scope-tag shadow">SYNTHETIC / SHADOW</span>
+          </div>
+          <h2>Make lineage reversible.</h2>
+          <p>Integrated seam testing checks that downstream behavior can be traced backward and explained without mutating the sealed baseline.</p>
+          <div class="lineage-rail" aria-label="Lineage path">
+            <span>T3 replay</span><b>→</b><span>T4 trace</span><b>→</b><span>T5 gate</span>
+          </div>
+          <pre><code>T3_LINEAGE_DIGEST_STABLE   = True
+T4_REVERSE_TRACE_COMPLETE  = True
+T4_WHY_TRACE_COMPLETE      = True
+SEALED_BATCH60_MUTATED     = NO</code></pre>
+          <footer>Proof: CI-TEST-005 behavioral cross-thread seam</footer>
+        </article>
+
+        <article class="proof-card" data-step="05">
+          <div class="card-topline">
+            <span class="step">05 / VALIDATE</span>
+            <span class="scope-tag pass">PASS</span>
+          </div>
+          <h2>Test the seam, not just the modules.</h2>
+          <p>Replay, reverse tracing, fault localization, gate behavior, and semantic-family coherence are checked together.</p>
+          <div class="status-card pass-card">
+            <span>CI-TEST-005</span>
+            <strong>PASS_FIRST_BEHAVIORAL_CROSS_THREAD_SEAM</strong>
+          </div>
+          <pre><code>T3_ORACLE_PASS             = True
+T4_ORACLE_PASS             = True
+T5_ORACLE_PASS             = True
+FAILURE_COUNT              = 0</code></pre>
+          <footer>Bounded integration proof, not a production claim.</footer>
+        </article>
+
+        <article class="proof-card defect-card" data-step="06">
+          <div class="card-topline">
+            <span class="step">06 / DEFECT</span>
+            <span class="scope-tag fail">FAIL WITH DEFECT</span>
+          </div>
+          <h2>Name the failure precisely.</h2>
+          <p>CI-008 found 12 eligible T5 objects that could not satisfy the native T6 contract because five required fields were absent.</p>
+          <div class="status-card fail-card">
+            <span>CI-TEST-008-DEFECT-002-V005</span>
+            <strong>T5 native materialization fields absent</strong>
+          </div>
+          <pre><code>missing: object_type
+         subject_entity_id
+         as_of
+         confidence
+         evidence_ids
+semantic_values_invented = false</code></pre>
+          <footer>The defect stayed visible instead of being papered over.</footer>
+        </article>
+
+        <article class="proof-card resolution-card" data-step="07">
+          <div class="card-topline">
+            <span class="step">07 / RESOLUTION</span>
+            <span class="scope-tag rule">REPAIR OR BLOCK</span>
+          </div>
+          <h2>Only two honest exits.</h2>
+          <div class="resolution-paths">
+            <div>
+              <span class="resolution-label">PROVEN REPAIR</span>
+              <strong>minimum repair → rerun → PASS</strong>
+              <code>OVERALL = PASS_REPAIRED_CI_TEST_004</code>
+              <code>CANONICAL_BASELINE_MUTATED = NO</code>
+            </div>
+            <div>
+              <span class="resolution-label">MISSING AUTHORITY</span>
+              <strong>refuse fabrication → BLOCK</strong>
+              <code>AUTHORITY_SOURCE_STATUS = MISSING</code>
+              <code>SEMANTIC_VALUES_INVENTED = False</code>
+            </div>
+          </div>
+          <footer>Green is earned. A truthful blocker is an acceptable system result.</footer>
+        </article>
+
+        <article class="proof-card output-card" data-step="08">
+          <div class="card-topline">
+            <span class="step">08 / OUTPUT</span>
+            <span class="scope-tag representative">REPRESENTATIVE</span>
+          </div>
+          <h2>Return intelligence with its evidence still attached.</h2>
+          <p>The final constraint layer is designed as additive enrichment around an existing canonical Constraint, preserving identity, provenance, uncertainty, rationale, and reason codes.</p>
+          <pre class="schema"><code>{
+  "constraint_ref": "existing canonical identity",
+  "classification": "shortage | bottleneck | ...",
+  "scope": "local | systemic | unknown",
+  "timing": "current | emerging | unknown",
+  "provenance": ["source evidence", "upstream constraint"],
+  "rationale": "explainable classification basis",
+  "reason_code": "governed reason",
+  "authority_status": "preserved"
+}</code></pre>
+          <footer>Representative structure. Not labeled as live production output.</footer>
+        </article>
       </div>
-      <div class="public-profile-actions" data-public-links hidden>
-        <a class="button button-secondary" href="#" data-linkedin-link hidden>LinkedIn ↗</a>
-        <a class="button button-secondary" href="#" data-contact-link hidden>Contact ↗</a>
+
+      <div class="proof-close">
+        <div>
+          <span class="close-label">WHAT THIS PROVES</span>
+          <strong>HYDRA treats data correctness, authority, and lineage as engineering concerns rather than cleanup performed after the fact.</strong>
+        </div>
+        <div class="close-chips" aria-label="Proof themes">
+          <span>source accounting</span>
+          <span>contract gates</span>
+          <span>reverse trace</span>
+          <span>named defects</span>
+          <span>minimum repair</span>
+          <span>fail closed</span>
+        </div>
       </div>
     </section>
   </main>
-
-  <footer class="site-footer shell">
-    <div class="footer-brand"><img src="assets/hydra-mark.svg" alt="" /><div><strong>HYDRA</strong><small>DATA SYSTEMS LAB</small></div></div>
-    <p>Market intelligence built on traceable data engineering.</p>
-    <div class="footer-links"><a href="index.html">Overview</a><a href="architecture.html">Architecture</a><a href="constraint.html">Constraints</a><a href="case-study.html">Case Study</a><a href="lab.html">Integrity Lab</a><a href="proof.html">Proof</a><a href="roadmap.html">Roadmap</a></div>
-    <small class="footer-meta">Data engineering · market intelligence · <span data-year></span></small>
-  </footer>
 </body>
 </html>

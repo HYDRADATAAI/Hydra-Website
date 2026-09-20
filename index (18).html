@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HYDRA Architecture + Evidence Bridge</title>
+<link rel="stylesheet" href="architecture-evidence.css">
+</head>
+<body>
+
+<section class="arch-evidence" id="architecture-evidence">
+  <div class="eyebrow">HYDRA / ARCHITECTURE + EVIDENCE</div>
+
+  <div class="hero">
+    <div>
+      <h1>Architecture is the map. Receipts decide what is proven.</h1>
+      <p class="lead">HYDRA separates architectural intent from verified behavior. Each layer carries its own evidence state so design cannot quietly masquerade as executed capability.</p>
+    </div>
+
+    <aside class="legend">
+      <div class="legend-title">EVIDENCE STATE</div>
+      <div class="legend-grid">
+        <span class="legend-chip c-arch">ARCHITECTURE</span>
+        <span class="legend-chip c-rep">REPRESENTATIVE</span>
+        <span class="legend-chip c-int">INTEGRATED</span>
+        <span class="legend-chip c-shadow">SHADOW</span>
+        <span class="legend-chip c-block">BLOCKED</span>
+      </div>
+    </aside>
+  </div>
+
+  <div class="bridge">
+    
+    <div class="row">
+      <section class="layer">
+        <div class="node-id">A1</div>
+        <div>
+          <div class="layer-name">SOURCE INTAKE</div>
+          <h2>Market, reference, and historical inputs</h2>
+          <p>Accept heterogeneous evidence into the governed pipeline.</p>
+          <div class="wording"><b>PUBLIC WORDING</b> · Intake layer for market, reference, and historical sources</div>
+        </div>
+      </section>
+      <aside class="evidence">
+        <div class="state arch">ARCHITECTURE</div>
+        <strong>PROOF PENDING</strong>
+        <p>W1 does not authorize a blanket live multi-source ingestion claim.</p>
+        <div class="receipt">AUTHORITY · W1-015</div>
+      </aside>
+    </div>
+    
+    <div class="row">
+      <section class="layer">
+        <div class="node-id">A2</div>
+        <div>
+          <div class="layer-name">CONTROLLED REPRESENTATION</div>
+          <h2>Normalize without erasing meaning</h2>
+          <p>Carry source identity, uncertainty, temporal distinctions, and raw meaning into controlled structures.</p>
+          <div class="wording"><b>PUBLIC WORDING</b> · Controlled internal representation</div>
+        </div>
+      </section>
+      <aside class="evidence">
+        <div class="state rep">REPRESENTATIVE</div>
+        <strong>REPRESENTATIVE</strong>
+        <p>Public structure may be illustrated, but live end-to-end normalization remains unproven.</p>
+        <div class="receipt">AUTHORITY · W1-016</div>
+      </aside>
+    </div>
+    
+    <div class="row">
+      <section class="layer">
+        <div class="node-id">A3</div>
+        <div>
+          <div class="layer-name">SOURCE AUTHORITY</div>
+          <h2>Decide whether evidence is authorized</h2>
+          <p>Evaluate source identity, provenance, requested use, quality, and freshness before accepting authority.</p>
+          <div class="wording"><b>PUBLIC WORDING</b> · Source-authority gate</div>
+        </div>
+      </section>
+      <aside class="evidence">
+        <div class="state integrated">INTEGRATED</div>
+        <strong>108/108 PASS</strong>
+        <p>N4 final closeout: 108/108 tests PASS, canonical-hash PASS, explicit evaluate_evidence(...) seam.</p>
+        <div class="receipt">AUTHORITY · W1-008 / W1-009</div>
+      </aside>
+    </div>
+    
+    <div class="row">
+      <section class="layer">
+        <div class="node-id">A4</div>
+        <div>
+          <div class="layer-name">CONTRACT SEAMS</div>
+          <h2>Check handoffs before data crosses</h2>
+          <p>Validate identifiers, references, expected shapes, and forbidden fabrication across bounded stage seams.</p>
+          <div class="wording"><b>PUBLIC WORDING</b> · Contract-checked handoffs</div>
+        </div>
+      </section>
+      <aside class="evidence">
+        <div class="state shadow">SHADOW</div>
+        <strong>T1→T5 PATH PASS</strong>
+        <p>CI-004 proves a bounded T1→T2→T3→T4→T5 shadow path without historical-equivalence claims.</p>
+        <div class="receipt">AUTHORITY · W1-001 / W1-019</div>
+      </aside>
+    </div>
+    
+    <div class="row">
+      <section class="layer">
+        <div class="node-id">A5</div>
+        <div>
+          <div class="layer-name">LINEAGE + RELEASE GATES</div>
+          <h2>Keep the source attached to the decision</h2>
+          <p>Preserve forward/reverse traceability and block release when quarantined evidence propagates downstream.</p>
+          <div class="wording"><b>PUBLIC WORDING</b> · Lineage + release gates</div>
+        </div>
+      </section>
+      <aside class="evidence">
+        <div class="state shadow">SHADOW</div>
+        <strong>CI-006 PASS</strong>
+        <p>CI-006 proves quarantine propagation, release blocking, lineage, provenance, and reverse references.</p>
+        <div class="receipt">AUTHORITY · W1-003 / W1-017 / W1-022</div>
+      </aside>
+    </div>
+    
+    <div class="row">
+      <section class="layer">
+        <div class="node-id">A6</div>
+        <div>
+          <div class="layer-name">CONSTRAINT SEMANTICS</div>
+          <h2>Refine meaning without minting identity</h2>
+          <p>Classify already-authorized Constraint objects while preserving ambiguity, provenance, and canonical identity authority.</p>
+          <div class="wording"><b>PUBLIC WORDING</b> · Constraint semantic classification</div>
+        </div>
+      </section>
+      <aside class="evidence">
+        <div class="state integrated">INTEGRATED</div>
+        <strong>38/38 PASS</strong>
+        <p>N1 classification is additive. It may refine a Constraint, but cannot create canonical existence or identity.</p>
+        <div class="receipt">AUTHORITY · W1-010</div>
+      </aside>
+    </div>
+    
+    <div class="row">
+      <section class="layer">
+        <div class="node-id">A7</div>
+        <div>
+          <div class="layer-name">ADMISSIBILITY</div>
+          <h2>Require authority for the next handoff</h2>
+          <p>Check whether the downstream native contract has the authoritative fields required to cross the seam.</p>
+          <div class="wording"><b>PUBLIC WORDING</b> · Fail-closed admissibility gate</div>
+        </div>
+      </section>
+      <aside class="evidence">
+        <div class="state blocked">BLOCKED</div>
+        <strong>AUTHORITY ABSENT</strong>
+        <p>Native T6 surface exists, but the exact T5→T6 authoritative binding is absent. Semantic values were not invented.</p>
+        <div class="receipt">AUTHORITY · W1-005 / W1-006 / W1-007</div>
+      </aside>
+    </div>
+    
+    <div class="row">
+      <section class="layer">
+        <div class="node-id">A8</div>
+        <div>
+          <div class="layer-name">DOWNSTREAM CONSUMERS</div>
+          <h2>Research, planning, and later intelligence consumers</h2>
+          <p>Receive only objects that have crossed the required authority and contract gates.</p>
+          <div class="wording"><b>PUBLIC WORDING</b> · Designed for downstream research and planning consumers</div>
+        </div>
+      </section>
+      <aside class="evidence">
+        <div class="state arch">ARCHITECTURE</div>
+        <strong>INTENDED HANDOFF</strong>
+        <p>Do not claim an operational downstream handoff until the missing T5→T6 authority binding is closed.</p>
+        <div class="receipt">AUTHORITY · W1-021</div>
+      </aside>
+    </div>
+    
+  </div>
+
+  <section class="callout">
+    <div>
+      <h3>A blocker is part of the architecture, not an embarrassment.</h3>
+      <p>
+        The downstream path remains visibly blocked when authority is incomplete.
+        That prevents “data was discoverable” from quietly becoming
+        “the system was allowed to use it.”
+      </p>
+    </div>
+    <div class="code">
+      N4_AUTHORITY=PROVEN<br>
+      CONTRACT_SEAMS=SHADOW_PASS<br>
+      LINEAGE=SHADOW_PASS<br>
+      N1_SEMANTICS=38/38_PASS<br>
+      T5→T6_AUTHORITY=ABSENT
+    </div>
+  </section>
+
+  <p class="note">
+    This section intentionally separates system design from proof status.
+    Architecture-only layers are not presented as live or production-validated capabilities.
+  </p>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿============================================================
+HYDRA - GITHUB PAGES DISCOVERY DIAGNOSTIC
+============================================================
+REPO=HYDRADATAAI/hydra-website
+MODE=READ_ONLY
+SITE_MUTATION=NONE
+GITHUB_MUTATION=NONE
+============================================================
+GH_CLI=NOT_FOUND
+FALLBACK=PUBLIC_GITHUB_API
+REPO_FOUND=YES_PUBLIC_API
+REPO_URL=https://github.com/HYDRADATAAI/Hydra-Website
+REPO_VISIBILITY=public
+DEFAULT_BRANCH=main
+GITHUB_PAGES=NOT_ENABLED_OR_NOT_PUBLICLY_DISCOVERABLE
+============================================================
+VERDICT=REPO_PROVEN_PAGES_NOT_PROVEN
+NEXT_ACTION=ENABLE_GITHUB_PAGES_IN_REPO_SETTINGS_THEN_RERUN_THIS_DIAGNOSTIC
+============================================================
+RESULT_FILE=C:\Users\Selene\Downloads\HYDRA_GITHUB_PAGES_DISCOVERY_RESULT.txt

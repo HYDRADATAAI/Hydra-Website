@@ -1,0 +1,70 @@
+{
+  "schema": "HYDRA_V12_PUBLIC_GITHUB_SYNC_PAYLOAD_V001",
+  "target_repository": "HYDRADATAAI/Hydra-Website",
+  "target_branch": "main",
+  "mode": "PREPARED_NOT_EXECUTED",
+  "delete_unlisted_files": false,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5073,
+      "sha256": "c204af52959f3a996e6fe18348f94812b89b31e10b6713c14ddc9ce9ab1d38cf"
+    },
+    {
+      "path": "assets/site.css",
+      "bytes": 11107,
+      "sha256": "1cfc5eb70c024715b51056c19f3ff15b6c2a1fb9217063b487e32ea89303a755"
+    },
+    {
+      "path": "constraint-case-study-v2.html",
+      "bytes": 7501,
+      "sha256": "5de9f0a7cfe53558ee6639ff4ba27d8b5a950c01212642ae39949afa1613e1dc"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 995,
+      "sha256": "d6931748d217f0bee503ac84143082f6e1b8755f2395723201c6321536345b02"
+    },
+    {
+      "path": "docs/EVIDENCE_INDEX.md",
+      "bytes": 1025,
+      "sha256": "c0d6b3ad373a9ebf222810466d0257d7a44a8ca43a5bb674252a00b349393389"
+    },
+    {
+      "path": "docs/PUBLIC_CLAIM_BOUNDARIES.md",
+      "bytes": 883,
+      "sha256": "c17671219662ca3048c010dd07bf94f63379eab22279026c2a882164b41112ab"
+    },
+    {
+      "path": "docs/REAL_VS_SYNTHETIC.md",
+      "bytes": 1157,
+      "sha256": "504afee8265fa6c394f83030911aa75806e6fe43e59ee8baa86499de0b01f8c6"
+    },
+    {
+      "path": "evidence/CI_TEST_004_PUBLIC_EXCERPT.json",
+      "bytes": 376,
+      "sha256": "e76cd9c94e17427493d0fa2ec2928455758d4ee94d0df32477ff5633a8df830c"
+    },
+    {
+      "path": "evidence/CI_TEST_006_PUBLIC_EXCERPT.txt",
+      "bytes": 292,
+      "sha256": "7779dcc43a5aad76570417c1b07596653dd27df828fb776ffe79489619a29e5a"
+    },
+    {
+      "path": "evidence/CI_TEST_008_PUBLIC_EXCERPT.json",
+      "bytes": 474,
+      "sha256": "193957181831d41cd5c3569a5954bb2821d74941e4786d3e241a74becaa3a297"
+    },
+    {
+      "path": "index.html",
+      "bytes": 11985,
+      "sha256": "d601c3daf17ab62f3699d9265f662832cf804fd3387ebb1e50efa58ea01ea845"
+    },
+    {
+      "path": "repository.html",
+      "bytes": 6480,
+      "sha256": "e3700278f7dca057462e03905a915b7526f46a95dbf21e1cd24477d5f0db9b9c"
+    }
+  ],
+  "file_count": 12
+}

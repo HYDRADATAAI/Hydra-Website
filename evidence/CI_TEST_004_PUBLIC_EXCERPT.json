@@ -1,0 +1,13 @@
+{
+  "classification": "SYNTHETIC_SHADOW_ONLY",
+  "test_id": "CI-TEST-004",
+  "overall": "PASS_REPAIRED_CI_TEST_004",
+  "failure_count": 0,
+  "canonical_baseline_mutated": false,
+  "checks": {
+    "T1_TO_T2_TO_T3_TO_T4_TO_T5_PATH": "PASS",
+    "REVERSE_REFERENCE_VERIFICATION": "PASS",
+    "ZERO_FABRICATED_MAPPING_CLAIMS": "PASS",
+    "BATCH60_IMMUTABILITY_PIN": "PASS"
+  }
+}

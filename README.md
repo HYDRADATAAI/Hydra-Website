@@ -1,49 +1,114 @@
-# HYDRA Website V7 — Recruiter System + Constraint Case Walkthrough
+# HYDRA
 
-A dependency-free static project site for HYDRA, positioned as a market-intelligence data engineering platform. V7 adds a recruiter-readable end-to-end case walkthrough without changing the frozen landing-page visual direction.
+**Market Intelligence Data Platform**
 
-## Pages
+> Turn fragmented market data into traceable intelligence.
 
-- `index.html` — recruiter-facing overview and system hook
-- `architecture.html` — interactive architecture explorer and AWS target mapping
-- `constraint.html` — Constraint Intelligence domain model
-- `case-study.html` — representative source → identity → contract → evidence → constraint → release walkthrough
-- `lab.html` — browser-only integrity/failure-semantics simulation
-- `proof.html` — engineering proof, defect discipline, and receipt model
-- `roadmap.html` — data → AWS → analytical operations → intelligence roadmap
-- `404.html` — custom error page
+**Public repository:** https://github.com/HYDRADATAAI/Hydra-Website  
+**Release note:** this README is the recruiter-facing repository front door; website deployment state is tracked separately from local release-candidate packaging.
 
-## Public positioning
+HYDRA is a data-engineering portfolio project built around controlled ingestion, explicit contracts, deterministic identity, provenance, lineage, and auditable downstream decisions. The public repository path is intentionally compact: it shows the architecture and the strongest inspectable proof without exposing internal version archaeology as the front door.
 
-The front page remains frozen around:
+## What it does
 
-**HYDRA / MARKET INTELLIGENCE DATA PLATFORM**
+HYDRA models a pipeline that moves fragmented market, reference, and historical evidence through controlled normalization, identity resolution, contract/authority gates, provenance/history linkage, and downstream constraint interpretation.
 
-**Turn fragmented market data into traceable intelligence.**
+A core design rule is simple: **discoverable data is not automatically authorized data**. If a downstream field has no proven owner or permitted derivation, the handoff blocks rather than inventing a value.
 
-V7 deepens the evidence behind that message rather than redesigning the hero.
+## Architecture
 
-## Case-study honesty rule
+```mermaid
+flowchart TD
+  A[Fragmented market evidence] --> B[Source normalization]
+  B --> C[Identity resolution]
+  C --> D{Contract / authority gate}
+  D -->|authorized| E[Provenance + history]
+  D -->|authority missing| X[BLOCK]
+  E --> F[Constraint interpretation]
+  F --> G[Auditable result]
+```
 
-The new end-to-end walkthrough is explicitly labeled as a **representative walkthrough**. It demonstrates HYDRA's intended architecture and data-engineering boundaries without pretending to be live market output or a real trading signal. Replace representative inputs with sanitized real HYDRA artifacts when they are ready for public release.
+See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
-## Configure public links
+## Data flow
 
-Open `site.config.js` and fill only the links that are ready to be public. Empty values remain hidden.
+`source evidence → normalized records → canonical identity → authority check → lineage/history → constraint interpretation → auditable result`
 
-## Preview locally
+## Engineering principles
 
-Run `OPEN_HYDRA_SITE.ps1`, or double-click `index.html`.
+- explicit authority and field ownership;
+- deterministic identity and bounded canonicalization;
+- provenance and forward/reverse lineage;
+- contract-bound handoffs;
+- testable, replayable transformations;
+- quarantine and release-gate propagation;
+- minimum defect-scoped repair;
+- **blocked rather than fabricated outputs**.
 
-## GitHub Pages
+## Technical proof
 
-The package includes `.github/workflows/pages.yml` and `.nojekyll`. Push the site to a public repository and select **GitHub Actions** as the Pages source.
+The public proof path deliberately uses small artifacts rather than giant logs.
 
-## Truth rules
+| Evidence | Public label | Engineering lesson |
+|---|---|---|
+| `evidence/CI_TEST_004_PUBLIC_EXCERPT.json` | SYNTHETIC / SHADOW | A named cross-thread defect was repaired and rerun to PASS without mutating the canonical baseline. |
+| `evidence/CI_TEST_006_PUBLIC_EXCERPT.txt` | SYNTHETIC / SHADOW | A quarantined upstream object remained blocked through the downstream release gate while lineage/provenance were preserved. |
+| `evidence/CI_TEST_008_PUBLIC_EXCERPT.json` | SHADOW | Required handoff semantics lacked proven authority, so the pipeline blocked and invented no semantic values. |
 
-1. Current capabilities lead the recruiter-facing story.
-2. Future AWS/GenAI work stays in the roadmap until implemented.
-3. Browser demonstrations and representative walkthroughs are labeled honestly.
-4. No fake production metrics or fabricated authority.
-5. Real proof should gradually replace representative surfaces.
-6. The landing-page visual direction stays frozen unless a concrete usability issue appears.
+See [`docs/EVIDENCE_INDEX.md`](docs/EVIDENCE_INDEX.md).
+
+## Representative constraint example
+
+The website includes a **REPRESENTATIVE / NON-LIVE** constraint walkthrough:
+
+`fragmented evidence → normalize → identity → authority → provenance/history → interpretation → result`
+
+The example demonstrates a bounded conclusion: evidence may support a local bottleneck without justifying a broader systemic shortage claim. The case study is intentionally representative and is not presented as live production detection.
+
+Open `constraint-case-study-v2.html` in the website export for the full walkthrough.
+
+## Testing
+
+Public-safe control evidence demonstrates patterns including:
+
+- integrated seam validation;
+- bounded repair + rerun;
+- deterministic regeneration/replay;
+- quarantine propagation;
+- forward and reverse lineage checks;
+- baseline immutability pins;
+- fail-closed authority checks.
+
+## Real vs synthetic
+
+Public labels are mandatory, not cosmetic.
+
+- **REPRESENTATIVE**: illustrative market evidence, normalization, identity mapping, and constraint output used in the case study.
+- **SYNTHETIC / SHADOW**: control-plane and integration receipts shown as technical proof.
+- **NOT CLAIMED**: live production operation, proven real-world constraint detection, production promotion, or production ML execution.
+
+See [`docs/REAL_VS_SYNTHETIC.md`](docs/REAL_VS_SYNTHETIC.md).
+
+## Repository map
+
+```text
+README.md                         recruiter front door
+docs/ARCHITECTURE.md             public architecture
+docs/EVIDENCE_INDEX.md           proof guide
+docs/REAL_VS_SYNTHETIC.md        claim boundary
+docs/PUBLIC_CLAIM_BOUNDARIES.md  public language controls
+evidence/                         public-safe receipts
+constraint-case-study-v2.html    representative case study
+index.html                       recruiter website front door
+```
+
+## Run / demo path
+
+This public export is a **static inspectable portfolio surface**, not a claim of a live production runtime.
+
+1. Open `index.html`.
+2. Use the 30–90 second technical proof strip.
+3. Open `constraint-case-study-v2.html` for the full source-to-result walkthrough.
+4. Inspect the three public-safe receipts under `evidence/`.
+
+No runnable live-data demo is manufactured here merely to make the repository look more complete.

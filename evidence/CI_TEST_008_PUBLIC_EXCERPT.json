@@ -1,0 +1,17 @@
+{
+  "classification": "SHADOW",
+  "test_id": "CI-TEST-008",
+  "public_lesson": "Discoverable data is not automatically authorized data.",
+  "overall": "BLOCKED_EXACT_AUTHORITATIVE_CASE_SOURCE_REQUIRED",
+  "authority_source_status": "MISSING",
+  "downstream_handoff": "BLOCKED",
+  "required_semantics": [
+    "object_type",
+    "subject_entity_id",
+    "as_of",
+    "confidence",
+    "evidence_ids"
+  ],
+  "semantic_values_invented": false,
+  "canonical_promotion": "NONE"
+}

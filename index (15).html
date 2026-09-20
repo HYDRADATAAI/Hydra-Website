@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HYDRA Constraint Case Study V2</title>
+<link rel="stylesheet" href="case-study.css">
+</head>
+<body>
+
+<section class="case-study" id="constraint-case-study">
+  <div class="eyebrow">HYDRA / CONSTRAINT CASE STUDY V2</div>
+  <div class="hero">
+    <div>
+      <h1>Discoverable data is not automatically authorized data.</h1>
+      <p class="deck">HYDRA separates evidence discovery, authority, semantic interpretation, and downstream admissibility. If a required authoritative handoff cannot be proven, the case remains blocked.</p>
+    </div>
+    <aside class="rule">
+      <strong>CASE BOUNDARY</strong>
+      Market evidence and the displayed semantic example are <b>REPRESENTATIVE</b>.
+      Authority, lineage, quarantine, release-block, and CI-008 blocker behavior are receipt-backed.
+    </aside>
+  </div>
+
+  <div class="flow">
+    
+    <article class="stage">
+      <div class="dot">S1</div>
+      <div class="stage-card">
+        <div class="stage-top">
+          <span class="stage-name">FRAGMENTED MARKET EVIDENCE</span>
+          <span class="tag rep">REPRESENTATIVE</span>
+        </div>
+        <h2>Illustrative market evidence arrives with different meanings, scopes, and source roles.</h2>
+        <p>Illustrative market evidence arrives with different meanings, scopes, and source roles. This is not presented as a live market event.</p>
+        <div class="artifact"><div class="kv"><span class="k">SOURCE_A</span><span class="v">supplier lead-time extension / candidate evidence</span></div>
+<div class="kv"><span class="k">SOURCE_B</span><span class="v">transport capacity restriction / candidate evidence</span></div>
+<div class="kv"><span class="k">SOURCE_C</span><span class="v">pricing pressure / context only</span></div></div>
+        
+        <p class="truth">BOUNDARY · Illustrative content only. No live multi-source ingestion claim.</p>
+      </div>
+    </article>
+    
+    <article class="stage">
+      <div class="dot">S2</div>
+      <div class="stage-card">
+        <div class="stage-top">
+          <span class="stage-name">SOURCE NORMALIZATION</span>
+          <span class="tag rep">REPRESENTATIVE</span>
+        </div>
+        <h2>The public example shows the intended controlled representation: preserve source identity, scope, uncertainty, and semantic distinctions.</h2>
+        <p>The public example shows the intended controlled representation: preserve source identity, scope, uncertainty, and semantic distinctions.</p>
+        <div class="artifact"><div class="kv"><span class="k">candidate_type</span><span class="v">market_constraint_evidence</span></div>
+<div class="kv"><span class="k">source_identity</span><span class="v">preserved</span></div>
+<div class="kv"><span class="k">uncertainty</span><span class="v">explicit</span></div>
+<div class="kv"><span class="k">silent_coercion</span><span class="v">forbidden</span></div></div>
+        
+        <p class="truth">BOUNDARY · Representative structure. No live end-to-end normalization claim.</p>
+      </div>
+    </article>
+    
+    <article class="stage">
+      <div class="dot">S3</div>
+      <div class="stage-card">
+        <div class="stage-top">
+          <span class="stage-name">SOURCE AUTHORITY</span>
+          <span class="tag integrated">INTEGRATED</span>
+        </div>
+        <h2>Authority is evaluated explicitly.</h2>
+        <p>Authority is evaluated explicitly. A source does not become authoritative simply because it exists.</p>
+        <div class="artifact"><div class="kv"><span class="k">seam</span><span class="v">SourceAuthorityRegistry.evaluate_evidence(...)</span></div>
+<div class="kv"><span class="k">tests</span><span class="v">108/108 PASS</span></div>
+<div class="kv"><span class="k">canonical_hash</span><span class="pass">PASS</span></div>
+<div class="kv"><span class="k">weak_source_promotes</span><span class="pass">NO</span></div></div>
+        <div class="receipt">RECEIPT · N4 final closeout</div>
+        
+      </div>
+    </article>
+    
+    <article class="stage">
+      <div class="dot">S4</div>
+      <div class="stage-card">
+        <div class="stage-top">
+          <span class="stage-name">CONTRACT + LINEAGE</span>
+          <span class="tag shadow">SHADOW</span>
+        </div>
+        <h2>CI-006 proves a quarantined source anchor remains traceable through T4 and into the T5 release block.</h2>
+        <p>CI-006 proves a quarantined source anchor remains traceable through T4 and into the T5 release block.</p>
+        <div class="artifact"><div class="kv"><span class="k">source_anchor</span><span class="v">B60-source_cursor_expiry_snapshot_drift-0292</span></div>
+<div class="kv"><span class="k">T2_to_T4</span><span class="v">QUARANTINE_DISPOSITION_FOR</span></div>
+<div class="kv"><span class="k">T4_to_T5</span><span class="block">RELEASE_BLOCK_FOR_QUARANTINE</span></div>
+<div class="kv"><span class="k">lineage_preserved</span><span class="pass">PASS</span></div>
+<div class="kv"><span class="k">provenance_preserved</span><span class="pass">PASS</span></div></div>
+        <div class="receipt">RECEIPT · CI_TEST_006_REPAIRED_RERUN_RESULT_V002.json</div>
+        
+      </div>
+    </article>
+    
+    <article class="stage">
+      <div class="dot">S5</div>
+      <div class="stage-card">
+        <div class="stage-top">
+          <span class="stage-name">CONSTRAINT INTERPRETATION</span>
+          <span class="tag rep">REPRESENTATIVE</span>
+        </div>
+        <h2>Semantic classification may refine an already-authorized Constraint, but it may not create one.</h2>
+        <p>Semantic classification may refine an already-authorized Constraint, but it may not create one.</p>
+        <div class="artifact"><div class="kv"><span class="k">semantic_class</span><span class="v">BOTTLENECK</span></div>
+<div class="kv"><span class="k">identity_authority</span><span class="v">UPSTREAM_REQUIRED</span></div>
+<div class="kv"><span class="k">ambiguity</span><span class="v">PRESERVE_IF_UNRESOLVED</span></div>
+<div class="kv"><span class="k">classification_mints_identity</span><span class="pass">NO</span></div></div>
+        
+        <p class="truth">BOUNDARY · N1 semantics are governed. This displayed market example is illustrative.</p>
+      </div>
+    </article>
+    
+    <article class="stage">
+      <div class="dot">S6</div>
+      <div class="stage-card">
+        <div class="stage-top">
+          <span class="stage-name">ADMISSIBILITY CHECK</span>
+          <span class="tag shadow">SHADOW</span>
+        </div>
+        <h2>CI-008 confirms the native T6 surface exists, then checks whether a complete authoritative T5→T6 handoff can be proven.</h2>
+        <p>CI-008 confirms the native T6 surface exists, then checks whether a complete authoritative T5→T6 handoff can be proven.</p>
+        <div class="artifact"><div class="kv"><span class="k">native_t6_validator</span><span class="pass">PASS</span></div>
+<div class="kv"><span class="k">native_t6_field_contract</span><span class="pass">PASS</span></div>
+<div class="kv"><span class="k">exact_batch60_t5_binding</span><span class="block">FAIL</span></div>
+<div class="kv"><span class="k">semantics_invented</span><span class="pass">NO</span></div></div>
+        <div class="receipt">RECEIPT · CI_TEST_008_NATIVE_T6_AUDIT_SUMMARY_V004.txt</div>
+        
+      </div>
+    </article>
+    
+    <article class="stage">
+      <div class="dot">S7</div>
+      <div class="stage-card blocked">
+        <div class="stage-top">
+          <span class="stage-name">AUDITABLE RESULT</span>
+          <span class="tag shadow">SHADOW</span>
+        </div>
+        <h2>The correct result is a blocker.</h2>
+        <p>The correct result is a blocker. HYDRA does not invent the missing values to produce a green handoff.</p>
+        <div class="artifact"><div class="kv"><span class="k">authority_hit_count</span><span class="v">0</span></div>
+<div class="kv"><span class="k">complete_case_count</span><span class="v">0</span></div>
+<div class="kv"><span class="k">nonblocked_t5_count</span><span class="v">1206</span></div>
+<div class="kv"><span class="k">deterministic_double_scan</span><span class="pass">true</span></div>
+<div class="kv"><span class="k">semantic_values_invented</span><span class="v">false</span></div>
+<div class="kv"><span class="k">result</span><span class="block">BLOCKED_BY_MISSING_AUTHORITY</span></div></div>
+        <div class="receipt">RECEIPT · CI_TEST_008_V012_RESULT.json</div>
+        
+      </div>
+    </article>
+    
+  </div>
+
+  <section class="final">
+    <div>
+      <h3>The control is the product.</h3>
+      <p>
+        A trustworthy pipeline must distinguish “data exists” from “this field is authorized to cross this boundary.”
+        Here, missing authority remains visible and blocks progression instead of being manufactured away.
+      </p>
+    </div>
+    <div class="verdict">
+      T6_NATIVE_SURFACE=PROVEN<br>
+      T5→T6_AUTH_BINDING=ABSENT<br>
+      SEMANTIC_VALUES_INVENTED=NO<br>
+      FINAL_STATE=BLOCKED
+    </div>
+  </section>
+
+  <p class="caption">
+    Public-safe case study. Local paths, operator identifiers, proprietary raw source material,
+    and internal filesystem details are intentionally omitted.
+  </p>
+</section>
+
+</body>
+</html>

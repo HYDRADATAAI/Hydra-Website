@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="HYDRA market intelligence data platform portfolio"><title>HYDRA | Market Intelligence Data Platform</title><link rel="stylesheet" href="assets/site.css"></head>
+<body>
+<header class="topbar"><div class="shell"><a class="brand" href="index.html"><span class="brand-mark">H</span><span>HYDRA</span></a><nav class="nav"><a href="#proof">Technical proof</a><a href="#case">Constraint case</a><a href="#receipts">Evidence</a></nav></div></header>
+<main>
+<section class="hero"><div class="shell hero-grid"><div><div class="eyebrow">HYDRA / MARKET INTELLIGENCE DATA PLATFORM</div><h1>Turn fragmented market data into traceable intelligence.</h1><p class="subtag">A data-engineering portfolio project built around controlled ingestion, explicit contracts, provenance, and auditable downstream decisions.</p><p>HYDRA ingests market, reference, and historical evidence, resolves identity, enforces contract-bound handoffs, preserves lineage, and produces downstream intelligence with an audit trail. Where authority is missing, the pipeline is designed to stop rather than manufacture a convenient answer.</p><div class="badges"><span class="pill">Multi-source ingestion</span><span class="pill">Contract-bound handoffs</span><span class="pill">Lineage + release gates</span></div></div><aside class="arch-card"><div class="arch-head"><strong>System path</strong><span>portfolio architecture</span></div><div class="arch-flow"><div class="arch-node"><b>MARKET</b><span>fragmented evidence</span></div><div class="arch-arrow">↓</div><div class="arch-node"><b>REFERENCE</b><span>identity + source context</span></div><div class="arch-arrow">↓</div><div class="arch-node"><b>HISTORY</b><span>temporal continuity</span></div><div class="arch-arrow">↓</div><div class="arch-node"><b>CONTRACT GATE</b><span>authority + admissibility</span></div><div class="arch-arrow">↓</div><div class="arch-node"><b>DATA CORE</b><span>normalized governed objects</span></div><div class="arch-arrow">↓</div><div class="arch-node"><b>LINEAGE</b><span>forward + reverse trace</span></div><div class="arch-arrow">↓</div><div class="arch-node"><b>QUERY / INTELLIGENCE</b><span>auditable downstream use</span></div></div></aside></div></section>
+
+<section id="proof" class="section"><div class="shell"><div class="section-head"><div><div class="kicker">RECRUITER_TECHNICAL_PROOF_STRIP</div><h2>The engineering loop in under 90 seconds.</h2><p class="desc">A fast path through ingestion, contracts, lineage, testing, defect handling, and bounded output.</p></div><div class="outcome">Correctness, authority, and lineage are handled inside the pipeline rather than treated as cleanup after the fact.</div></div>
+<div class="proof-strip">
+<article class="proof"><div class="num">01</div><h3>INGEST</h3><p>Keep source-specific observations separate instead of pretending they already agree.</p><div class="code">supplier_note: lead_time=42d
+filing_extract: capacity=constrained
+market_signal: price=rising</div><span class="label rep">REPRESENTATIVE</span></article>
+<article class="proof"><div class="num">02</div><h3>NORMALIZE</h3><p>Map fragments into controlled evidence records while retaining source identity.</p><div class="code">evidence_id: ev_0184
+entity_ref: ent_supplier_a
+claim_type: capacity_limit
+source_ref: src_003</div><span class="label rep">REPRESENTATIVE</span></article>
+<article class="proof"><div class="num">03</div><h3>CONTRACT</h3><p>Required downstream semantics must be owned or legitimately derivable.</p><div class="code">required:
+  object_type
+  subject_entity_id
+  as_of
+  confidence
+  evidence_ids</div><span class="label shadow">SHADOW</span></article>
+<article class="proof"><div class="num">04</div><h3>TRACE</h3><p>Forward lineage and reverse references survive governed handoffs.</p><div class="code">T4_LINEAGE_PRESERVED=PASS
+T5_LINEAGE_PRESERVED=PASS
+REVERSE_REFERENCE_VERIFICATION=PASS</div><span class="label shadow">SYNTHETIC / SHADOW</span></article>
+<article class="proof"><div class="num">05</div><h3>VALIDATE</h3><p>Run the seam and capture a machine-checkable outcome.</p><div class="code">OVERALL=PASS_REPAIRED_CI_TEST_004
+FAILURE_COUNT=0
+BATCH60_IMMUTABILITY_PIN=PASS</div><span class="label pass">SYNTHETIC / SHADOW</span></article>
+<article class="proof"><div class="num">06</div><h3>DEFECT</h3><p>Name the failure and constrain the repair instead of masking it.</p><div class="code">ticket_id: CI-TEST-004-DEFECT-001
+repair_version: V004
+canonical_baseline_mutated: false</div><span class="label shadow">SYNTHETIC / SHADOW</span></article>
+<article class="proof"><div class="num">07</div><h3>RESOLUTION</h3><p>Repair narrowly and rerun, or stop when authoritative ownership is missing.</p><div class="code">repair → rerun → PASS
+
+or
+
+authority missing → BLOCK
+semantic_values_invented=false</div><span class="label shadow">SYNTHETIC / SHADOW</span></article>
+<article class="proof"><div class="num">08</div><h3>OUTPUT</h3><p>Promote only the evidence-supported scope into the representative result.</p><div class="code">classification: local_bottleneck
+identity: preserved
+provenance: linked
+systemic_shortage: NOT_PROMOTED</div><span class="label rep">REPRESENTATIVE</span></article>
+</div></div></section>
+
+<section id="case" class="section"><div class="shell"><div class="section-head"><div><div class="kicker">HYDRA_CONSTRAINT_CASE_STUDY_V2</div><h2>A bounded conclusion with visible lineage.</h2><p class="desc">The homepage keeps this concise. The full technical case study exposes the seven-stage path and the blocked authority branch.</p></div></div><div class="case-summary"><article class="card case-card"><span class="label rep">REPRESENTATIVE / NON-LIVE</span><h3>Fragmented evidence → auditable constraint result</h3><p>Source fragments are normalized, aliases are resolved, the handoff is checked for authority, provenance and history remain attached, and the final constraint interpretation stays within the scope actually supported by evidence.</p><div class="pipeline-mini"><span class="step">EVIDENCE</span><span class="arrow">→</span><span class="step">NORMALIZE</span><span class="arrow">→</span><span class="step">IDENTITY</span><span class="arrow">→</span><span class="step">AUTHORITY</span><span class="arrow">→</span><span class="step">HISTORY</span><span class="arrow">→</span><span class="step">INTERPRET</span><span class="arrow">→</span><span class="step">RESULT</span></div><a class="cta" href="constraint-case-study-v2.html">Open the full technical case study →</a></article><aside class="card principle"><span class="label shadow">SHADOW CONTROL PRINCIPLE</span><h3>Discoverable data is not automatically authorized data.</h3><p>Finding a plausible value somewhere in the project is not enough. The pipeline must prove that the source owns, or may legitimately derive, the semantic field required by the downstream contract.</p><div class="branch"><div class="branch-box"><b style="color:var(--mint)">AUTHORIZED</b><small>required field + valid owner/contract = admissible handoff</small></div><div class="branch-box"><b style="color:var(--red)">BLOCKED</b><small>discoverable data + missing ownership = stop, fabricate nothing</small></div></div></aside></div></div></section>
+
+<section id="receipts" class="section"><div class="shell"><div class="section-head"><div><div class="kicker">PUBLIC-SAFE CONTROL RECEIPTS</div><h2>Three small artifacts, three engineering lessons.</h2><p class="desc">The raw internal history stays out of the recruiter path. These excerpts preserve the truth without requiring CI-test archaeology.</p></div></div><div class="receipts">
+<article class="card receipt"><span class="label pass">SYNTHETIC / SHADOW</span><h3>Repaired seam rerun</h3><p>A named cross-thread defect was repaired with the canonical baseline left unchanged.</p><div class="receipt-status">OVERALL=PASS_REPAIRED_CI_TEST_004
+FAILURE_COUNT=0
+CANONICAL_BASELINE_MUTATED=NO</div><a href="evidence/CI_TEST_004_PUBLIC_EXCERPT.json">Inspect excerpt →</a></article>
+<article class="card receipt"><span class="label pass">SYNTHETIC / SHADOW</span><h3>Quarantine propagates</h3><p>A rejected upstream target remained quarantined through the downstream release gate while lineage and provenance were preserved.</p><div class="receipt-status">EXPECTED_ACTION=QUARANTINE
+T4_TO_T5_RELEASE_BLOCK_PATH=PASS
+T5_LINEAGE_PRESERVED=PASS</div><a href="evidence/CI_TEST_006_PUBLIC_EXCERPT.txt">Inspect excerpt →</a></article>
+<article class="card receipt"><span class="label blocked">SHADOW</span><h3>Authority missing → block</h3><p>The pipeline could not prove authoritative ownership for required handoff semantics, so it stopped instead of inventing values.</p><div class="receipt-status">AUTHORITY_SOURCE_STATUS=MISSING
+DOWNSTREAM_HANDOFF=BLOCKED
+SEMANTIC_VALUES_INVENTED=false</div><a href="evidence/CI_TEST_008_PUBLIC_EXCERPT.json">Inspect excerpt →</a></article>
+</div><div class="boundary"><strong>Claim boundary:</strong> the market example, normalization example, identity mapping, constraint interpretation, and final constraint object are <strong>REPRESENTATIVE</strong>. CI-004, CI-006, and CI-008 evidence shown here is <strong>SYNTHETIC</strong> and/or <strong>SHADOW</strong> as labeled. Nothing on this page claims live production validation, canonical production promotion, or proven real-world constraint detection.</div></div></section>
+</main><footer><div class="shell footer-row"><span>HYDRA / MARKET INTELLIGENCE DATA PLATFORM</span><span>Recruiter-facing technical portfolio</span></div></footer>
+</body></html>

@@ -1,10 +1,11 @@
-# HYDRA
+﻿# HYDRA
 
 **Market Intelligence Data Platform**
 
 > Turn fragmented market data into traceable intelligence.
 
-**Public repository:** https://github.com/HYDRADATAAI/Hydra-Website  
+**Public repository:** https://github.com/HYDRADATAAI/Hydra-Website
+**Core engineering repository:** https://github.com/HYDRADATAAI/Hydra  
 **Release note:** this README is the recruiter-facing repository front door; website deployment state is tracked separately from local release-candidate packaging.
 
 HYDRA is a data-engineering portfolio project built around controlled ingestion, explicit contracts, deterministic identity, provenance, lineage, and auditable downstream decisions. The public repository path is intentionally compact: it shows the architecture and the strongest inspectable proof without exposing internal version archaeology as the front door.
@@ -32,7 +33,7 @@ See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 ## Data flow
 
-`source evidence → normalized records → canonical identity → authority check → lineage/history → constraint interpretation → auditable result`
+`source evidence â†’ normalized records â†’ canonical identity â†’ authority check â†’ lineage/history â†’ constraint interpretation â†’ auditable result`
 
 ## Engineering principles
 
@@ -61,7 +62,7 @@ See [`docs/EVIDENCE_INDEX.md`](docs/EVIDENCE_INDEX.md).
 
 The website includes a **REPRESENTATIVE / NON-LIVE** constraint walkthrough:
 
-`fragmented evidence → normalize → identity → authority → provenance/history → interpretation → result`
+`fragmented evidence â†’ normalize â†’ identity â†’ authority â†’ provenance/history â†’ interpretation â†’ result`
 
 The example demonstrates a bounded conclusion: evidence may support a local bottleneck without justifying a broader systemic shortage claim. The case study is intentionally representative and is not presented as live production detection.
 
@@ -107,8 +108,9 @@ index.html                       recruiter website front door
 This public export is a **static inspectable portfolio surface**, not a claim of a live production runtime.
 
 1. Open `index.html`.
-2. Use the 30–90 second technical proof strip.
+2. Use the 30â€“90 second technical proof strip.
 3. Open `constraint-case-study-v2.html` for the full source-to-result walkthrough.
 4. Inspect the three public-safe receipts under `evidence/`.
 
 No runnable live-data demo is manufactured here merely to make the repository look more complete.
+

@@ -1,7 +1,8 @@
-window.HYDRA_CONFIG = {
+﻿window.HYDRA_CONFIG = {
   ownerName: "Cody",
-  repositoryUrl: "",
+  repositoryUrl: "https://github.com/HYDRADATAAI/Hydra",
   linkedinUrl: "",
   contactEmail: "",
-  repositoryLabel: "Repository"
+  repositoryLabel: "Core repository"
 };
+

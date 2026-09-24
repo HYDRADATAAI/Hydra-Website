@@ -1,6 +1,6 @@
-﻿# HYDRA
+# HYDRA
 
-**Market Intelligence Data Platform**
+**Market Intelligence & Data Engineering System**
 
 > Turn fragmented market data into traceable intelligence.
 
@@ -33,7 +33,7 @@ See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 ## Data flow
 
-`source evidence â†’ normalized records â†’ canonical identity â†’ authority check â†’ lineage/history â†’ constraint interpretation â†’ auditable result`
+`source evidence → normalized records → canonical identity → authority check → lineage/history → constraint interpretation → auditable result`
 
 ## Engineering principles
 
@@ -62,7 +62,7 @@ See [`docs/EVIDENCE_INDEX.md`](docs/EVIDENCE_INDEX.md).
 
 The website includes a **REPRESENTATIVE / NON-LIVE** constraint walkthrough:
 
-`fragmented evidence â†’ normalize â†’ identity â†’ authority â†’ provenance/history â†’ interpretation â†’ result`
+`fragmented evidence → normalize → identity → authority → provenance/history → interpretation → result`
 
 The example demonstrates a bounded conclusion: evidence may support a local bottleneck without justifying a broader systemic shortage claim. The case study is intentionally representative and is not presented as live production detection.
 
@@ -108,7 +108,7 @@ index.html                       recruiter website front door
 This public export is a **static inspectable portfolio surface**, not a claim of a live production runtime.
 
 1. Open `index.html`.
-2. Use the 30â€“90 second technical proof strip.
+2. Use the 30–90 second technical proof strip.
 3. Open `constraint-case-study-v2.html` for the full source-to-result walkthrough.
 4. Inspect the three public-safe receipts under `evidence/`.
 

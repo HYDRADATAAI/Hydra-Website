@@ -28,6 +28,7 @@ HYDRA treats correctness, authority, provenance, and blocked states as engineeri
 ## 4. Inspectable implementation
 
 **Core source:** [`t6-fail-closed-validator/`](https://github.com/HYDRADATAAI/Hydra/tree/main/t6-fail-closed-validator)  
+**CI:** [T6 fail-closed validator](https://github.com/HYDRADATAAI/Hydra/actions/workflows/t6-validator.yml)  
 **Status:** `SOURCE-ONLY / DORMANT / NOT ACTIVATED`
 
 Pairs the public receipts with a focused implementation example:

@@ -152,7 +152,23 @@ RERUN_RESULT=REQUIRED</code></pre>
     <section class="shell section proof-bridge">
       <div class="proof-bridge-card" data-reveal>
         <div>
-          <p class="eyebrow">05 / INSPECTABLE SOURCE</p>
+          <p class="eyebrow">05 / RUNNABLE DATA PIPELINE</p>
+          <h2>Follow synthetic market data from CSV to Parquet.</h2>
+          <p>A compact public sample demonstrates strict file contracts, row normalization, deterministic event identity, provenance hashes, duplicate and defect quarantine, deterministic JSONL/manifest output, typed Parquet output, tests, and CI. The fixture is synthetic and intentionally non-live.</p>
+        </div>
+        <div class="proof-bridge-actions">
+          <a class="button button-primary" href="https://github.com/HYDRADATAAI/Hydra/tree/main/market-data-pipeline-sample" target="_blank" rel="noopener noreferrer">Open pipeline sample <span>↗</span></a>
+          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/pipeline.py" target="_blank" rel="noopener noreferrer">Open pipeline.py <span>↗</span></a>
+          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_pipeline.py" target="_blank" rel="noopener noreferrer">Open pipeline tests <span>↗</span></a>
+          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/actions/workflows/market-data-pipeline.yml" target="_blank" rel="noopener noreferrer">View pipeline CI <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section proof-bridge">
+      <div class="proof-bridge-card" data-reveal>
+        <div>
+          <p class="eyebrow">06 / INSPECTABLE SOURCE</p>
           <h2>Open the fail-closed implementation.</h2>
           <p>The public receipts are paired with a focused source example in the core repository. The component is source-only and dormant; the value here is inspectable contract validation, authority handling, deterministic inert receipts, and regression coverage.</p>
         </div>
@@ -168,7 +184,7 @@ RERUN_RESULT=REQUIRED</code></pre>
     <section class="shell section proof-bridge">
       <div class="proof-bridge-card" data-reveal>
         <div>
-          <p class="eyebrow">06 / TRY THE FAILURE MODEL</p>
+          <p class="eyebrow">07 / TRY THE FAILURE MODEL</p>
           <h2>See the same discipline without touching production data.</h2>
           <p>The Integrity Lab is a browser-only simulation of the public failure semantics. It demonstrates the policy without pretending the demo is a live HYDRA runtime.</p>
         </div>

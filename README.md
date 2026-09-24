@@ -52,7 +52,7 @@ The public proof path deliberately uses small artifacts rather than giant logs.
 
 | Evidence | Public label | Engineering lesson |
 |---|---|---|
-| `evidence/CI_TEST_004_PUBLIC_EXCERPT.json` | SYNTHETIC / SHADOW | A named cross-thread defect was repaired and rerun to PASS without mutating the canonical baseline. |
+| `evidence/CI_TEST_004_PUBLIC_EXCERPT.json` | SYNTHETIC / SHADOW | A named cross-component defect was repaired and rerun to PASS without mutating the canonical baseline. |
 | `evidence/CI_TEST_006_PUBLIC_EXCERPT.txt` | SYNTHETIC / SHADOW | A quarantined upstream object remained blocked through the downstream release gate while lineage/provenance were preserved. |
 | `evidence/CI_TEST_008_PUBLIC_EXCERPT.json` | SHADOW | Required handoff semantics lacked proven authority, so the pipeline blocked and invented no semantic values. |
 
@@ -128,3 +128,7 @@ No runnable live-data demo is manufactured here merely to make the repository lo
 ## Historical material
 
 Historical release, audit, verification, build-report, and packaging artifacts are retained under `archive/` for traceability. They are intentionally kept out of the recruiter-facing repository root.
+
+## Maintenance guard
+
+The recruiter-facing surface is protected by deterministic CI. [Public surface validation](https://github.com/HYDRADATAAI/Hydra-Website/actions/workflows/public-surface-validation.yml) checks required evidence/routes, relative HTML/Markdown/CSS links, stale public wording, and historical build artifacts returning to the repository root.

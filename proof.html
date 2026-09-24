@@ -81,7 +81,7 @@
       <div class="shell">
         <div class="section-heading" data-reveal>
           <div><p class="eyebrow">02 / REAL DEFECT RECORD</p><h2>When “complete” was not actually authoritative.</h2></div>
-          <p>An integrated T5→T6 investigation exposed a subtle failure mode: a target identifier could appear somewhere in a JSON document while required fields were recursively discovered in unrelated sibling records. The handoff could look complete without proving one producer owned the complete case.</p>
+          <p>An integrated candidate-handoff investigation exposed a subtle failure mode: a target identifier could appear somewhere in a JSON document while required fields were recursively discovered in unrelated sibling records. The handoff could look complete without proving one producer owned the complete case.</p>
         </div>
 
         <div class="proof-record" data-reveal>
@@ -121,7 +121,7 @@
         <div class="receipt-example" data-reveal>
           <div class="receipt-example-top"><span>EXAMPLE CLOSEOUT</span><span>sanitized</span></div>
           <pre><code>DEFECT_ID=AUTHORITY_SCOPE_CROSSOVER
-FAILED_SEAM=T5_TO_T6_ADMISSIBILITY
+FAILED_SEAM=CANDIDATE_HANDOFF_ADMISSIBILITY
 OWNER_LANE=CONTRACT_BOUNDARY
 EXACT_CAUSE=SIBLING_FIELD_DISCOVERY
 MINIMUM_REPAIR=SCOPE_CONTAINMENT
@@ -159,7 +159,7 @@ RERUN_RESULT=REQUIRED</code></pre>
         <div class="proof-bridge-actions">
           <a class="button button-primary" href="https://github.com/HYDRADATAAI/Hydra/tree/main/t6-fail-closed-validator" target="_blank" rel="noopener noreferrer">Inspect validator source <span>↗</span></a>
           <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/src/hydra_t6_failclosed/handoff.py" target="_blank" rel="noopener noreferrer">Open handoff logic <span>↗</span></a>
-          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/tests/test_camelcase_smuggling.py" target="_blank" rel="noopener noreferrer">Open regression test <span>↗</span></a>
+          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/tree/main/t6-fail-closed-validator/tests" target="_blank" rel="noopener noreferrer">Browse public tests <span>↗</span></a>
           <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/actions/workflows/t6-validator.yml" target="_blank" rel="noopener noreferrer">View validator CI <span>↗</span></a>
         </div>
       </div>

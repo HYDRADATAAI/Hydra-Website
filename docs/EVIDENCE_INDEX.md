@@ -34,7 +34,7 @@ HYDRA treats correctness, authority, provenance, and blocked states as engineeri
 Pairs the public receipts with a focused implementation example:
 
 - [`authority.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/src/hydra_t6_failclosed/authority.py) validates authority envelope, scope/digest bindings, time validity, revocation/supersession state, and signature trust.
-- [`handoff.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/src/hydra_t6_failclosed/handoff.py) validates candidate-only T5→T6 semantics and rejects authority smuggling.
+- [`handoff.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/src/hydra_t6_failclosed/handoff.py) validates candidate-only handoff semantics and rejects authority smuggling.
 ### Public test suite
 
 - [`test_authority.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/tests/test_authority.py) covers signed authority acceptance, expiry rejection, and signature tamper rejection.
@@ -44,3 +44,23 @@ Pairs the public receipts with a focused implementation example:
 - [`test_dormant_adapter.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/tests/test_dormant_adapter.py) proves the public integration boundary requires dormant readiness and refuses runtime execution.
 
 This is inspectable engineering evidence, not a claim that the component is active in a production runtime.
+
+
+## 5. Runnable data-engineering pipeline
+
+**Core source:** [`market-data-pipeline-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/market-data-pipeline-sample)  
+**CI:** [Market data pipeline sample](https://github.com/HYDRADATAAI/Hydra/actions/workflows/market-data-pipeline.yml)  
+**Label:** `SYNTHETIC / NON-LIVE`
+
+Demonstrates a compact end-to-end public pipeline:
+
+`CSV → producer contract → normalization → deterministic identity → provenance → quarantine → JSONL / Parquet → manifest`
+
+Inspectable proof includes:
+
+- [`pipeline.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/pipeline.py) for file-level contract enforcement, row normalization, duplicate-event detection, and quarantine;
+- [`writers.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/writers.py) for deterministic JSONL/manifest output and typed Parquet output;
+- [`test_pipeline.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_pipeline.py) for expected 3/3 accept/quarantine behavior, deterministic reruns, Parquet equivalence, provenance, and contract-drift failure;
+- the CI workflow, which publishes the generated synthetic JSONL, Parquet, quarantine, and manifest files as a workflow artifact.
+
+This sample broadens the public evidence from fail-closed authority controls into conventional data-engineering concerns: ingestion, schema contracts, normalization, identity, lineage/provenance, quarantine, columnar output, testing, and reproducibility.

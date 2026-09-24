@@ -61,6 +61,7 @@ Inspectable proof includes:
 - [`pipeline.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/pipeline.py) for file-level contract enforcement, row normalization, duplicate-event detection, and quarantine;
 - [`writers.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/writers.py) for deterministic JSONL/manifest output and typed Parquet output;
 - [`test_pipeline.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_pipeline.py) for expected 3/3 accept/quarantine behavior, deterministic reruns, Parquet equivalence, provenance, and contract-drift failure;
+- [`test_contract_files.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_contract_files.py) for contract-to-runtime synchronization: input columns, normalized event shape, quarantine shape, and transform-version contract;
 - the CI workflow, which publishes the generated synthetic JSONL, Parquet, quarantine, and manifest files as a workflow artifact.
 
 This sample broadens the public evidence from fail-closed authority controls into conventional data-engineering concerns: ingestion, schema contracts, normalization, identity, lineage/provenance, quarantine, columnar output, testing, and reproducibility.

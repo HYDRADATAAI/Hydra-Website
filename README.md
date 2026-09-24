@@ -58,6 +58,16 @@ The public proof path deliberately uses small artifacts rather than giant logs.
 
 See [`docs/EVIDENCE_INDEX.md`](docs/EVIDENCE_INDEX.md).
 
+### Inspectable implementation
+
+The small public receipts above are paired with a focused source example in the core repository:
+
+- [`t6-fail-closed-validator/`](https://github.com/HYDRADATAAI/Hydra/tree/main/t6-fail-closed-validator) — source-only, dormant fail-closed validator component;
+- [`handoff.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/src/hydra_t6_failclosed/handoff.py) — candidate-only handoff validation and authority-smuggling detection;
+- [`test_camelcase_smuggling.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/tests/test_camelcase_smuggling.py) — focused regression proof.
+
+The component is intentionally presented as inspectable source, not as an activated live production runtime.
+
 ## Representative constraint example
 
 The website includes a **REPRESENTATIVE / NON-LIVE** constraint walkthrough:

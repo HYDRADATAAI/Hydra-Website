@@ -114,3 +114,7 @@ This public export is a **static inspectable portfolio surface**, not a claim of
 
 No runnable live-data demo is manufactured here merely to make the repository look more complete.
 
+
+## Historical material
+
+Historical release, audit, verification, build-report, and packaging artifacts are retained under `archive/` for traceability. They are intentionally kept out of the recruiter-facing repository root.

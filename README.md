@@ -58,6 +58,17 @@ The public proof path deliberately uses small artifacts rather than giant logs.
 
 See [`docs/EVIDENCE_INDEX.md`](docs/EVIDENCE_INDEX.md).
 
+### Runnable data-engineering pipeline
+
+The core repository now also includes a runnable **SYNTHETIC / NON-LIVE** data-engineering sample:
+
+- [`market-data-pipeline-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/market-data-pipeline-sample) — CSV ingestion → strict contract check → normalization → deterministic identity → provenance → quarantine → JSONL / Parquet;
+- [`pipeline.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/pipeline.py) — row validation, source-symbol normalization, UTC normalization, provenance hashing, duplicate detection, and quarantine decisions;
+- [`test_pipeline.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_pipeline.py) — deterministic rerun, Parquet equivalence, provenance, quarantine, and file-level contract tests;
+- [Market data pipeline CI](https://github.com/HYDRADATAAI/Hydra/actions/workflows/market-data-pipeline.yml) — installs the sample, runs tests, executes the synthetic fixture, verifies the manifest, and publishes generated outputs as a workflow artifact.
+
+The committed synthetic fixture produces **3 accepted / 3 quarantined** rows by design. The sample is evidence of pipeline engineering, not a live market-data feed.
+
 ### Inspectable implementation
 
 The small public receipts above are paired with a focused source example in the core repository:
@@ -121,6 +132,7 @@ This public export is a **static inspectable portfolio surface**, not a claim of
 2. Use the 30–90 second technical proof strip.
 3. Open `constraint-case-study-v2.html` for the full source-to-result walkthrough.
 4. Inspect the three public-safe receipts under `evidence/`.
+5. Open the runnable [`market-data-pipeline-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/market-data-pipeline-sample) for the ingestion → normalization → provenance → quarantine → Parquet path.
 
 No runnable live-data demo is manufactured here merely to make the repository look more complete.
 

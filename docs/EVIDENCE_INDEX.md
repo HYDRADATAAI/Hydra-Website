@@ -5,7 +5,7 @@
 **File:** `evidence/CI_TEST_004_PUBLIC_EXCERPT.json`  
 **Label:** `SYNTHETIC / SHADOW`
 
-Shows a named cross-thread defect followed by bounded repair and rerun. Publicly relevant facts: rerun PASS, zero failures, baseline immutability preserved, no fabricated mapping claim.
+Shows a named cross-component defect followed by bounded repair and rerun. Publicly relevant facts: rerun PASS, zero failures, baseline immutability preserved, no fabricated mapping claim.
 
 ## 2. Quarantine propagation
 
@@ -35,6 +35,12 @@ Pairs the public receipts with a focused implementation example:
 
 - [`authority.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/src/hydra_t6_failclosed/authority.py) validates authority envelope, scope/digest bindings, time validity, revocation/supersession state, and signature trust.
 - [`handoff.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/src/hydra_t6_failclosed/handoff.py) validates candidate-only T5→T6 semantics and rejects authority smuggling.
-- [`test_camelcase_smuggling.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/tests/test_camelcase_smuggling.py) provides focused regression coverage for forbidden authority markers and allowed non-authority metadata.
+### Public test suite
+
+- [`test_authority.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/tests/test_authority.py) covers signed authority acceptance, expiry rejection, and signature tamper rejection.
+- [`test_documents.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/tests/test_documents.py) covers deterministic encoding plus duplicate-key, non-finite-number, and root-shape rejection.
+- [`test_receipt.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/tests/test_receipt.py) covers deterministic inert receipts and rejection of unsafe outcomes.
+- [`test_camelcase_smuggling.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/tests/test_camelcase_smuggling.py) covers forbidden authority markers and allowed non-authority metadata.
+- [`test_dormant_adapter.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/t6-fail-closed-validator/tests/test_dormant_adapter.py) proves the public integration boundary requires dormant readiness and refuses runtime execution.
 
 This is inspectable engineering evidence, not a claim that the component is active in a production runtime.

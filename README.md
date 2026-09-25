@@ -62,13 +62,13 @@ See [`docs/EVIDENCE_INDEX.md`](docs/EVIDENCE_INDEX.md).
 
 The core repository now also includes a runnable **SYNTHETIC / NON-LIVE** data-engineering sample:
 
-- [`market-data-pipeline-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/market-data-pipeline-sample) — CSV ingestion → strict contract check → normalization → deterministic identity → provenance → quarantine → JSONL / Parquet;
+- [`market-data-pipeline-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/market-data-pipeline-sample) — CSV ingestion → strict contract check → normalization → deterministic identity → provenance → quarantine → JSONL / CSV;
 - [`pipeline.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/pipeline.py) — row validation, source-symbol normalization, UTC normalization, provenance hashing, duplicate detection, and quarantine decisions;
-- [`test_pipeline.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_pipeline.py) — deterministic rerun, Parquet equivalence, provenance, quarantine, and file-level contract tests;
+- [`test_pipeline.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_pipeline.py) — deterministic rerun, CSV/JSONL equivalence, provenance, quarantine, no-silent-loss, and file-level contract tests;
 - [`test_contract_files.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_contract_files.py) — proves the committed input/output contract files match runtime-required CSV columns and emitted normalized/quarantine record shapes;
-- [Market data pipeline CI](https://github.com/HYDRADATAAI/Hydra/actions/workflows/market-data-pipeline.yml) — installs the sample, runs tests, executes the synthetic fixture, verifies the manifest, and publishes generated outputs as a workflow artifact.
+- [Market data pipeline CI](https://github.com/HYDRADATAAI/Hydra/actions/workflows/market-data-pipeline.yml) — runs directly from committed source, executes the synthetic fixture, verifies the manifest, and publishes generated outputs as a workflow artifact.
 
-The committed synthetic fixture produces **3 accepted / 3 quarantined** rows by design. Contract files are regression-tested against runtime behavior so the public schemas cannot silently drift away from the implementation. The sample is evidence of pipeline engineering, not a live market-data feed.
+The committed synthetic fixture produces **3 accepted / 4 quarantined** rows by design. Contract files are regression-tested against runtime behavior so the public schemas cannot silently drift away from the implementation. The sample is evidence of pipeline engineering, not a live market-data feed.
 
 ### Inspectable implementation
 
@@ -133,7 +133,7 @@ This public export is a **static inspectable portfolio surface**, not a claim of
 2. Use the 30–90 second technical proof strip.
 3. Open `constraint-case-study-v2.html` for the full source-to-result walkthrough.
 4. Inspect the three public-safe receipts under `evidence/`.
-5. Open the runnable [`market-data-pipeline-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/market-data-pipeline-sample) for the ingestion → normalization → provenance → quarantine → Parquet path.
+5. Open the runnable [`market-data-pipeline-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/market-data-pipeline-sample) for the ingestion → normalization → provenance → quarantine → deterministic artifact path.
 
 No runnable live-data demo is manufactured here merely to make the repository look more complete.
 

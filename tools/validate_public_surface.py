@@ -33,12 +33,18 @@ REQUIRED_PATHS = (
 
 REQUIRED_PUBLIC_REFERENCES = {
     "proof.html": (
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/operations.py",
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/config/backfill_plan.json",
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_operations.py",
         "https://github.com/HYDRADATAAI/Hydra/tree/main/sql-data-quality-sample",
         "https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/sql/02_quality.sql",
         "https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/tests/test_sql_sample.py",
         "https://github.com/HYDRADATAAI/Hydra/actions/workflows/sql-data-quality-sample.yml",
     ),
     "docs/EVIDENCE_INDEX.md": (
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/operations.py",
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/config/backfill_plan.json",
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_operations.py",
         "https://github.com/HYDRADATAAI/Hydra/tree/main/sql-data-quality-sample",
         "https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/run_demo.py",
         "https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/tests/test_sql_sample.py",

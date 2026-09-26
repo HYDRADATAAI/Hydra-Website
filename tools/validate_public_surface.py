@@ -40,6 +40,10 @@ REQUIRED_PUBLIC_REFERENCES = {
         "https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/sql/02_quality.sql",
         "https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/tests/test_sql_sample.py",
         "https://github.com/HYDRADATAAI/Hydra/actions/workflows/sql-data-quality-sample.yml",
+        "https://github.com/HYDRADATAAI/Hydra/tree/main/governed-intelligence-sample",
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/src/hydra_governed_intelligence/context.py",
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/fixtures/evaluation_cases.json",
+        "https://github.com/HYDRADATAAI/Hydra/actions/workflows/governed-intelligence-sample.yml",
     ),
     "docs/EVIDENCE_INDEX.md": (
         "https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/operations.py",
@@ -49,6 +53,13 @@ REQUIRED_PUBLIC_REFERENCES = {
         "https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/run_demo.py",
         "https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/tests/test_sql_sample.py",
         "https://github.com/HYDRADATAAI/Hydra/actions/workflows/sql-data-quality-sample.yml",
+        "https://github.com/HYDRADATAAI/Hydra/tree/main/governed-intelligence-sample",
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/src/hydra_governed_intelligence/context.py",
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/fixtures/evaluation_cases.json",
+        "https://github.com/HYDRADATAAI/Hydra/actions/workflows/governed-intelligence-sample.yml",
+    ),
+    "repository.html": (
+        "https://github.com/HYDRADATAAI/Hydra/tree/main/governed-intelligence-sample",
     ),
 }
 

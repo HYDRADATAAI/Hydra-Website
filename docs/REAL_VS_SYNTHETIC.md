@@ -8,7 +8,7 @@ The recruiter-facing market constraint example, illustrative fragmented-source f
 
 ## SYNTHETIC / SHADOW
 
-The public CI-004 and CI-006 excerpts, the Python market-data pipeline and checkpoint-recovery fixtures, the SQLite data-quality fixture, and other control-plane validation receipts when labeled. They demonstrate contract, integration, normalization, relational quality checks, quarantine, lineage, checkpoint recovery, idempotent replay, and release-gate behavior within synthetic/shadow boundaries.
+The public CI-004 and CI-006 excerpts, the Python market-data pipeline and checkpoint-recovery fixtures, the SQLite data-quality fixture, the governed pre-model context/evaluation fixture, and other control-plane validation receipts when labeled. They demonstrate contract, integration, normalization, relational quality checks, quarantine, lineage, checkpoint recovery, idempotent replay, citation integrity, policy decisions, and release-gate behavior within synthetic/shadow boundaries.
 
 ## SHADOW
 
@@ -24,6 +24,8 @@ The CI-008 authority-block example. It demonstrates a fail-closed handoff when a
 - a deployed orchestration or observability service;
 - canonical production promotion;
 - production ML training or model execution;
+- model quality, semantic retrieval quality, or natural-language intent classification;
+- autonomous analysis, investment advice, or trading authorization;
 - production runtime availability.
 
 Ambiguous marketing language that could imply any of the above should not be used.

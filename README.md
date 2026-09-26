@@ -84,6 +84,18 @@ The core repository also includes a bounded **SYNTHETIC / NON-LIVE** SQLite samp
 
 The committed fixture produces **5 accepted / 3 quarantined** rows. This is inspectable SQL and relational data-quality evidence, not a production database, warehouse, or live market-data system.
 
+### Governed intelligence pre-model proof
+
+The core repository also includes a **SYNTHETIC / NON-LIVE / MODEL NOT EXECUTED** downstream control sample:
+
+- [`governed-intelligence-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/governed-intelligence-sample) - integrity-checked pipeline artifacts -> policy decision -> bounded accepted context -> exact citations -> deterministic evaluation receipt;
+- [`context.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/src/hydra_governed_intelligence/context.py) - accepted-record context, aggregate-only quality context, citation verification, and explicit `ADMIT`, `ABSTAIN`, and `REFUSE` decisions;
+- [`evaluation_cases.json`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/fixtures/evaluation_cases.json) - five deterministic expectations covering admitted evidence, quality status, missing evidence, unsupported production metrics, and prohibited trading action;
+- [`test_context.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/tests/test_context.py) - adversarial checks for artifact, citation, context, quarantine-exposure, and model-enable tampering;
+- [Governed intelligence CI](https://github.com/HYDRADATAAI/Hydra/actions/workflows/governed-intelligence-sample.yml) - rebuilds the upstream synthetic artifacts and verifies two admits, two abstentions, one refusal, five citation-integrity passes, zero model executions, and zero quarantined raw-record exposures.
+
+This proves the controlled boundary before a model call. It does not claim model quality, semantic retrieval, natural-language intent classification, production inference, autonomous analysis, investment advice, or trading authorization.
+
 ### Inspectable implementation
 
 The small public receipts above are paired with a focused source example in the core repository:
@@ -121,8 +133,8 @@ Public-safe control evidence demonstrates patterns including:
 Public labels are mandatory, not cosmetic.
 
 - **REPRESENTATIVE**: illustrative market evidence, normalization, identity mapping, and constraint output used in the case study.
-- **SYNTHETIC / SHADOW**: control-plane receipts plus the synthetic Python pipeline, checkpoint-recovery path, and SQLite quality sample shown as technical proof.
-- **NOT CLAIMED**: live production operation, production SLO attainment, deployed orchestration, a production database or warehouse, proven real-world constraint detection, production promotion, or production ML execution.
+- **SYNTHETIC / SHADOW**: control-plane receipts plus the synthetic Python pipeline, checkpoint-recovery path, SQLite quality sample, and governed pre-model context/evaluation sample shown as technical proof.
+- **NOT CLAIMED**: live production operation, production SLO attainment, deployed orchestration, a production database or warehouse, proven real-world constraint detection, production promotion, model quality, semantic retrieval, production inference, or executed model/agent behavior in the pre-model sample.
 
 See [`docs/REAL_VS_SYNTHETIC.md`](docs/REAL_VS_SYNTHETIC.md).
 
@@ -150,6 +162,7 @@ This public export is a **static inspectable portfolio surface**, not a claim of
 5. Open the runnable [`market-data-pipeline-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/market-data-pipeline-sample) for the ingestion → normalization → provenance → quarantine → deterministic artifact path.
 6. Inspect [`operations.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/operations.py) and [`test_operations.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_operations.py) for checkpoint, recovery, replay, integrity, SLI, and budget behavior.
 7. Open [`sql-data-quality-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/sql-data-quality-sample) for the relational quality, joins, CTEs, and window-function path.
+8. Open [`governed-intelligence-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/governed-intelligence-sample) for integrity-checked context, exact citations, abstention/refusal controls, and deterministic pre-model evaluation.
 
 No runnable live-data demo is manufactured here merely to make the repository look more complete.
 

@@ -54,7 +54,7 @@ This is inspectable engineering evidence, not a claim that the component is acti
 
 Demonstrates a compact end-to-end public pipeline:
 
-`CSV → producer contract → normalization → deterministic identity → provenance → quarantine → JSONL / CSV → manifest`
+`CSV → producer contract → normalization → deterministic identity → provenance → quarantine → JSONL / CSV → manifest → checkpointed backfill / recovery receipt`
 
 Inspectable proof includes:
 
@@ -62,9 +62,12 @@ Inspectable proof includes:
 - [`writers.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/writers.py) for deterministic JSONL, CSV, quarantine, and manifest output;
 - [`test_pipeline.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_pipeline.py) for expected 3 accepted / 4 quarantined behavior, deterministic reruns, CSV/JSONL equivalence, provenance, no silent data loss, and contract-drift failure;
 - [`test_contract_files.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_contract_files.py) for contract-to-runtime synchronization: input columns, normalized event shape, quarantine shape, and transform-version contract;
-- the CI workflow, which publishes the generated synthetic JSONL, CSV, quarantine, and manifest files as a workflow artifact.
+- [`operations.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/operations.py) for strict backfill plans, source-byte and partition budgets, atomic checkpoints, integrity-checked reuse, deterministic metrics, and local SLIs;
+- [`backfill_plan.json`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/config/backfill_plan.json) for the pinned two-partition synthetic recovery plan;
+- [`test_operations.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_operations.py) for interrupted resume, clean/resumed byte equivalence, idempotent replay, tamper rejection, plan drift, row accounting, and budget enforcement;
+- the CI workflow, which publishes the generated pipeline and recovery artifacts after injecting an interruption, resuming, and proving a completed replay performs no new source work.
 
-This sample broadens the public evidence from fail-closed authority controls into conventional data-engineering concerns: ingestion, schema contracts, normalization, identity, lineage/provenance, quarantine, deterministic artifact output, testing, and reproducibility.
+This sample broadens the public evidence from fail-closed authority controls into conventional data-engineering and local operational concerns: ingestion, schema contracts, normalization, identity, lineage/provenance, quarantine, deterministic artifact output, checkpoint recovery, testing, and reproducibility. Its SLIs are synthetic local implementation evidence, not production reliability measurements.
 
 ## 6. Runnable SQL data-quality proof
 

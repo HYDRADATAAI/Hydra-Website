@@ -64,11 +64,13 @@ The core repository now also includes a runnable **SYNTHETIC / NON-LIVE** data-e
 
 - [`market-data-pipeline-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/market-data-pipeline-sample) — CSV ingestion → strict contract check → normalization → deterministic identity → provenance → quarantine → JSONL / CSV;
 - [`pipeline.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/pipeline.py) — row validation, source-symbol normalization, UTC normalization, provenance hashing, duplicate detection, and quarantine decisions;
+- [`operations.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/operations.py) — bounded multi-partition backfills, atomic checkpoints, integrity-checked reuse, deterministic metrics, and explicit local SLIs;
 - [`test_pipeline.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_pipeline.py) — deterministic rerun, CSV/JSONL equivalence, provenance, quarantine, no-silent-loss, and file-level contract tests;
+- [`test_operations.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_operations.py) — interrupted resume, byte-identical recovery, idempotent replay, tamper rejection, row accounting, and budget enforcement;
 - [`test_contract_files.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_contract_files.py) — proves the committed input/output contract files match runtime-required CSV columns and emitted normalized/quarantine record shapes;
 - [Market data pipeline CI](https://github.com/HYDRADATAAI/Hydra/actions/workflows/market-data-pipeline.yml) — runs directly from committed source, executes the synthetic fixture, verifies the manifest, and publishes generated outputs as a workflow artifact.
 
-The committed synthetic fixture produces **3 accepted / 4 quarantined** rows by design. Contract files are regression-tested against runtime behavior so the public schemas cannot silently drift away from the implementation. The sample is evidence of pipeline engineering, not a live market-data feed.
+The primary committed fixture produces **3 accepted / 4 quarantined** rows by design. The two-partition recovery plan produces deterministic local operations receipts and proves replay behavior under an injected interruption. Contract files are regression-tested against runtime behavior so the public schemas cannot silently drift away from the implementation. The sample is evidence of pipeline engineering and local recovery behavior, not a live market-data feed or production SLO evidence.
 
 ### Runnable SQL data-quality proof
 
@@ -119,8 +121,8 @@ Public-safe control evidence demonstrates patterns including:
 Public labels are mandatory, not cosmetic.
 
 - **REPRESENTATIVE**: illustrative market evidence, normalization, identity mapping, and constraint output used in the case study.
-- **SYNTHETIC / SHADOW**: control-plane receipts plus the synthetic Python pipeline and SQLite quality sample shown as technical proof.
-- **NOT CLAIMED**: live production operation, a production database or warehouse, proven real-world constraint detection, production promotion, or production ML execution.
+- **SYNTHETIC / SHADOW**: control-plane receipts plus the synthetic Python pipeline, checkpoint-recovery path, and SQLite quality sample shown as technical proof.
+- **NOT CLAIMED**: live production operation, production SLO attainment, deployed orchestration, a production database or warehouse, proven real-world constraint detection, production promotion, or production ML execution.
 
 See [`docs/REAL_VS_SYNTHETIC.md`](docs/REAL_VS_SYNTHETIC.md).
 
@@ -146,7 +148,8 @@ This public export is a **static inspectable portfolio surface**, not a claim of
 3. Open `constraint-case-study-v2.html` for the full source-to-result walkthrough.
 4. Inspect the three public-safe receipts under `evidence/`.
 5. Open the runnable [`market-data-pipeline-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/market-data-pipeline-sample) for the ingestion → normalization → provenance → quarantine → deterministic artifact path.
-6. Open [`sql-data-quality-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/sql-data-quality-sample) for the relational quality, joins, CTEs, and window-function path.
+6. Inspect [`operations.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/operations.py) and [`test_operations.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_operations.py) for checkpoint, recovery, replay, integrity, SLI, and budget behavior.
+7. Open [`sql-data-quality-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/sql-data-quality-sample) for the relational quality, joins, CTEs, and window-function path.
 
 No runnable live-data demo is manufactured here merely to make the repository look more complete.
 

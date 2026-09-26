@@ -168,7 +168,23 @@ RERUN_RESULT=REQUIRED</code></pre>
     <section class="shell section proof-bridge">
       <div class="proof-bridge-card" data-reveal>
         <div>
-          <p class="eyebrow">06 / RUNNABLE SQL QUALITY</p>
+          <p class="eyebrow">06 / CHECKPOINTED OPERATIONS</p>
+          <h2>Interrupt, resume, verify, replay.</h2>
+          <p>The synthetic pipeline now includes a strict two-partition backfill plan, source-byte and partition budgets, atomic checkpoints, integrity-checked reuse, deterministic structured metrics, and explicit completion and row-accounting SLIs. CI injects an interruption after partition one, resumes partition two, and proves a completed replay performs no new source work. This is local operational evidence, not production uptime or SLO evidence.</p>
+        </div>
+        <div class="proof-bridge-actions">
+          <a class="button button-primary" href="https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/operations.py" target="_blank" rel="noopener noreferrer">Open operations.py <span>↗</span></a>
+          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/config/backfill_plan.json" target="_blank" rel="noopener noreferrer">Open backfill plan <span>↗</span></a>
+          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_operations.py" target="_blank" rel="noopener noreferrer">Open recovery tests <span>↗</span></a>
+          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/actions/workflows/market-data-pipeline.yml" target="_blank" rel="noopener noreferrer">View operations CI <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section proof-bridge">
+      <div class="proof-bridge-card" data-reveal>
+        <div>
+          <p class="eyebrow">07 / RUNNABLE SQL QUALITY</p>
           <h2>Inspect the relational quality path.</h2>
           <p>A small SQLite sample turns a synthetic CSV into normalized relational views, explicit accepted and quarantine sets, and analytical summaries. The SQL demonstrates joins, CTEs, <code>ROW_NUMBER</code>, <code>LAG</code>, windowed averages, aggregations, regression tests, and CI without implying a production warehouse.</p>
         </div>
@@ -184,7 +200,7 @@ RERUN_RESULT=REQUIRED</code></pre>
     <section class="shell section proof-bridge">
       <div class="proof-bridge-card" data-reveal>
         <div>
-          <p class="eyebrow">07 / INSPECTABLE SOURCE</p>
+          <p class="eyebrow">08 / INSPECTABLE SOURCE</p>
           <h2>Open the fail-closed implementation.</h2>
           <p>The public receipts are paired with a focused source example in the core repository. The component is source-only and dormant; the value here is inspectable contract validation, authority handling, deterministic inert receipts, and regression coverage.</p>
         </div>
@@ -200,7 +216,7 @@ RERUN_RESULT=REQUIRED</code></pre>
     <section class="shell section proof-bridge">
       <div class="proof-bridge-card" data-reveal>
         <div>
-          <p class="eyebrow">08 / TRY THE FAILURE MODEL</p>
+          <p class="eyebrow">09 / TRY THE FAILURE MODEL</p>
           <h2>See the same discipline without touching production data.</h2>
           <p>The Integrity Lab is a browser-only simulation of the public failure semantics. It demonstrates the policy without pretending the demo is a live HYDRA runtime.</p>
         </div>

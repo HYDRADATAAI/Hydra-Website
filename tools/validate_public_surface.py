@@ -31,6 +31,21 @@ REQUIRED_PATHS = (
     "evidence/CI_TEST_008_PUBLIC_EXCERPT.json",
 )
 
+REQUIRED_PUBLIC_REFERENCES = {
+    "proof.html": (
+        "https://github.com/HYDRADATAAI/Hydra/tree/main/sql-data-quality-sample",
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/sql/02_quality.sql",
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/tests/test_sql_sample.py",
+        "https://github.com/HYDRADATAAI/Hydra/actions/workflows/sql-data-quality-sample.yml",
+    ),
+    "docs/EVIDENCE_INDEX.md": (
+        "https://github.com/HYDRADATAAI/Hydra/tree/main/sql-data-quality-sample",
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/run_demo.py",
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/tests/test_sql_sample.py",
+        "https://github.com/HYDRADATAAI/Hydra/actions/workflows/sql-data-quality-sample.yml",
+    ),
+}
+
 STALE_PUBLIC_PHRASES = (
     "market intelligence data platform",
     "ai-driven quantitative trading",
@@ -132,6 +147,14 @@ def validate_root_hygiene(errors: list[str]) -> None:
                 break
 
 
+def validate_required_public_references(errors: list[str]) -> None:
+    for relative, references in REQUIRED_PUBLIC_REFERENCES.items():
+        text = (ROOT / relative).read_text(encoding="utf-8-sig")
+        for reference in references:
+            if reference not in text:
+                errors.append(f"required public reference missing from {relative}: {reference}")
+
+
 def validate_public_language(errors: list[str]) -> None:
     presentation_files = active_files("*.html", "README.md", "docs/*.md")
     config = ROOT / "site.config.js"
@@ -192,6 +215,7 @@ def main() -> int:
 
     validate_required_paths(errors)
     validate_root_hygiene(errors)
+    validate_required_public_references(errors)
     validate_public_language(errors)
     validate_html_links(errors)
     validate_markdown_links(errors)

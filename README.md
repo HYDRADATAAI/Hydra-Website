@@ -70,6 +70,18 @@ The core repository now also includes a runnable **SYNTHETIC / NON-LIVE** data-e
 
 The committed synthetic fixture produces **3 accepted / 4 quarantined** rows by design. Contract files are regression-tested against runtime behavior so the public schemas cannot silently drift away from the implementation. The sample is evidence of pipeline engineering, not a live market-data feed.
 
+### Runnable SQL data-quality proof
+
+The core repository also includes a bounded **SYNTHETIC / NON-LIVE** SQLite sample:
+
+- [`sql-data-quality-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/sql-data-quality-sample) - raw table -> alias join -> normalized view -> quality checks -> accepted/quarantine views -> analytical summary;
+- [`02_quality.sql`](https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/sql/02_quality.sql) - CTE and `ROW_NUMBER` logic for explicit duplicate and malformed-record classification;
+- [`03_analytics.sql`](https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/sql/03_analytics.sql) - `LAG`, windowed averages, grouped quality counts, and symbol-level summaries;
+- [`test_sql_sample.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/tests/test_sql_sample.py) - regression coverage for accepted/quarantine counts, reason codes, alias joins, and analytical output;
+- [SQL data quality CI](https://github.com/HYDRADATAAI/Hydra/actions/workflows/sql-data-quality-sample.yml) - runs the sample tests on Python 3.11 with no service or network dependency.
+
+The committed fixture produces **5 accepted / 3 quarantined** rows. This is inspectable SQL and relational data-quality evidence, not a production database, warehouse, or live market-data system.
+
 ### Inspectable implementation
 
 The small public receipts above are paired with a focused source example in the core repository:
@@ -107,8 +119,8 @@ Public-safe control evidence demonstrates patterns including:
 Public labels are mandatory, not cosmetic.
 
 - **REPRESENTATIVE**: illustrative market evidence, normalization, identity mapping, and constraint output used in the case study.
-- **SYNTHETIC / SHADOW**: control-plane and integration receipts shown as technical proof.
-- **NOT CLAIMED**: live production operation, proven real-world constraint detection, production promotion, or production ML execution.
+- **SYNTHETIC / SHADOW**: control-plane receipts plus the synthetic Python pipeline and SQLite quality sample shown as technical proof.
+- **NOT CLAIMED**: live production operation, a production database or warehouse, proven real-world constraint detection, production promotion, or production ML execution.
 
 See [`docs/REAL_VS_SYNTHETIC.md`](docs/REAL_VS_SYNTHETIC.md).
 
@@ -134,6 +146,7 @@ This public export is a **static inspectable portfolio surface**, not a claim of
 3. Open `constraint-case-study-v2.html` for the full source-to-result walkthrough.
 4. Inspect the three public-safe receipts under `evidence/`.
 5. Open the runnable [`market-data-pipeline-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/market-data-pipeline-sample) for the ingestion → normalization → provenance → quarantine → deterministic artifact path.
+6. Open [`sql-data-quality-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/sql-data-quality-sample) for the relational quality, joins, CTEs, and window-function path.
 
 No runnable live-data demo is manufactured here merely to make the repository look more complete.
 

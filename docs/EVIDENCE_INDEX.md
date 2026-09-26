@@ -65,3 +65,25 @@ Inspectable proof includes:
 - the CI workflow, which publishes the generated synthetic JSONL, CSV, quarantine, and manifest files as a workflow artifact.
 
 This sample broadens the public evidence from fail-closed authority controls into conventional data-engineering concerns: ingestion, schema contracts, normalization, identity, lineage/provenance, quarantine, deterministic artifact output, testing, and reproducibility.
+
+## 6. Runnable SQL data-quality proof
+
+**Core source:** [`sql-data-quality-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/sql-data-quality-sample)
+
+**CI:** [SQL data quality sample](https://github.com/HYDRADATAAI/Hydra/actions/workflows/sql-data-quality-sample.yml)
+
+**Label:** `SYNTHETIC / NON-LIVE`
+
+Demonstrates a bounded relational path:
+
+`synthetic CSV -> raw table -> alias join -> normalized view -> quality checks -> accepted/quarantine views -> analytical summary`
+
+Inspectable proof includes:
+
+- [`01_schema.sql`](https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/sql/01_schema.sql) for the raw schema, alias table, normalization join, and deterministic event key;
+- [`02_quality.sql`](https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/sql/02_quality.sql) for CTE-based quality classification, `ROW_NUMBER` duplicate detection, and accepted/quarantine views;
+- [`03_analytics.sql`](https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/sql/03_analytics.sql) for `LAG`, windowed averages, grouped quality counts, and symbol-level summaries;
+- [`run_demo.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/run_demo.py) for deterministic fixture loading and summary generation;
+- [`test_sql_sample.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/sql-data-quality-sample/tests/test_sql_sample.py) for the expected 5 accepted / 3 quarantined behavior, explicit reason codes, alias joins, and analytical regression checks.
+
+This is SQLite-based career evidence for SQL and relational data-quality fundamentals. It is not a claim of a production database, warehouse, distributed query engine, or live feed.

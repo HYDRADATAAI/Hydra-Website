@@ -6,9 +6,13 @@ HYDRA's public surfaces use explicit labels so a reader can distinguish what is 
 
 The recruiter-facing market constraint example, illustrative fragmented-source fields, normalized evidence object, identity mapping, constraint interpretation, and final case-study object. These communicate structure and behavior; they are not presented as live production observations.
 
+## SYNTHETIC / NON-LIVE
+
+The Python market-data pipeline and checkpoint-recovery fixtures, the SQLite data-quality fixture, and the governed pre-model context/evaluation fixture. They demonstrate normalization, relational quality checks, quarantine, checkpoint recovery, idempotent replay, citation integrity, and policy decisions using committed synthetic inputs without live operation.
+
 ## SYNTHETIC / SHADOW
 
-The public CI-004 and CI-006 excerpts, the Python market-data pipeline and checkpoint-recovery fixtures, the SQLite data-quality fixture, the governed pre-model context/evaluation fixture, and other control-plane validation receipts when labeled. They demonstrate contract, integration, normalization, relational quality checks, quarantine, lineage, checkpoint recovery, idempotent replay, citation integrity, policy decisions, and release-gate behavior within synthetic/shadow boundaries.
+The public CI-004 and CI-006 excerpts and other control-plane validation receipts when explicitly labeled. They demonstrate contract, integration, lineage, quarantine, and release-gate behavior within synthetic/shadow boundaries.
 
 ## SHADOW
 

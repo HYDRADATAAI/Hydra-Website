@@ -133,7 +133,9 @@ Public-safe control evidence demonstrates patterns including:
 Public labels are mandatory, not cosmetic.
 
 - **REPRESENTATIVE**: illustrative market evidence, normalization, identity mapping, and constraint output used in the case study.
-- **SYNTHETIC / SHADOW**: control-plane receipts plus the synthetic Python pipeline, checkpoint-recovery path, SQLite quality sample, and governed pre-model context/evaluation sample shown as technical proof.
+- **SYNTHETIC / NON-LIVE**: the synthetic Python pipeline, checkpoint-recovery path, SQLite quality sample, and governed pre-model context/evaluation sample shown as technical proof.
+- **SYNTHETIC / SHADOW**: the CI-004 and CI-006 control-plane receipts.
+- **SHADOW**: the CI-008 authority-block control receipt.
 - **NOT CLAIMED**: live production operation, production SLO attainment, deployed orchestration, a production database or warehouse, proven real-world constraint detection, production promotion, model quality, semantic retrieval, production inference, or executed model/agent behavior in the pre-model sample.
 
 See [`docs/REAL_VS_SYNTHETIC.md`](docs/REAL_VS_SYNTHETIC.md).

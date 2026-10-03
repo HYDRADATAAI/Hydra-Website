@@ -91,24 +91,29 @@ Inspectable proof includes:
 
 This is SQLite-based career evidence for SQL and relational data-quality fundamentals. It is not a claim of a production database, warehouse, distributed query engine, or live feed.
 
-## 7. Governed intelligence pre-model proof
+## 7. Governed intelligence context and lexical retrieval proof
 
 **Core source:** [`governed-intelligence-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/governed-intelligence-sample)
 
-**CI:** [Governed intelligence pre-model sample](https://github.com/HYDRADATAAI/Hydra/actions/workflows/governed-intelligence-sample.yml)
+**CI:** [Governed intelligence pre-model and retrieval sample](https://github.com/HYDRADATAAI/Hydra/actions/workflows/governed-intelligence-sample.yml)
 
 **Label:** `SYNTHETIC / NON-LIVE / MODEL NOT EXECUTED`
 
-Demonstrates the controlled boundary immediately before a model call:
+Demonstrates the controlled boundary immediately before a model call and a transparent accepted-only retrieval path:
 
 `pipeline manifest -> artifact integrity -> policy decision -> bounded accepted context -> exact citations -> evaluation receipt`
+
+`accepted records -> digest-bound lexical policy -> deterministic ranking -> exact citations -> Recall@k / MRR receipt`
 
 Inspectable proof includes:
 
 - [`context.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/src/hydra_governed_intelligence/context.py) for upstream digest checks, accepted-record context assembly, aggregate-only quality context, exact citation validation, and explicit `ADMIT`, `ABSTAIN`, and `REFUSE` outcomes;
 - [`evaluation.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/src/hydra_governed_intelligence/evaluation.py) for deterministic decisions, evaluation reports, and output manifests bound to the policy, suite, and upstream pipeline manifest;
+- [`retrieval.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/src/hydra_governed_intelligence/retrieval.py) for accepted-only indexing, inspectable field weights, integer scoring, deterministic tie breaking, and exact citation recomputation;
+- [`retrieval_evaluation.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/src/hydra_governed_intelligence/retrieval_evaluation.py) for Recall@k, mean reciprocal rank, disposition checks, and digest-bound retrieval receipts;
+- [`retrieval_cases.json`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/fixtures/retrieval_cases.json) for six inspectable ranking/control expectations, including unknown evidence, a quarantined-only symbol, and a restricted-corpus request;
 - [`evaluation_cases.json`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/fixtures/evaluation_cases.json) for five inspectable expectations: accepted evidence, aggregate quality, missing evidence, unsupported production metrics, and prohibited trading action;
 - [`test_context.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/tests/test_context.py) for artifact, citation, admitted-context, quarantine-exposure, and model-enable tamper rejection;
-- the CI workflow, which rebuilds the upstream synthetic pipeline artifacts and verifies five citation-integrity passes, two admits, two abstentions, one refusal, zero model executions, and zero quarantined raw-record exposures.
+- the CI workflow, which rebuilds the upstream synthetic pipeline artifacts and verifies both suites, including six retrieval citation checks, 1.000000 Recall@k and MRR on three positive fixture queries, zero model executions, and zero quarantined raw-record exposures.
 
-This is deterministic pre-model grounding and control evidence. It is not evidence of model quality, semantic retrieval quality, natural-language intent classification, production inference, autonomous analysis, investment advice, or trading authorization.
+This is deterministic pre-model grounding, control, and lexical retrieval evidence. It is not evidence of model quality, semantic or embedding retrieval quality, natural-language intent classification, production inference, autonomous analysis, investment advice, or trading authorization.

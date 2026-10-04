@@ -35,13 +35,13 @@
       <a href="constraint.html">Constraint Intel</a>
       <a href="case-study.html">Case Study</a>
       <a href="lab.html">Integrity Lab</a>
-      <a class="is-active" href="proof.html">Proof</a>
+      <a class="is-active" href="proof.html" aria-current="page">Proof</a>
       <a href="roadmap.html">Roadmap</a>
-      <a class="nav-repo" href="#" data-repo-link hidden>Repository <span>↗</span></a>
+      <a class="nav-repo" data-repo-link hidden>Repository <span>↗</span></a>
     </nav>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="page-hero shell proof-hero">
       <div data-reveal>
         <p class="eyebrow">HYDRA / ENGINEERING PROOF</p>
@@ -155,6 +155,7 @@ RERUN_RESULT=REQUIRED</code></pre>
           <p class="eyebrow">05 / RUNNABLE DATA PIPELINE</p>
           <h2>Follow synthetic market data from CSV to deterministic artifacts.</h2>
           <p>A compact public sample demonstrates strict file contracts, row normalization, deterministic event identity, provenance hashes, duplicate and defect quarantine, deterministic JSONL/CSV/quarantine/manifest output, tests, and CI. The fixture is synthetic and intentionally non-live.</p>
+          <p>The pipeline, recovery, and SQL links in sections 05-07 navigate to the current repository state; they are not immutable proof references. The governed evidence in section 08 is explicitly commit- and run-pinned.</p>
         </div>
         <div class="proof-bridge-actions">
           <a class="button button-primary" href="https://github.com/HYDRADATAAI/Hydra/tree/main/market-data-pipeline-sample" target="_blank" rel="noopener noreferrer">Open pipeline sample <span>↗</span></a>
@@ -200,16 +201,18 @@ RERUN_RESULT=REQUIRED</code></pre>
     <section class="shell section proof-bridge">
       <div class="proof-bridge-card" data-reveal>
         <div>
-          <p class="eyebrow">08 / GOVERNED RETRIEVAL</p>
-          <h2>Rank accepted evidence. Abstain or refuse when the corpus ends.</h2>
-          <p>A synthetic downstream sample verifies every pipeline artifact before assembling accepted-record context and exact citations. Its digest-bound lexical policy ranks accepted records only, with integer scores and deterministic tie breaking. Six benchmark cases produce three admits, two abstentions, one refusal, 1.000000 Recall@k and MRR on three positive fixture queries, zero model executions, and zero quarantined raw-record exposures. This is a small lexical benchmark, not semantic or model-quality evidence.</p>
+          <p class="eyebrow">08 / GOVERNED RETRIEVAL + STRUCTURED GROUNDING</p>
+          <h2>Rank accepted evidence. Ground claims. Abstain, quarantine, or refuse.</h2>
+          <p><strong>SYNTHETIC / NON-LIVE / MODEL NOT EXECUTED.</strong> A repository-controlled proof verifies every pipeline artifact before assembling accepted-record context and exact citations. Thirteen lexical-retrieval cases produce 4 ADMIT, 6 ABSTAIN, and 3 REFUSE outcomes; six scored quality cases yield micro Recall@k 0.444444, macro Recall@k 0.583333, and MRR 0.666667. Eight structured-grounding cases produce 1 ADMIT, 5 QUARANTINE, 1 ABSTAIN, and 1 REFUSE.</p>
+          <p>Candidate responses are committed fixtures, not model output. Verified package facts: 9 manifested outputs; 26 receipts; 2 verified input snapshots; 7 independently replayed source rows; 15 bundle members; 41,833 bytes; SHA-256 <code>2b52498e8dfba5f86cf694b08833bbbd67464c91e5cbf6fbd49cd37b1a0698a6</code>. The bundle includes <code>source_snapshot.csv</code> and <code>resolved_symbol_aliases.json</code>. The source snapshot contains all seven synthetic rows, including quarantine-designed rows. Governed contexts and receipts remain accepted-only or aggregate-only and do not expose quarantined row payloads. This evidence covers deterministic input-to-artifact replay, lexical retrieval, and structured grounding; no semantic or embedding retrieval, model, agent, broker, or external action is executed.</p>
         </div>
         <div class="proof-bridge-actions">
-          <a class="button button-primary" href="https://github.com/HYDRADATAAI/Hydra/tree/main/governed-intelligence-sample" target="_blank" rel="noopener noreferrer">Open governed sample <span>↗</span></a>
-          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/src/hydra_governed_intelligence/context.py" target="_blank" rel="noopener noreferrer">Open context controls <span>↗</span></a>
-          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/src/hydra_governed_intelligence/retrieval.py" target="_blank" rel="noopener noreferrer">Open retrieval ranking <span>↗</span></a>
-          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/fixtures/retrieval_cases.json" target="_blank" rel="noopener noreferrer">Open benchmark cases <span>↗</span></a>
-          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/actions/workflows/governed-intelligence-sample.yml" target="_blank" rel="noopener noreferrer">View retrieval CI <span>↗</span></a>
+          <a class="button button-primary" href="https://github.com/HYDRADATAAI/Hydra/tree/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample" target="_blank" rel="noopener noreferrer">Open governed sample <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/src/hydra_governed_intelligence/retrieval.py" target="_blank" rel="noopener noreferrer">Open lexical retrieval <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/src/hydra_governed_intelligence/grounding.py" target="_blank" rel="noopener noreferrer">Open structured grounding <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/fixtures/retrieval_qrels.json" target="_blank" rel="noopener noreferrer">Open retrieval qrels <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/fixtures/grounding_cases.json" target="_blank" rel="noopener noreferrer">Open grounding cases <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="https://github.com/HYDRADATAAI/Hydra/actions/runs/37170895042/attempts/1" target="_blank" rel="noopener noreferrer">View successful proof run <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
@@ -251,8 +254,8 @@ RERUN_RESULT=REQUIRED</code></pre>
         <p>Public profile links appear here only after they are configured.</p>
       </div>
       <div class="recruiter-contact-actions">
-        <a class="button button-primary" href="#" data-linkedin-link hidden>LinkedIn ↗</a>
-        <a class="button button-secondary" href="#" data-contact-link hidden>Contact ↗</a>
+        <a class="button button-primary" data-linkedin-link hidden>LinkedIn ↗</a>
+        <a class="button button-secondary" data-contact-link hidden>Contact ↗</a>
       </div>
     </section>
   </main>

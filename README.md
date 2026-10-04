@@ -84,19 +84,27 @@ The core repository also includes a bounded **SYNTHETIC / NON-LIVE** SQLite samp
 
 The committed fixture produces **5 accepted / 3 quarantined** rows. This is inspectable SQL and relational data-quality evidence, not a production database, warehouse, or live market-data system.
 
-### Governed intelligence context and lexical retrieval proof
+### Governed intelligence context, lexical retrieval, and structured grounding proof
 
-The core repository also includes a **SYNTHETIC / NON-LIVE / MODEL NOT EXECUTED** downstream control sample:
+The core repository also includes a **SYNTHETIC / NON-LIVE / MODEL NOT EXECUTED** downstream control sample, pinned here to merge commit [`6dd79a85cdba1f2cd90c2e8815f6d881ac73efad`](https://github.com/HYDRADATAAI/Hydra/commit/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad):
 
-- [`governed-intelligence-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/governed-intelligence-sample) - integrity-checked pipeline artifacts -> policy decision -> bounded accepted context -> exact citations -> deterministic evaluation receipt;
-- [`context.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/src/hydra_governed_intelligence/context.py) - accepted-record context, aggregate-only quality context, citation verification, and explicit `ADMIT`, `ABSTAIN`, and `REFUSE` decisions;
-- [`retrieval.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/src/hydra_governed_intelligence/retrieval.py) - digest-bound weighted lexical ranking over accepted records only, with integer scores and deterministic event-ID tie breaking;
-- [`retrieval_cases.json`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/fixtures/retrieval_cases.json) - six ranking/control expectations covering accepted matches, unknown and quarantined-only abstention, and restricted-corpus refusal;
-- [`evaluation_cases.json`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/fixtures/evaluation_cases.json) - five deterministic expectations covering admitted evidence, quality status, missing evidence, unsupported production metrics, and prohibited trading action;
-- [`test_context.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/tests/test_context.py) - adversarial checks for artifact, citation, context, quarantine-exposure, and model-enable tampering;
-- [Governed intelligence CI](https://github.com/HYDRADATAAI/Hydra/actions/workflows/governed-intelligence-sample.yml) - rebuilds the upstream synthetic artifacts and verifies both suites, including six retrieval cases, 1.000000 Recall@k and MRR on three positive fixture queries, zero model executions, and zero quarantined raw-record exposures.
+- [`governed-intelligence-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample) - integrity-checked pipeline artifacts -> bounded context -> lexical retrieval -> structured grounding -> deterministic receipts;
+- [`context.py`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/src/hydra_governed_intelligence/context.py) - digest-bound accepted-record context, aggregate-only quality context, exact citations, and explicit control outcomes;
+- [`retrieval.py`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/src/hydra_governed_intelligence/retrieval.py) and [`retrieval_evaluation.py`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/src/hydra_governed_intelligence/retrieval_evaluation.py) - accepted-only weighted lexical ranking, exact citation recomputation, and deterministic qrel evaluation;
+- [`retrieval_cases.json`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/fixtures/retrieval_cases.json) and [`retrieval_qrels.json`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/fixtures/retrieval_qrels.json) - inspectable behavior cases and separately committed qrels, independent of the behavior cases, containing record-level relevance judgments;
+- [`grounding.py`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/src/hydra_governed_intelligence/grounding.py) and [`grounding_cases.json`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/fixtures/grounding_cases.json) - exact claim, value, record, and citation checks over committed candidate fixtures;
+- [`pre_upload_verifier.py`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/src/hydra_governed_intelligence/pre_upload_verifier.py) and [`test_pre_upload_verifier.py`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/tests/test_pre_upload_verifier.py) - final receipt revalidation, independent metric recomputation, and deterministic artifact packaging;
+- [pinned workflow source](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/.github/workflows/governed-intelligence-sample.yml) and [successful run `37170895042`, attempt 1](https://github.com/HYDRADATAAI/Hydra/actions/runs/37170895042/attempts/1) - rebuild, verify, publish, download, and digest-check the exact proof package.
 
-This proves the controlled boundary before a model call and a small deterministic lexical benchmark. It does not claim model quality, semantic or embedding retrieval, natural-language intent classification, production inference, autonomous analysis, investment advice, or trading authorization.
+Verified retrieval metrics: 13 retrieval cases; 4 `ADMIT` / 6 `ABSTAIN` / 3 `REFUSE`; 0.444444 micro Recall@k; 0.583333 macro Recall@k; 0.666667 MRR.
+
+Verified grounding metrics: 8 grounding cases; 1 `ADMIT` / 5 `QUARANTINE` / 1 `ABSTAIN` / 1 `REFUSE`.
+
+Verified package facts: 9 manifested outputs; 26 receipts; 2 verified input snapshots; 7 independently replayed source rows; 15 bundle members; 41,833 bytes; inner SHA-256 `2b52498e8dfba5f86cf694b08833bbbd67464c91e5cbf6fbd49cd37b1a0698a6`.
+
+The proof bundle includes `source_snapshot.csv` and `resolved_symbol_aliases.json`. The source snapshot contains all seven synthetic rows, including quarantine-designed rows. Governed contexts and receipts remain accepted-only or aggregate-only and do not expose quarantined row payloads.
+
+Candidate responses are committed synthetic fixtures, not model output. Retrieval is lexical, not semantic or embedding retrieval. There is no model or agent execution and no external action. These runs are repository-controlled evidence, not independent attestation or a trust anchor; they do not establish model quality, production inference, autonomous analysis, investment advice, or trading authorization.
 
 ### Inspectable implementation
 
@@ -135,10 +143,10 @@ Public-safe control evidence demonstrates patterns including:
 Public labels are mandatory, not cosmetic.
 
 - **REPRESENTATIVE**: illustrative market evidence, normalization, identity mapping, and constraint output used in the case study.
-- **SYNTHETIC / NON-LIVE**: the synthetic Python pipeline, checkpoint-recovery path, SQLite quality sample, and governed pre-model context/lexical-retrieval evaluations shown as technical proof.
+- **SYNTHETIC / NON-LIVE**: the synthetic Python pipeline, checkpoint-recovery path, SQLite quality sample, and governed context, lexical-retrieval, structured-grounding, and deterministic-package evaluations shown as technical proof.
 - **SYNTHETIC / SHADOW**: the CI-004 and CI-006 control-plane receipts.
 - **SHADOW**: the CI-008 authority-block control receipt.
-- **NOT CLAIMED**: live production operation, production SLO attainment, deployed orchestration, a production database or warehouse, proven real-world constraint detection, production promotion, model quality, semantic or embedding retrieval, production inference, or executed model/agent behavior in the pre-model sample.
+- **NOT CLAIMED**: live production operation, production SLO attainment, deployed orchestration, a production database or warehouse, proven real-world constraint detection, production promotion, model quality, semantic or embedding retrieval, production inference, model or agent execution, external action, or independent attestation.
 
 See [`docs/REAL_VS_SYNTHETIC.md`](docs/REAL_VS_SYNTHETIC.md).
 
@@ -166,7 +174,7 @@ This public export is a **static inspectable portfolio surface**, not a claim of
 5. Open the runnable [`market-data-pipeline-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/market-data-pipeline-sample) for the ingestion → normalization → provenance → quarantine → deterministic artifact path.
 6. Inspect [`operations.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/src/hydra_market_pipeline/operations.py) and [`test_operations.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/market-data-pipeline-sample/tests/test_operations.py) for checkpoint, recovery, replay, integrity, SLI, and budget behavior.
 7. Open [`sql-data-quality-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/sql-data-quality-sample) for the relational quality, joins, CTEs, and window-function path.
-8. Open [`governed-intelligence-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/governed-intelligence-sample) for integrity-checked context, accepted-only lexical ranking, exact citations, abstention/refusal controls, and deterministic pre-model evaluation.
+8. Open the commit-pinned [`governed-intelligence-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample) for integrity-checked context, accepted-only lexical ranking, separately committed qrels, independent of the behavior cases, exact citations, structured-grounding receipts, and deterministic proof packaging.
 
 No runnable live-data demo is manufactured here merely to make the repository look more complete.
 

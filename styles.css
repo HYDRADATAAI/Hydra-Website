@@ -21,6 +21,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html { scroll-behavior: smooth; background: var(--bg); }
 body {
   margin: 0;
@@ -779,6 +780,8 @@ img, svg { display: block; max-width: 100%; }
 
 .proof-bridge { padding-top: 94px; padding-bottom: 94px; }
 .proof-bridge-card { display: grid; grid-template-columns: 1.2fr .8fr; gap: 34px; align-items: end; padding: 40px; border: 1px solid rgba(97,245,184,.14); border-radius: 26px; background: linear-gradient(145deg, rgba(11,31,26,.78), rgba(8,20,24,.76)); }
+.proof-bridge-card > * { min-width: 0; }
+.proof-bridge-card code { overflow-wrap: anywhere; word-break: break-word; }
 .proof-bridge-card h2 { margin: 0; font-size: clamp(2.6rem, 4.8vw, 4.8rem); line-height: .98; letter-spacing: -.05em; }
 .proof-bridge-card p:not(.eyebrow) { max-width: 760px; color: var(--muted); }
 .proof-bridge-actions { display: flex; flex-direction: column; gap: 10px; align-items: stretch; }

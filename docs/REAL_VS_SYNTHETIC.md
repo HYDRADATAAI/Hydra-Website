@@ -8,7 +8,7 @@ The recruiter-facing market constraint example, illustrative fragmented-source f
 
 ## SYNTHETIC / NON-LIVE
 
-The Python market-data pipeline and checkpoint-recovery fixtures, the SQLite data-quality fixture, and the governed pre-model context/evaluation fixture. They demonstrate normalization, relational quality checks, quarantine, checkpoint recovery, idempotent replay, citation integrity, and policy decisions using committed synthetic inputs without live operation.
+The Python market-data pipeline and checkpoint-recovery fixtures, the SQLite data-quality fixture, and the governed pre-model context/lexical-retrieval fixtures. They demonstrate normalization, relational quality checks, quarantine, checkpoint recovery, idempotent replay, citation integrity, accepted-only lexical ranking, and policy decisions using committed synthetic inputs without live operation.
 
 ## SYNTHETIC / SHADOW
 
@@ -28,7 +28,7 @@ The CI-008 authority-block example. It demonstrates a fail-closed handoff when a
 - a deployed orchestration or observability service;
 - canonical production promotion;
 - production ML training or model execution;
-- model quality, semantic retrieval quality, or natural-language intent classification;
+- model quality, semantic or embedding retrieval quality, or natural-language intent classification;
 - autonomous analysis, investment advice, or trading authorization;
 - production runtime availability.
 

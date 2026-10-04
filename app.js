@@ -4,6 +4,78 @@
   const qs = (sel, root = document) => root.querySelector(sel);
   const qsa = (sel, root = document) => [...root.querySelectorAll(sel)];
   const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+  const repositoryUrl = "https://github.com/HYDRADATAAI/Hydra";
+
+  const safeHttpsDestination = (value) => {
+    if (typeof value !== "string" || !value.trim()) return null;
+    try {
+      const destination = new URL(value.trim());
+      const allowedPort = !destination.port || destination.port === "443";
+      if (
+        destination.protocol !== "https:" ||
+        destination.username ||
+        destination.password ||
+        !allowedPort
+      ) return null;
+      return destination;
+    } catch {
+      return null;
+    }
+  };
+
+  const safeRepositoryDestination = (value) => {
+    const destination = safeHttpsDestination(value);
+    if (!destination || destination.hostname.toLowerCase() !== "github.com") return null;
+    if (destination.search || destination.hash) return null;
+    if (destination.pathname !== "/HYDRADATAAI/Hydra") return null;
+    return repositoryUrl;
+  };
+
+  const safeLinkedInDestination = (value) => {
+    const destination = safeHttpsDestination(value);
+    if (!destination) return null;
+    const hostname = destination.hostname.toLowerCase();
+    if (hostname !== "linkedin.com" && hostname !== "www.linkedin.com") return null;
+    if (destination.search || destination.hash) return null;
+    try {
+      const pathname = decodeURIComponent(destination.pathname);
+      if (!/^\/(?:in|company)\/[^/\s]+\/?$/.test(pathname)) return null;
+    } catch {
+      return null;
+    }
+    return destination.href;
+  };
+
+  const safeMailtoDestination = (value) => {
+    if (typeof value !== "string") return null;
+    const address = value.trim();
+    return /^[^@\s?]+@[^@\s?]+\.[^@\s?]+$/.test(address)
+      ? `mailto:${address}`
+      : null;
+  };
+
+  const hideOptionalLink = (link) => {
+    link.hidden = true;
+    link.removeAttribute("href");
+    link.removeAttribute("target");
+    link.removeAttribute("rel");
+    link.setAttribute("aria-disabled", "true");
+    link.tabIndex = -1;
+  };
+
+  const showOptionalLink = (link, destination, { newTab = false } = {}) => {
+    link.href = destination;
+    if (newTab) {
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    } else {
+      link.removeAttribute("target");
+      link.removeAttribute("rel");
+    }
+    link.removeAttribute("aria-disabled");
+    link.removeAttribute("tabindex");
+    link.hidden = false;
+  };
 
   // Footer year.
   qsa("[data-year]").forEach(el => { el.textContent = new Date().getFullYear(); });
@@ -13,18 +85,15 @@
   const config = window.HYDRA_CONFIG || {};
   const repoLinks = qsa("[data-repo-link]");
   const repoSection = qs("[data-repo-section]");
-  if (config.repositoryUrl) {
+  const repositoryDestination = safeRepositoryDestination(config.repositoryUrl);
+  if (repositoryDestination) {
     repoLinks.forEach(link => {
-      link.href = config.repositoryUrl;
-      link.target = "_blank";
-      link.rel = "noreferrer";
-      link.removeAttribute("aria-disabled");
-      link.hidden = false;
+      showOptionalLink(link, repositoryDestination, { newTab: true });
       if (link.classList.contains("repo-button")) link.textContent = "Open repository ↗";
     });
     if (repoSection) repoSection.hidden = false;
   } else {
-    repoLinks.forEach(link => { link.hidden = true; });
+    repoLinks.forEach(hideOptionalLink);
     if (repoSection) repoSection.hidden = true;
   }
 
@@ -33,23 +102,21 @@
   const publicLinkGroups = qsa("[data-public-links]");
   const linkedinLinks = qsa("[data-linkedin-link]");
   const contactLinks = qsa("[data-contact-link]");
+  const linkedinDestination = safeLinkedInDestination(config.linkedinUrl);
+  const contactDestination = safeMailtoDestination(config.contactEmail);
   let hasPublicLink = false;
-  if (config.linkedinUrl) {
+  if (linkedinDestination) {
     hasPublicLink = true;
     linkedinLinks.forEach(link => {
-      link.href = config.linkedinUrl;
-      link.target = "_blank";
-      link.rel = "noreferrer";
-      link.hidden = false;
+      showOptionalLink(link, linkedinDestination, { newTab: true });
     });
-  }
-  if (config.contactEmail) {
+  } else linkedinLinks.forEach(hideOptionalLink);
+  if (contactDestination) {
     hasPublicLink = true;
     contactLinks.forEach(link => {
-      link.href = `mailto:${config.contactEmail}`;
-      link.hidden = false;
+      showOptionalLink(link, contactDestination);
     });
-  }
+  } else contactLinks.forEach(hideOptionalLink);
   publicLinkGroups.forEach(group => { group.hidden = !hasPublicLink; });
 
   // Mobile navigation.

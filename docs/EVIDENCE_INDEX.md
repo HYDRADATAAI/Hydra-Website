@@ -91,29 +91,39 @@ Inspectable proof includes:
 
 This is SQLite-based career evidence for SQL and relational data-quality fundamentals. It is not a claim of a production database, warehouse, distributed query engine, or live feed.
 
-## 7. Governed intelligence context and lexical retrieval proof
+## 7. Governed context, lexical retrieval, and structured grounding proof
 
-**Core source:** [`governed-intelligence-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/main/governed-intelligence-sample)
+**Core source:** [`governed-intelligence-sample/`](https://github.com/HYDRADATAAI/Hydra/tree/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample)
 
-**CI:** [Governed intelligence pre-model and retrieval sample](https://github.com/HYDRADATAAI/Hydra/actions/workflows/governed-intelligence-sample.yml)
+**Pinned revision:** [`6dd79a85cdba1f2cd90c2e8815f6d881ac73efad`](https://github.com/HYDRADATAAI/Hydra/commit/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad)
+
+**CI:** [workflow source at the pinned revision](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/.github/workflows/governed-intelligence-sample.yml) and [successful run `37170895042`, attempt 1](https://github.com/HYDRADATAAI/Hydra/actions/runs/37170895042/attempts/1)
 
 **Label:** `SYNTHETIC / NON-LIVE / MODEL NOT EXECUTED`
 
-Demonstrates the controlled boundary immediately before a model call and a transparent accepted-only retrieval path:
+Demonstrates three bounded repository-controlled flows:
 
 `pipeline manifest -> artifact integrity -> policy decision -> bounded accepted context -> exact citations -> evaluation receipt`
 
-`accepted records -> digest-bound lexical policy -> deterministic ranking -> exact citations -> Recall@k / MRR receipt`
+`accepted records -> digest-bound lexical policy -> deterministic ranking -> separately committed qrels, independent of the behavior cases -> Recall@k / MRR receipt`
+
+`governed retrieval -> committed synthetic candidate -> exact claim/value/record/citation checks -> structured-grounding receipt`
 
 Inspectable proof includes:
 
-- [`context.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/src/hydra_governed_intelligence/context.py) for upstream digest checks, accepted-record context assembly, aggregate-only quality context, exact citation validation, and explicit `ADMIT`, `ABSTAIN`, and `REFUSE` outcomes;
-- [`evaluation.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/src/hydra_governed_intelligence/evaluation.py) for deterministic decisions, evaluation reports, and output manifests bound to the policy, suite, and upstream pipeline manifest;
-- [`retrieval.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/src/hydra_governed_intelligence/retrieval.py) for accepted-only indexing, inspectable field weights, integer scoring, deterministic tie breaking, and exact citation recomputation;
-- [`retrieval_evaluation.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/src/hydra_governed_intelligence/retrieval_evaluation.py) for Recall@k, mean reciprocal rank, disposition checks, and digest-bound retrieval receipts;
-- [`retrieval_cases.json`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/fixtures/retrieval_cases.json) for six inspectable ranking/control expectations, including unknown evidence, a quarantined-only symbol, and a restricted-corpus request;
-- [`evaluation_cases.json`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/fixtures/evaluation_cases.json) for five inspectable expectations: accepted evidence, aggregate quality, missing evidence, unsupported production metrics, and prohibited trading action;
-- [`test_context.py`](https://github.com/HYDRADATAAI/Hydra/blob/main/governed-intelligence-sample/tests/test_context.py) for artifact, citation, admitted-context, quarantine-exposure, and model-enable tamper rejection;
-- the CI workflow, which rebuilds the upstream synthetic pipeline artifacts and verifies both suites, including six retrieval citation checks, 1.000000 Recall@k and MRR on three positive fixture queries, zero model executions, and zero quarantined raw-record exposures.
+- [`context.py`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/src/hydra_governed_intelligence/context.py) and [`evaluation.py`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/src/hydra_governed_intelligence/evaluation.py) for source-byte-bound policies, upstream digest checks, accepted-record context, exact citations, and deterministic context receipts;
+- [`retrieval.py`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/src/hydra_governed_intelligence/retrieval.py) and [`retrieval_evaluation.py`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/src/hydra_governed_intelligence/retrieval_evaluation.py) for accepted-only lexical indexing, integer scoring, deterministic tie breaking, exact citation recomputation, and exact-fraction metric derivation;
+- [`retrieval_cases.json`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/fixtures/retrieval_cases.json) for retrieval behavior expectations and separately committed [`retrieval_qrels.json`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/fixtures/retrieval_qrels.json), independent of the behavior cases, for record-level relevance judgments;
+- [`grounding.py`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/src/hydra_governed_intelligence/grounding.py) and [`grounding_cases.json`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/fixtures/grounding_cases.json) for exact claim, value, record, and citation checks over committed candidate fixtures;
+- [`pre_upload_verifier.py`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/src/hydra_governed_intelligence/pre_upload_verifier.py) and [`test_pre_upload_verifier.py`](https://github.com/HYDRADATAAI/Hydra/blob/6dd79a85cdba1f2cd90c2e8815f6d881ac73efad/governed-intelligence-sample/tests/test_pre_upload_verifier.py) for final receipt verification, independent metric recomputation, fixed ZIP metadata, and byte-identical packaging;
+- the pinned workflow and exact successful run, which rebuild, verify, publish, download, and compare the inner proof ZIP digest before reporting success.
 
-This is deterministic pre-model grounding, control, and lexical retrieval evidence. It is not evidence of model quality, semantic or embedding retrieval quality, natural-language intent classification, production inference, autonomous analysis, investment advice, or trading authorization.
+Verified retrieval metrics: 13 retrieval cases; 4 `ADMIT` / 6 `ABSTAIN` / 3 `REFUSE`; 0.444444 micro Recall@k; 0.583333 macro Recall@k; 0.666667 MRR.
+
+Verified grounding metrics: 8 grounding cases; 1 `ADMIT` / 5 `QUARANTINE` / 1 `ABSTAIN` / 1 `REFUSE`.
+
+Verified package facts: 9 manifested outputs; 26 receipts; 2 verified input snapshots; 7 independently replayed source rows; 15 bundle members; 41,833 bytes; inner SHA-256 `2b52498e8dfba5f86cf694b08833bbbd67464c91e5cbf6fbd49cd37b1a0698a6`.
+
+The proof bundle includes `source_snapshot.csv` and `resolved_symbol_aliases.json`. The source snapshot contains all seven synthetic rows, including quarantine-designed rows. Governed contexts and receipts remain accepted-only or aggregate-only and do not expose quarantined row payloads.
+
+Candidate responses are committed synthetic fixtures, not model output. Retrieval is lexical, not semantic or embedding retrieval. There is no model or agent execution and no external action. This is repository-controlled evidence, not independent attestation or a trust anchor. It does not establish model quality, natural-language claim extraction, production inference, autonomous analysis, investment advice, or trading authorization.

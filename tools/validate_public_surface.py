@@ -212,7 +212,21 @@ ALLOWED_CSS_DATA_IMAGE_TYPES = frozenset(
     {"image/gif", "image/jpeg", "image/png", "image/svg+xml", "image/webp"}
 )
 HTML_URL_ATTRIBUTES = frozenset(
-    {"href", "xlink:href", "src", "srcset", "poster", "action", "formaction"}
+    {
+        "href",
+        "xlink:href",
+        "src",
+        "srcset",
+        "imagesrcset",
+        "poster",
+        "action",
+        "formaction",
+    }
+)
+MARKDOWN_AUTOLINK_RE = re.compile(
+    r"<(?P<target>(?:[A-Za-z][A-Za-z0-9+.-]{1,31}:[^<>\x00-\x20]*|"
+    r"[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@"
+    r"[A-Za-z0-9](?:[A-Za-z0-9.-]{0,253}[A-Za-z0-9])?))>"
 )
 NON_RENDERED_ELEMENTS = frozenset({"script", "style", "template", "noscript"})
 VOID_ELEMENTS = frozenset(
@@ -355,7 +369,7 @@ class LinkParser(HTMLParser):
             key = key.casefold()
             if key not in HTML_URL_ATTRIBUTES or not value:
                 continue
-            if key == "srcset":
+            if key in {"srcset", "imagesrcset"}:
                 self.links.extend(parse_srcset(value))
             else:
                 self.links.append(value.strip())
@@ -705,9 +719,13 @@ def extract_markdown_links(text: str) -> tuple[list[str], LinkParser]:
     stripped = strip_markdown_nonrendered(text, keep_inline_code=False)
     definitions, definition_destinations, body = extract_markdown_definitions(stripped)
     links = [item[3] for item in markdown_links_and_spans(body, definitions)]
+    autolinks = []
+    for match in MARKDOWN_AUTOLINK_RE.finditer(body):
+        target = html.unescape(match.group("target"))
+        autolinks.append(target if ":" in target else f"mailto:{target}")
     parser = LinkParser()
     parser.feed(body)
-    return definition_destinations + links + parser.links, parser
+    return definition_destinations + links + autolinks + parser.links, parser
 
 
 def _decode_css_escapes(text: str) -> str:
@@ -1732,6 +1750,8 @@ def validate_internal_self_checks(errors: list[str]) -> None:
 [reference link][outside]
 [outside]: ../reference-outside
 <a href="../raw-html-outside">raw HTML</a>
+<https://evil.example/autolink>
+<person@example.com>
 <!-- [comment](../ignored-comment) -->
 ```markdown
 [fenced](../ignored-fence)
@@ -1742,6 +1762,8 @@ def validate_internal_self_checks(errors: list[str]) -> None:
         "../inline-outside",
         "../reference-outside",
         "../raw-html-outside",
+        "https://evil.example/autolink",
+        "mailto:person@example.com",
     }
     if not expected_references.issubset(references):
         errors.append("internal self-check failed: Markdown link extraction")
@@ -1756,7 +1778,8 @@ def validate_internal_self_checks(errors: list[str]) -> None:
         'poster="p.png" style="background:url(inline.png)"><form action="submit">'
         '<button formaction="alternate" ping="audit-one audit-two">'
         '<meta http-equiv="refresh" content="0; url=refresh.html#ready">'
-        '<link rel="manifest" href="app.webmanifest">'
+        '<link rel="manifest" href="app.webmanifest" '
+        'imagesrcset="preload-1.png 1x, preload-2.png 2x">'
         '<object data="object.html"></object>'
         '<svg><a xlink:href="vector-target.html">vector</a></svg>'
         '<iframe srcdoc="&lt;a href=&quot;nested.html&quot;&gt;nested&lt;/a&gt;">'
@@ -1775,6 +1798,8 @@ def validate_internal_self_checks(errors: list[str]) -> None:
         "audit-two",
         "refresh.html#ready",
         "app.webmanifest",
+        "preload-1.png",
+        "preload-2.png",
         "object.html",
         "vector-target.html",
         "nested.html",

@@ -104,7 +104,7 @@ REQUIRED_PUBLIC_REFERENCES = {
         "https://github.com/HYDRADATAAI/Hydra/blob/main/constraint-runtime/tests/test_unresolved_gates.py",
         "https://github.com/HYDRADATAAI/Hydra/blob/main/tools/validate_constraint_first_slice_acceptance_gate.py",
         "https://github.com/HYDRADATAAI/Hydra/blob/main/tools/test_constraint_first_slice_acceptance_gate_adversarial.py",
-        "https://github.com/HYDRADATAAI/Hydra/actions/runs/38003907729",
+        "https://github.com/HYDRADATAAI/Hydra/actions/runs/38070387023",
     ),
     "repository.html": (
         CORE_PROOF_TREE,

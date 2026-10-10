@@ -99,6 +99,13 @@ REQUIRED_PUBLIC_REFERENCES = {
         f"{CORE_PROOF_BLOB}/.github/workflows/governed-intelligence-sample.yml",
         CORE_PROOF_RUN,
     ),
+    "constraint.html": (
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/constraint-geopolitical-policy/tests/test_sourced_case_end_to_end.py",
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/constraint-runtime/tests/test_unresolved_gates.py",
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/tools/validate_constraint_first_slice_acceptance_gate.py",
+        "https://github.com/HYDRADATAAI/Hydra/blob/main/tools/test_constraint_first_slice_acceptance_gate_adversarial.py",
+        "https://github.com/HYDRADATAAI/Hydra/actions/runs/38003907729",
+    ),
     "repository.html": (
         CORE_PROOF_TREE,
         CORE_PROOF_RUN,
@@ -168,6 +175,10 @@ REQUIRED_PUBLIC_CLAIMS = {
         + PACKAGE_CLAIMS
         + PROVENANCE_CLAIMS
         + BOUNDARY_CLAIMS
+    ),
+    "constraint.html": (
+        "representative constraint workflow",
+        "first serious constraint run remains blocked",
     ),
     "proof.html": PACKAGE_CLAIMS + PROVENANCE_CLAIMS,
 }

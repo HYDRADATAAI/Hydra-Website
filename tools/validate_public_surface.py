@@ -177,7 +177,7 @@ REQUIRED_PUBLIC_CLAIMS = {
         + BOUNDARY_CLAIMS
     ),
     "constraint.html": (
-        "representative constraint workflow",
+        "Representative constraint workflow",
         "first serious constraint run remains blocked",
     ),
     "proof.html": PACKAGE_CLAIMS + PROVENANCE_CLAIMS,

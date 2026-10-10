@@ -915,3 +915,36 @@ img, svg { display: block; max-width: 100%; }
   .case-result-main{min-height:430px;padding:26px}.case-result-schema{grid-template-columns:1fr}.case-result-schema>div,.case-result-schema>div:nth-child(2n),.case-result-schema>div:nth-last-child(-n+2){border-right:0;border-bottom:1px solid rgba(151,213,194,.07)}.case-result-schema>div:last-child{border-bottom:0}
 }
 @media(max-width:520px){.case-step-list{grid-template-columns:1fr}.case-result-main h3{font-size:4.3rem}}
+
+
+/* Keep the constraint page's evidence boundary visible before its conceptual workflow. */
+.constraint-claim-boundary {
+  display: grid;
+  gap: 12px;
+  margin: 18px auto 0;
+  padding: 22px 24px;
+  border: 1px solid rgba(97, 245, 184, .22);
+  border-radius: 18px;
+  background: rgba(8, 22, 20, .72);
+}
+.constraint-claim-boundary h2 {
+  margin: 0;
+  color: #e0f2eb;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+}
+.constraint-claim-boundary p {
+  max-width: 88ch;
+  margin: 0;
+  color: var(--muted-2);
+  line-height: 1.7;
+}
+.constraint-claim-boundary a {
+  color: #b9f8df;
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+@media (max-width: 640px) {
+  .constraint-claim-boundary {
+    padding: 18px;
+  }
+}
